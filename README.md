@@ -30,11 +30,9 @@ unzip images.zip
 unzip images2.zip
 rm *.zip
 cd ..
-apt-get install git-lfs
-git lfs install
-git clone https://huggingface.co/sunsmarterjieleaf/ChatterBox
-mv ChatterBox/llava-llama-2-13b-chat-lightning-preview .
-rm -rf ChatterBox
+cd llava-llama-2-13b-chat-lightning-preview
+bash download_model.sh
+cd ..
 unzip mmcv-1.4.7.zip
 cd mmcv-1.4.7/
 MMCV_WITH_OPS=1 pip install -e .
