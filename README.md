@@ -12,16 +12,18 @@
 1. Clone this repository and navigate to ChatterBox folder
 
 ```bash
-git clone https://github.com/sunsmarterjie/ChatterBox
-cd ChatterBox
+git https://github.com/abdur75648/ChatterBox-Finetuning.git
+cd ChatterBox-Finetuning
 ```
 
 2.1 Install Packages (Runpod)
 ```Shell
 apt-get update
 apt-get install zip unzip
-pip install gdown
-rm -rf CB-300K && mkdir CB-300K && cd CB-300K
+pip install --upgrade pip
+pip install -r requirements.txt
+rm -rf CB-300K
+mkdir CB-300K && cd CB-300K
 gdown --id 1vAqozQ3En5xSEIhzCp4WnUeWztYzZGQY
 gdown --id 1C0XyMyhLRzdSDbtWAiGdW1rjljop0sMe
 gdown --id 16CaLpXiiudAKP40ESKUjhquzWa0OTXaF
@@ -39,7 +41,6 @@ MMCV_WITH_OPS=1 pip install -e .
 cd ../model/GroundingDINO/ops
 python setup.py build install
 wget https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha2/groundingdino_swinb_cogcoor.pth
-git lfs install
 ```
 
 * ** Update @ 17th feb 2024: ** Trained weights available at https://huggingface.co/sunsmarterjieleaf/ChatterBox
