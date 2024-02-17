@@ -40,10 +40,10 @@ def parse_args(args):
     parser.add_argument("--lora-r", default=16, type=int)
     parser.add_argument(
         
-        "--vision-tower", default="./CLIP/clip-vit-large-patch14/", type=str
+        "--vision-tower", default="openai/clip-vit-large-patch14", type=str
     )
     parser.add_argument(
-        "--vision_tower_aux",default="./CLIP/clip-vit-large-patch14/", type=str
+        "--vision_tower_aux",default="openai/clip-vit-large-patch14", type=str
     )
     parser.add_argument("--local-rank", default=0, type=int, help="node rank")
     parser.add_argument("--load_in_8bit", action="store_true", default=False)
@@ -74,7 +74,7 @@ def vision_branch_args():
                             help='device to use for training / testing')
         parser.add_argument('--seed', default=42, type=int)
         parser.add_argument('--resume', default='', help='resume from checkpoint')
-        parser.add_argument('--pretrained', default="./Open-GroundingDino-main/groundingdino_swinb_cogcoor.pth",help='load from other checkpoint')
+        parser.add_argument('--pretrained', default="groundingdino_swinb_cogcoor.pth",help='load from other checkpoint')
         parser.add_argument('--finetune_ignore', type=str, nargs='+')
         parser.add_argument('--start_epoch', default=0, type=int, metavar='N',
                             help='start epoch')

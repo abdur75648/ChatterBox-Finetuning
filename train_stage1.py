@@ -34,7 +34,7 @@ def parse_args(args):
     parser = argparse.ArgumentParser(description="ChatterBox Model Training")
     parser.add_argument("--local_rank", default=0, type=int, help="node rank")
     parser.add_argument(
-        "--version", default="../llava-llama-2-13b-chat-lightning-preview"
+        "--version", default="llava-llama-2-13b-chat-lightning-preview"
     )
     parser.add_argument("--vis_save_path", default="./vis_output", type=str)
     parser.add_argument(
@@ -49,7 +49,7 @@ def parse_args(args):
     parser.add_argument("--model_max_length", default=2048, type=int)
     parser.add_argument("--lora_r", default=16, type=int)
     parser.add_argument(
-        "--vision-tower", default="../clip-vit-large-patch14", type=str
+        "--vision-tower", default="openai/clip-vit-large-patch14", type=str
     )
     parser.add_argument("--load_in_8bit", action="store_true", default=False)
     parser.add_argument("--load_in_4bit", action="store_true", default=False)
@@ -113,6 +113,7 @@ def vision_branch_args():
             action=DictAction,
             help='override some settings in the used config, the key-value pair '
             'in xxx=yyy format will be merged into config file.')
+        parser.add_argument('--version', default='llava-llama-2-13b-chat-lightning-preview', help='version of the model')
 
         # dataset parameters
         parser.add_argument("--datasets", type=str, help='path to datasets json')
@@ -128,7 +129,7 @@ def vision_branch_args():
                             help='device to use for training / testing')
         parser.add_argument('--seed', default=42, type=int)
         parser.add_argument('--resume', default='', help='resume from checkpoint')
-        parser.add_argument('--pretrained', default="../groundingdino_swinb_cogcoor.pth",help='load from other checkpoint')
+        parser.add_argument('--pretrained', default="groundingdino_swinb_cogcoor.pth",help='load from other checkpoint')
         parser.add_argument('--finetune_ignore', type=str, nargs='+')
         parser.add_argument('--start_epoch', default=0, type=int, metavar='N',
                             help='start epoch')
@@ -235,11 +236,11 @@ def main(args):
     # print('before build dataset')
     grounding_dataset = GroundingDataset(
         args.dataset_dir,
-        args.base_coco17_dir,
+        # args.base_coco17_dir,
         tokenizer,
         args.vision_tower,
-        dataset="refcocoground||cocoground||jackground||jacklogicground",
-        sample_rate=[4, 4, 1, 1],
+        dataset="jackground||jacklogicground",
+        sample_rate=[1, 1],
         vqa_data='llava_instruct_150k',
     )
 

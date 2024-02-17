@@ -2132,7 +2132,7 @@ class ReferringDataset(torch.utils.data.Dataset):
                 self.all_datasets.append(
                     JackVanillaDataset(
                         base_root="../datasets/VG/",
-                        vision_tower="../CLIP/clip-vit-large-patch14/",
+                        vision_tower="openai/clip-vit-large-patch14",
                         tokenizer=tokenizer,
                         anno_path='../CB-300K/'
                     )
@@ -2141,7 +2141,7 @@ class ReferringDataset(torch.utils.data.Dataset):
                 self.all_datasets.append(
                     JackReferringDataset(
                         base_root="../datasets/VG/",
-                        vision_tower="../CLIP/clip-vit-large-patch14/",
+                        vision_tower="openai/clip-vit-large-patch14",
                         tokenizer=tokenizer,
                         anno_path='../CB-300K/'
                     )
@@ -2150,7 +2150,7 @@ class ReferringDataset(torch.utils.data.Dataset):
                 self.all_datasets.append(
                     RefCOCOsDataset(
                         base_root="../datasets/MSCOCO2014/train2014/",
-                        vision_tower="../CLIP/clip-vit-large-patch14/",
+                        vision_tower="openai/clip-vit-large-patch14",
                         tokenizer=tokenizer,
                         anno_path='../CB-materials/'
                     )

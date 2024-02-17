@@ -432,6 +432,230 @@ class COCOGroundingDataset(torch.utils.data.Dataset):
             bboxes_gpt,
             label,
         )
+        
+# class JackGroundingDataset(torch.utils.data.Dataset):
+class MyGroundingDataset(torch.utils.data.Dataset):
+    pixel_mean = torch.Tensor([123.675, 116.28, 103.53]).view(-1, 1, 1)
+    pixel_std = torch.Tensor([58.395, 57.12, 57.375]).view(-1, 1, 1)
+    img_size = img_size
+    region_size = 224
+
+    def __init__(
+            self,
+            base_root,
+            tokenizer,
+            vision_tower,
+            anno_path,
+            samples_per_epoch=500 * 8 * 2 * 10,
+            precision: str = "fp32",
+            image_size: int = 224,
+            num_classes_per_sample: int = 3,
+            query_bbox_rate: float = 0.5,  # note to use this args or not ?
+    ):
+        self.samples_per_epoch = samples_per_epoch
+        self.num_classes_per_sample = num_classes_per_sample
+        self.query_bbox_rate = query_bbox_rate
+
+        self.base_root = base_root
+        # self.image_size = image_size
+        self.tokenizer = tokenizer
+        self.precision = precision
+        # self.transform = dino_transform  # transforms for dino detection
+        self.clip_image_processor = CLIPImageProcessor.from_pretrained(vision_tower)
+        self.data_path = os.path.join(base_root)
+        with open(os.path.join(anno_path, 'CB_GND.json')) as f:
+            jack_json = json.load(f)
+        self.jack_json = jack_json['data']
+
+        self.replace_names = ['the region', 'this region']
+
+        self.first_q = "This is an image. Can you answer the next questions about the specific regions in the image?  "
+        self.first_a = "Sure, I will answer your questions.  "
+
+    def __len__(self):
+        return self.samples_per_epoch
+
+    def transform(self, x):
+        trans = T.Compose([
+            T.RandomResize([(self.img_size, self.img_size)])  # change to Resize?
+        ])
+
+        return trans(x, target=None)
+
+    def preprocess(self, x: torch.Tensor) -> torch.Tensor:  # resize instead of padding
+
+        x = x.float()
+        x = torchvision.transforms.functional.normalize(x, mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375])
+
+        return x
+
+    def postprocess_bbox(self, bboxes_raw, ratios):
+
+        h, w = self.img_size, self.img_size  # 图像的size变换 -> box的size变换
+        boxes_gt = []
+        for box in bboxes_raw:
+            if len(box) == 0:  # this conversation has no bbox
+                boxes_gt.append([])
+                continue
+
+            if isinstance(box, list):
+                box = torch.tensor(box)
+
+            ratio_width, ratio_height = ratios
+            scaled_boxes = box * torch.as_tensor([ratio_width, ratio_height, ratio_width, ratio_height])
+
+            scaled_boxes = box_xyxy_to_cxcywh(scaled_boxes)
+            scaled_boxes = scaled_boxes / torch.tensor([w, h, w, h], dtype=torch.float32)
+            boxes_gt.append(scaled_boxes)
+        return boxes_gt
+
+    def strbbox2bbox(self, bboxes_str=None):
+        if len(bboxes_str) == 0 or ";" in bboxes_str[0] or 'x1' in bboxes_str[0] or '?' in bboxes_str[0] or \
+                '[0,0,0,0]' in bboxes_str[0] or '[]' in bboxes_str[0] or 'white and multi-storied and garage' in \
+                bboxes_str[0] \
+                or 'lap:[220, 151, 305]' in bboxes_str[0] or 'yellow and blue [equipment]' in bboxes_str[0]:
+            return []
+        bboxes_split_str = bboxes_str[0].split(']')[:-1]
+        bboxes = []
+        for bbox_split_str in bboxes_split_str:
+            sta = bbox_split_str.find('[')
+            bbox = list(eval(bbox_split_str[sta + 1:]))
+
+            bboxes.append(bbox)
+            if len(bbox) == 0:
+                print(bboxes_str)
+                assert False
+
+        return bboxes
+
+    def __getitem__(self, idx):
+
+        while True:
+            idx = random.randint(0, len(self.jack_json) - 1)
+            image_path = os.path.join(self.data_path, self.jack_json[idx]['image'])
+            img = cv2.imread(image_path)
+            images_ori = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+            ori_size = images_ori.shape[:2]
+
+            # preprocess images for clip
+            images_clip = self.clip_image_processor.preprocess(images_ori, return_tensors="pt")[
+                "pixel_values"
+            ][0]
+            image_token_len = (images_clip.shape[1] // 14) * (
+                    images_clip.shape[2] // 14
+            )  # FIXME: 14 is hardcoded patch size
+
+            images, _, ratios = self.transform(Image.fromarray(images_ori))  # preprocess images for dino, check this
+            # resize = images.shape[:2]
+
+            source = self.jack_json[idx]["conversation"]
+
+            conv = get_default_conv_template(
+                "vicuna"
+            ).copy()  # conversation_lib.default_conversation.copy()
+            roles = {"human": conv.roles[0], "gpt": conv.roles[1]}
+
+            conversations = []
+            bboxes_human = []
+            bboxes_gpt = []
+
+            replace_name = -2
+            # random sample convs from start_id -> note logical reasoning NOT has this
+            len_conv = len(source)
+            start_id = 0
+            if len_conv > 2:
+                rand_id = random.randint(0, len_conv - 1)
+                start_id = \
+                random.sample([rand_id, int(len_conv // 2), int(len_conv // 4), int(len_conv // 6), int(len_conv // 8)],
+                              1)[0]
+                start_id = start_id // 2 * 2
+                source = source[start_id:]
+
+            if roles[source[0]["from"]] != conv.roles[0]:
+                # Skip the first one if it is not from human
+                source = source[1:]
+            conv.messages = []
+
+            label = -1
+
+            for j, sentence in enumerate(source):  # note here: the model_max_length only contains about 6-7 VQAs
+                role = roles[sentence["from"]]
+                assert role == conv.roles[j % 2], f"{j}"
+
+                if j % 2 == 0:
+
+                    # 'the cup is on the desk. <cup:[238, 249, 298, 511], red and orange desk:[241, 289, 300, 390]>'
+                    # extract the bboxes string: <cup:[238, 249, 298, 511], red and orange desk:[241, 289, 300, 390]>
+                    bboxes_str = re.findall(r"<(.+?)>", sentence["value"])
+                    sentence['value'] = sentence['value'][:sentence['value'].find('<')]
+
+                    bboxes_human.append([])
+
+                    ########################## find coco classes #########################
+                    sentence_next = source[j + 1]
+                    bboxes_str_next = re.findall(r"<(.+?)>", sentence_next["value"])
+                    bboxes_next = self.strbbox2bbox(bboxes_str_next)
+                    if len(bboxes_next) == 1:
+                        ins_name = bboxes_str_next[0].split('<')[-1].split(':')[0]
+                    ######################################################################
+                    if label != -1:
+                        sentence["value"] = sentence["value"] + '[VG]'
+
+                    if j == 0:
+                        sentence["value"] = '<image>\n' + ' ' + sentence["value"]  # put <image> in the most front
+
+                elif j % 2 == 1:
+                    if label != -1:
+                        bboxes_str = re.findall(r"<(.+?)>", sentence["value"])
+                        gt_bboxes = self.strbbox2bbox(bboxes_str)
+                        if len(gt_bboxes) > 0:
+                            bboxes_gpt.append(gt_bboxes)
+
+                    if '<' in sentence['value']:
+                        sentence['value'] = sentence['value'][:sentence['value'].find('<')]
+
+                    if replace_name == j - 1:
+                        if ins_name in sentence["value"]:
+                            sentence["value"] = sentence["value"].replace(ins_name, name_re)
+
+                conv.append_message(role, sentence["value"])
+
+                if label != -1 and j % 2 == 1:
+                    break
+
+            conversations.append(conv.get_prompt())
+
+            questions = conversations
+            sampled_classes = conversations
+
+            # replace <image> token
+            # region_token_len = 256
+            for i in range(len(conversations)):
+                replace_token = DEFAULT_IMAGE_PATCH_TOKEN * image_token_len
+                replace_token = (
+                        DEFAULT_IM_START_TOKEN + replace_token + DEFAULT_IM_END_TOKEN
+                )
+                conversations[i] = conversations[i].replace(
+                    DEFAULT_IMAGE_TOKEN, replace_token
+                )
+
+            # images = self.preprocess(torch.from_numpy(images).permute(2, 0, 1).contiguous())
+            images = self.preprocess(torch.from_numpy(np.array(images)).permute(2, 0, 1).contiguous())
+
+            #### postprocess bbox
+            bboxes_gpt = self.postprocess_bbox(bboxes_gpt, ratios)  # for DINO prediction
+            # print('JackGroundingDataset >>', bboxes_gpt)
+
+            if conversations[0].count("<im_start>") == 1 and conversations[0].count("[VG]") == 1 and label != -1:
+                break
+
+        return (
+            images,
+            images_clip,
+            conversations,
+            bboxes_gpt,
+            [label],
+        )
 
 
 class JackGroundingDataset(torch.utils.data.Dataset):
@@ -949,15 +1173,14 @@ class GroundingDataset(torch.utils.data.Dataset):
     def __init__(
             self,
             base_image_dir,
-            base_coco_dir,
             tokenizer,
             vision_tower,
             dataset="jack||vqa",
             sample_rate=[7, 3],
-            vqa_data='llava_instruct_150k',
+            vqa_data='llava_instruct_150k'
     ):
-        dataset = "refcocoground||cocoground||jackground||jacklogicground"
-        sample_rate = [5, 8, 1, 1]
+        # dataset = "refcocoground||cocoground||jackground||jacklogicground"
+        # sample_rate = [5, 8, 1, 1]
 
         sample_rate = np.array(sample_rate)
         self.sample_rate = sample_rate / sample_rate.sum()
@@ -974,7 +1197,7 @@ class GroundingDataset(torch.utils.data.Dataset):
                     RefCOCOGroundingDataset(
                         base_root="../datasets/MSCOCO2014/train2014/",
                         tokenizer=tokenizer,
-                        vision_tower="../CLIP/clip-vit-large-patch14/",
+                        vision_tower="openai/clip-vit-large-patch14",
                         anno_path="../datasets/CB-materials/"
                     )
                 )
@@ -983,26 +1206,37 @@ class GroundingDataset(torch.utils.data.Dataset):
                     COCOGroundingDataset(
                         base_root="../datasets/MSCOCO2017/train2017/",
                         tokenizer=tokenizer,
-                        vision_tower="../CLIP/clip-vit-large-patch14/",
+                        vision_tower="openai/clip-vit-large-patch14",
                         anno_path='../datasets/CB-materials/'
                     )
                 )
             elif dataset == "jackground":
                 self.all_datasets.append(
                     JackGroundingDataset(
-                        base_root="../datasets/VG/",
+                        base_root="CB-300K/",
                         tokenizer=tokenizer,
-                        vision_tower="../CLIP/clip-vit-large-patch14/",
-                        anno_path='../datasets/CB-300K/'
+                        vision_tower="openai/clip-vit-large-patch14",
+                        anno_path='CB-300K/'
                     )
                 )
+            
+            elif dataset == "mygr":
+                self.all_datasets.append(
+                    MyGroundingDataset(
+                        base_root=self.base_image_dir, # path to images in grounding_gt.json
+                        tokenizer=tokenizer,
+                        vision_tower=vision_tower,
+                        anno_path='../scratch/cbox_data/'
+                    )
+                )
+                
             elif dataset == "jacklogicground":
                 self.all_datasets.append(
                     JackLogicGroundingDataset(
-                        base_root="../datasets/VG/",
+                        base_root="CB-300K/",
                         tokenizer=tokenizer,
-                        vision_tower="../CLIP/clip-vit-large-patch14/",
-                        anno_path='../datasets/CB-300K/'
+                        vision_tower="openai/clip-vit-large-patch14",
+                        anno_path='CB-300K/'
                     )
                 )
 

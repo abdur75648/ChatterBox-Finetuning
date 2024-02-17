@@ -371,7 +371,7 @@ class LlavaLlamaForCausalLM(LlamaForCausalLM):
     def __init__(self, config):
         super(LlamaForCausalLM, self).__init__(config)
         print('config  >>> ', config)
-        config.mm_vision_tower = "/Workspace/ZhaoYuzhong/TianYunjie/CLIP/clip-vit-large-patch14/"
+        config.mm_vision_tower = "openai/clip-vit-large-patch14"
         self.model = LlavaLlamaModel(config)
 
         self.lm_head = nn.Linear(config.hidden_size, config.vocab_size, bias=False)

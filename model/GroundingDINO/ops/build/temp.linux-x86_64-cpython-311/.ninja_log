@@ -1,0 +1,4 @@
+# ninja log v5
+2	9358	1707800909000000000	/home/chemical/dual/ch7190150/ChatterBox/model/GroundingDINO/ops/build/temp.linux-x86_64-cpython-311/home/chemical/dual/ch7190150/ChatterBox/model/GroundingDINO/ops/src/cpu/ms_deform_attn_cpu.o	d36cb06e9791e3a4
+2	26850	1707800926000000000	/home/chemical/dual/ch7190150/ChatterBox/model/GroundingDINO/ops/build/temp.linux-x86_64-cpython-311/home/chemical/dual/ch7190150/ChatterBox/model/GroundingDINO/ops/src/vision.o	c44fe061ea274f54
+2	29505	1707800929000000000	/home/chemical/dual/ch7190150/ChatterBox/model/GroundingDINO/ops/build/temp.linux-x86_64-cpython-311/home/chemical/dual/ch7190150/ChatterBox/model/GroundingDINO/ops/src/cuda/ms_deform_attn_cuda.o	dc2b2e016c3c628b

@@ -1,0 +1,4 @@
+# ninja log v5
+0	6314	1708167286737119974	/root/Chatterbox/model/GroundingDINO/ops/build/temp.linux-x86_64-cpython-310/root/Chatterbox/model/GroundingDINO/ops/src/cpu/ms_deform_attn_cpu.o	13b261a85953469d
+0	18875	1708167299297214949	/root/Chatterbox/model/GroundingDINO/ops/build/temp.linux-x86_64-cpython-310/root/Chatterbox/model/GroundingDINO/ops/src/cuda/ms_deform_attn_cuda.o	d98b0ab37858b2a9
+0	22438	1708167302837241717	/root/Chatterbox/model/GroundingDINO/ops/build/temp.linux-x86_64-cpython-310/root/Chatterbox/model/GroundingDINO/ops/src/vision.o	a602746a1851849d

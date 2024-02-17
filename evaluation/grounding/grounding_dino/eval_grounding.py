@@ -31,15 +31,15 @@ def parse_args(args):
     parser.add_argument("--image-size", default=768, type=int, help="image size")
     parser.add_argument("--model-max-length", default=2048, type=int)
     parser.add_argument("--lora-r", default=16, type=int)
-    parser.add_argument("--vision-tower", default="/path/to/CLIP/clip-vit-large-patch14", type=str)
-    parser.add_argument("--vision_tower_aux",default="/path/to/CLIP/clip-vit-large-patch14", type=str)
+    parser.add_argument("--vision-tower", default="openai/clip-vit-large-patch14", type=str)
+    parser.add_argument("--vision_tower_aux",default="openai/clip-vit-large-patch14", type=str)
     parser.add_argument("--local-rank", default=0, type=int, help="node rank")
     parser.add_argument("--load_in_8bit", action="store_true", default=False)
     parser.add_argument("--load_in_4bit", action="store_true", default=False)
     parser.add_argument("--coco2017_path", default="/path/to/MSCOCO2017/images/")#image
     parser.add_argument("--coco_val_path", default="/path/to/grouding_qa.json")#question and gt answer
     parser.add_argument("--save_out_path", default="/path/to/test_out.json")#predicted answer
-    parser.add_argument('--pretrained', default="/path/to/Open-GroundingDino-main/groundingdino_swinb_cogcoor.pth",)
+    parser.add_argument('--pretrained', default="groundingdino_swinb_cogcoor.pth",)
     return parser.parse_args(args)
 
 def vision_branch_args():
@@ -66,7 +66,7 @@ def vision_branch_args():
                             help='device to use for training / testing')
         parser.add_argument('--seed', default=42, type=int)
         parser.add_argument('--resume', default='', help='resume from checkpoint')
-        parser.add_argument('--pretrained', default="/path/to/Open-GroundingDino-main/groundingdino_swinb_cogcoor.pth",help='load from other checkpoint')
+        parser.add_argument('--pretrained', default="groundingdino_swinb_cogcoor.pth",help='load from other checkpoint')
         parser.add_argument('--finetune_ignore', type=str, nargs='+')
         parser.add_argument('--start_epoch', default=0, type=int, metavar='N',
                             help='start epoch')
@@ -91,8 +91,8 @@ def vision_branch_args():
         parser.add_argument("--version", default="/path/to/llava-llama-2-13b-chat-lightning-preview")
         parser.add_argument("--weight", default="/path/to/chatterbox_grounding_ckp.pt",
                             type=str)  # chatterbox_model_weight
-        parser.add_argument("--vision-tower", default="/path/to/CLIP/clip-vit-large-patch14", type=str)
-        parser.add_argument("--vision_tower_aux", default="/path/to/CLIP/clip-vit-large-patch14", type=str)
+        parser.add_argument("--vision-tower", default="openai/clip-vit-large-patch14", type=str)
+        parser.add_argument("--vision_tower_aux", default="openai/clip-vit-large-patch14", type=str)
         parser.add_argument("--coco2017_path", default="/path/to/MSCOCO2017/images/")  # image
         parser.add_argument("--coco_val_path", default="/path/to/grouding_qa.json")  # question and gt answer
         parser.add_argument("--save_out_path", default="/path/to/test_out.json")  # predicted answer
