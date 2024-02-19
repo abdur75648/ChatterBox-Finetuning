@@ -1509,3 +1509,2147 @@ Epoch: [0][  1/500]     Time 217.477 (208.455)  Loss 27.6724 (20.8174)  VQALoss 
 [2024-02-19 01:50:04,266] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step1/zero_pp_rank_0_mp_rank_00_optim_states.pt.
 [2024-02-19 01:50:04,275] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step1/zero_pp_rank_0_mp_rank_00_optim_states.pt
 [2024-02-19 01:50:04,275] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step1 is ready now!
+[2024-02-19 01:53:13,330] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step1/zero_pp_rank_5_mp_rank_00_optim_states.pt.
+[2024-02-19 01:53:13,330] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step1/zero_pp_rank_5_mp_rank_00_optim_states.pt
+[2024-02-19 01:53:13,330] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step1 is ready now!
+[2024-02-19 01:53:14,852] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step1/zero_pp_rank_3_mp_rank_00_optim_states.pt.
+[2024-02-19 01:53:14,852] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step1/zero_pp_rank_3_mp_rank_00_optim_states.pt
+[2024-02-19 01:53:14,852] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step1 is ready now!
+[2024-02-19 01:55:40,606] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 2147483648, reducing to 1073741824
+curr_lr =  [0.0]
+curr_lr =  [0.0]
+curr_lr =  [0.0]
+curr_lr =  [0.0]
+curr_lr =  [0.0]
+curr_lr =  [0.0]
+curr_lr =  [0.0]
+curr_lr =  [0.0]
+curr_lr =  [2.0000000000000002e-07]
+curr_lr =  [2.0000000000000002e-07]
+curr_lr =  [2.0000000000000002e-07]
+curr_lr =  [2.0000000000000002e-07]
+curr_lr =  [2.0000000000000002e-07]
+curr_lr =  [2.0000000000000002e-07]
+[2024-02-19 01:58:07,213] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 1073741824, reducing to 536870912
+curr_lr =  [2.0000000000000002e-07]
+curr_lr =  [2.0000000000000002e-07]
+[2024-02-19 02:00:32,818] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 536870912, reducing to 268435456
+curr_lr =  [4.0000000000000003e-07]
+curr_lr =  [4.0000000000000003e-07]
+curr_lr = curr_lr =   [4.0000000000000003e-07][4.0000000000000003e-07]
+
+curr_lr =  [4.0000000000000003e-07]
+curr_lr =  [4.0000000000000003e-07]
+curr_lr =  [4.0000000000000003e-07]
+curr_lr =  [4.0000000000000003e-07]
+curr_lr = curr_lr =   [6.000000000000001e-07]
+[6.000000000000001e-07]
+curr_lr =  curr_lr = [6.000000000000001e-07] 
+[6.000000000000001e-07]
+curr_lr =  [6.000000000000001e-07]
+curr_lr =  [6.000000000000001e-07]
+curr_lr =  [6.000000000000001e-07]
+[2024-02-19 02:02:59,600] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 268435456, reducing to 134217728
+curr_lr =  [6.000000000000001e-07]
+[2024-02-19 02:05:26,537] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 134217728, reducing to 67108864
+curr_lr = curr_lr = curr_lr =  curr_lr =   Epoch: [0][  6/500]  Time 146.935 (215.151)  Loss 18.3009 (20.5803)  VQALoss 0.0000 (0.0000) VGLoss 18.3009 (20.5803) [8.000000000000001e-07]
+
+[8.000000000000001e-07][8.000000000000001e-07]curr_lr = 
+[8.000000000000001e-07]
+
+curr_lr =  curr_lr =  [8.000000000000001e-07][8.000000000000001e-07]
+
+ [8.000000000000001e-07]
+curr_lr =  [8.000000000000001e-07]
+curr_lr =  [1.0000000000000002e-06]
+[2024-02-19 02:07:51,860] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 67108864, reducing to 33554432
+curr_lr =  curr_lr = [1.0000000000000002e-06]
+ [1.0000000000000002e-06]
+curr_lr =  [1.0000000000000002e-06]
+curr_lr =  [1.0000000000000002e-06]
+curr_lr =  [1.0000000000000002e-06]
+curr_lr =  [1.0000000000000002e-06]
+curr_lr =  [1.0000000000000002e-06]
+curr_lr =  [1.2000000000000002e-06]
+curr_lr =  [1.2000000000000002e-06]
+[2024-02-19 02:10:18,463] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 33554432, reducing to 16777216
+curr_lr = curr_lr =   [1.2000000000000002e-06]
+[1.2000000000000002e-06]
+curr_lr = curr_lr =   [1.2000000000000002e-06][1.2000000000000002e-06]
+
+curr_lr =  [1.2000000000000002e-06]
+curr_lr =  [1.2000000000000002e-06]
+curr_lr =  [2024-02-19 02:12:45,458] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 16777216, reducing to 8388608
+[1.4000000000000001e-06]
+curr_lr =  [1.4000000000000001e-06]
+curr_lr =  [1.4000000000000001e-06]
+curr_lr =  [1.4000000000000001e-06]
+curr_lr =  [1.4000000000000001e-06]
+curr_lr = curr_lr =   [1.4000000000000001e-06][1.4000000000000001e-06]
+
+curr_lr =  [1.4000000000000001e-06]
+curr_lr =  [1.6000000000000001e-06]
+curr_lr =  curr_lr = [2024-02-19 02:15:12,470] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 8388608, reducing to 4194304
+ [1.6000000000000001e-06]
+[1.6000000000000001e-06]
+curr_lr =  [1.6000000000000001e-06]
+curr_lr =  [1.6000000000000001e-06]
+curr_lr =  [1.6000000000000001e-06]
+[2024-02-19 02:15:12,472] [INFO] [logging.py:96:log_dist] [Rank 0] step=10, skipped=10, lr=[1.4000000000000001e-06], mom=[(0.9, 0.95)]
+curr_lr =  [1.6000000000000001e-06]
+[2024-02-19 02:15:12,472] [INFO] [timer.py:260:stop] epoch=0/micro_step=200/global_step=10, RunningAvgSamplesPerSec=17.48528303155135, CurrSamplesPerSec=17.41361876405232, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [1.6000000000000001e-06]
+[2024-02-19 02:17:40,298] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 4194304, reducing to 2097152
+Epoch: [0][ 11/500]     Time 147.827 (146.752)  Loss 16.7349 (21.0075)  VQALoss 0.0000 (0.0000) VGLoss 16.7349 (21.0075)
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =     curr_lr =   [1.8000000000000001e-06][1.8000000000000001e-06][1.8000000000000001e-06][1.8000000000000001e-06][1.8000000000000001e-06]
+
+
+
+curr_lr = 
+[1.8000000000000001e-06]
+ [1.8000000000000001e-06]
+curr_lr =  [1.8000000000000001e-06]
+[2024-02-19 02:20:45,463] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 2097152, reducing to 1048576
+curr_lr =  [2.0000000000000003e-06]
+curr_lr = curr_lr =   [2.0000000000000003e-06][2.0000000000000003e-06]
+
+curr_lr =  [2.0000000000000003e-06]
+curr_lr =  [2.0000000000000003e-06]
+curr_lr =  [2.0000000000000003e-06]
+curr_lr =  [2.0000000000000003e-06]
+curr_lr =  [2.0000000000000003e-06]
+[2024-02-19 02:24:47,921] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 1048576, reducing to 524288
+curr_lr =  [2.2e-06]
+curr_lr =  curr_lr =  [2.2e-06]
+[2.2e-06]
+curr_lr =  curr_lr = [2.2e-06]
+ [2.2e-06]
+curr_lr =  [2.2e-06]
+curr_lr =  [2.2e-06]
+curr_lr =  [2.2e-06]
+[2024-02-19 02:28:31,888] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 524288, reducing to 262144
+curr_lr =  [2.4000000000000003e-06]
+curr_lr =  [2.4000000000000003e-06]
+curr_lr = curr_lr =   [2.4000000000000003e-06][2.4000000000000003e-06]
+
+curr_lr =  [2.4000000000000003e-06]
+curr_lr =  [2.4000000000000003e-06]
+curr_lr =  [2.4000000000000003e-06]
+curr_lr =  [2.4000000000000003e-06]
+[2024-02-19 02:31:00,687] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 262144, reducing to 131072
+curr_lr =  [2.6e-06]
+curr_lr = curr_lr =   [2.6e-06]
+[2.6e-06]
+curr_lr =  [2.6e-06]
+curr_lr =  [2.6e-06]
+curr_lr =  [2.6e-06]
+curr_lr =  [2.6e-06]
+curr_lr =  [2.6e-06]
+[2024-02-19 02:33:30,205] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 131072, reducing to 65536
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =     Epoch: [0][ 16/500]     Time 149.518 (189.981)  Loss 17.4251 (20.7180)  VQALoss 0.0000 (0.0000) VGLoss 17.4251 (20.7180) [2.8000000000000003e-06] curr_lr = [2.8000000000000003e-06]
+
+[2.8000000000000003e-06][2.8000000000000003e-06]
+[2.8000000000000003e-06] 
+
+[2.8000000000000003e-06]
+
+[2.8000000000000003e-06]
+curr_lr =  [2.8000000000000003e-06]
+curr_lr =  [3e-06]
+[2024-02-19 02:35:58,406] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 65536, reducing to 32768
+curr_lr =  curr_lr = [3e-06] 
+[3e-06]
+curr_lr =  [3e-06]
+curr_lr =  curr_lr = [3e-06]
+ [3e-06]
+curr_lr =  [3e-06]
+curr_lr =  [3e-06]
+[2024-02-19 02:38:27,164] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 32768, reducing to 16384
+curr_lr =  [3.2000000000000003e-06]
+curr_lr = curr_lr = curr_lr =    [3.2000000000000003e-06]
+[3.2000000000000003e-06]
+curr_lr = [3.2000000000000003e-06]
+ [3.2000000000000003e-06]
+curr_lr = curr_lr =   [3.2000000000000003e-06]
+[3.2000000000000003e-06]
+curr_lr =  [3.2000000000000003e-06]
+[2024-02-19 02:40:56,332] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 16384, reducing to 8192
+curr_lr =  [3.4000000000000005e-06]
+curr_lr =  [3.4000000000000005e-06]
+curr_lr =  [3.4000000000000005e-06]
+curr_lr =  [3.4000000000000005e-06]
+curr_lr =  curr_lr = [3.4000000000000005e-06]
+ [3.4000000000000005e-06]
+curr_lr =  [3.4000000000000005e-06]
+curr_lr =  [3.4000000000000005e-06]
+curr_lr = curr_lr =   [3.6000000000000003e-06]
+[3.6000000000000003e-06]
+[2024-02-19 02:43:25,022] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 8192, reducing to 4096
+curr_lr =  [3.6000000000000003e-06]
+curr_lr =  [3.6000000000000003e-06]
+curr_lr =  [3.6000000000000003e-06]
+curr_lr =  [3.6000000000000003e-06]curr_lr = 
+ [3.6000000000000003e-06]
+[2024-02-19 02:43:25,024] [INFO] [logging.py:96:log_dist] [Rank 0] step=20, skipped=20, lr=[3.4000000000000005e-06], mom=[(0.9, 0.95)]
+[2024-02-19 02:43:25,024] [INFO] [timer.py:260:stop] epoch=0/micro_step=400/global_step=20, RunningAvgSamplesPerSec=16.095803348091867, CurrSamplesPerSec=17.217044667602632, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [3.6000000000000003e-06]
+[2024-02-19 02:45:52,179] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 4096, reducing to 2048
+Epoch: [0][ 21/500]     Time 147.156 (148.395)  Loss 31.0920 (21.0223)  VQALoss 0.0000 (0.0000) VGLoss 31.0920 (21.0223)
+curr_lr = curr_lr =  curr_lr = curr_lr = curr_lr =   [3.8000000000000005e-06]
+  curr_lr = [3.8000000000000005e-06][3.8000000000000005e-06]
+
+[3.8000000000000005e-06] [3.8000000000000005e-06]
+
+[3.8000000000000005e-06]curr_lr = 
+ [3.8000000000000005e-06]
+curr_lr =  [3.8000000000000005e-06]
+curr_lr = [2024-02-19 02:48:34,211] [INFO] [loss_scaler.py:183:update_scale] [deepspeed] OVERFLOW! Rank 0 Skipping step. Attempted loss scale: 2048, reducing to 1024
+ [4.000000000000001e-06]
+curr_lr =  curr_lr = [4.000000000000001e-06]
+ [4.000000000000001e-06]
+curr_lr =  curr_lr = [4.000000000000001e-06]
+ [4.000000000000001e-06]
+curr_lr =  [4.000000000000001e-06]
+curr_lr =  [4.000000000000001e-06]
+curr_lr =  [4.000000000000001e-06]
+curr_lr =  [4.4e-06]
+curr_lr = curr_lr =   [4.4e-06][4.4e-06]
+
+curr_lr =  [4.4e-06]curr_lr = 
+ [4.4e-06]
+curr_lr =  [4.4e-06]
+curr_lr =  [4.4e-06]
+curr_lr =  [4.4e-06]
+curr_lr =  [4.800000000000001e-06]
+curr_lr =  [4.800000000000001e-06]
+curr_lr =  [4.800000000000001e-06]
+curr_lr =  [4.800000000000001e-06]
+curr_lr =  [4.800000000000001e-06]
+curr_lr =  [4.800000000000001e-06]
+curr_lr =  [4.800000000000001e-06]
+curr_lr =  [4.800000000000001e-06]
+curr_lr =  [5.2e-06]
+curr_lr = curr_lr =   [5.2e-06]
+[5.2e-06]
+curr_lr =  [5.2e-06]
+curr_lr =  curr_lr = [5.2e-06]
+ [5.2e-06]
+curr_lr =  [5.2e-06]
+curr_lr =  [5.2e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =    curr_lr = curr_lr =   Epoch: [0][ 26/500]  Time 148.995 (238.841)  Loss 16.1575 (19.8463)  VQALoss 0.0000 (0.0000) VGLoss 16.1575 (19.8463) [5.600000000000001e-06][5.600000000000001e-06]
+[5.600000000000001e-06]
+[5.600000000000001e-06]
+[5.600000000000001e-06] 
+
+[5.600000000000001e-06]
+
+[5.600000000000001e-06]
+curr_lr =  [5.600000000000001e-06]
+curr_lr = curr_lr =   curr_lr = [6e-06]
+ [6e-06]
+curr_lr = [6e-06]
+ [6e-06]
+curr_lr = curr_lr =   [6e-06][6e-06]
+
+curr_lr =  [6e-06]
+curr_lr =  [6e-06]
+curr_lr =  [6.4000000000000006e-06]
+curr_lr = curr_lr =   curr_lr =  [6.4000000000000006e-06][6.4000000000000006e-06]
+
+[6.4000000000000006e-06]
+curr_lr = curr_lr =   [6.4000000000000006e-06][6.4000000000000006e-06]
+
+curr_lr =  curr_lr = [6.4000000000000006e-06]
+ [6.4000000000000006e-06]
+curr_lr =  curr_lr = curr_lr = [6.800000000000001e-06]
+  [6.800000000000001e-06][6.800000000000001e-06]
+
+curr_lr =  [6.800000000000001e-06]
+curr_lr =  curr_lr =  [6.800000000000001e-06]
+[6.800000000000001e-06]
+curr_lr =  [6.800000000000001e-06]
+curr_lr =  [6.800000000000001e-06]
+[2024-02-19 03:15:40,194] [INFO] [logging.py:96:log_dist] [Rank 0] step=30, skipped=22, lr=[7e-06], mom=[(0.9, 0.95)]
+curr_lr =  [7.2000000000000005e-06]
+curr_lr = curr_lr =   [7.2000000000000005e-06]
+[7.2000000000000005e-06]curr_lr = 
+ [7.2000000000000005e-06]curr_lr = curr_lr = 
+  [7.2000000000000005e-06][7.2000000000000005e-06]
+
+curr_lr =  [7.2000000000000005e-06]
+[2024-02-19 03:15:40,397] [INFO] [timer.py:260:stop] epoch=0/micro_step=600/global_step=30, RunningAvgSamplesPerSec=14.941912325601281, CurrSamplesPerSec=17.18401600324748, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [7.2000000000000005e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =        Epoch: [0][ 31/500]        Time 147.857 (148.374)  Loss 15.3959 (17.5450)  VQALoss 0.0000 (0.0000) VGLoss 15.3959 (17.5450)
+[7.600000000000001e-06]
+[7.600000000000001e-06][7.600000000000001e-06]
+[7.600000000000001e-06][7.600000000000001e-06][7.600000000000001e-06]
+
+
+
+[7.600000000000001e-06]
+curr_lr =  [7.600000000000001e-06]
+curr_lr = curr_lr =  curr_lr =   [8.000000000000001e-06][8.000000000000001e-06]curr_lr = 
+
+[8.000000000000001e-06]
+ [8.000000000000001e-06]
+curr_lr =  [8.000000000000001e-06]
+curr_lr =  [8.000000000000001e-06]
+curr_lr =  [8.000000000000001e-06]
+curr_lr =  [8.000000000000001e-06]
+curr_lr = curr_lr = curr_lr =    curr_lr =  [8.400000000000001e-06][8.400000000000001e-06]
+
+[8.400000000000001e-06][8.400000000000001e-06]
+
+curr_lr =  [8.400000000000001e-06]
+curr_lr =  [8.400000000000001e-06]
+curr_lr =  [8.400000000000001e-06]
+curr_lr =  [8.400000000000001e-06]
+curr_lr = curr_lr =   curr_lr = [8.8e-06][8.8e-06]
+ 
+curr_lr = [8.8e-06]
+ [8.8e-06]
+curr_lr =  [8.8e-06]
+curr_lr =  curr_lr = [8.8e-06]
+ [8.8e-06]
+curr_lr =  [8.8e-06]
+curr_lr = curr_lr = curr_lr =    [9.200000000000002e-06]
+[9.200000000000002e-06][9.200000000000002e-06]
+
+curr_lr = curr_lr =   [9.200000000000002e-06]
+[9.200000000000002e-06]
+curr_lr =  [9.200000000000002e-06]
+curr_lr =  [9.200000000000002e-06]
+curr_lr =  [9.200000000000002e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =     curr_lr = Epoch: [0][ 36/500]   Time 148.618 (148.240)  Loss 27.0109 (15.8643)  VQALoss 0.0000 (0.0000) VGLoss 27.0109 (15.8643)   [9.600000000000001e-06][9.600000000000001e-06][9.600000000000001e-06]
+[9.600000000000001e-06]
+
+
+[9.600000000000001e-06][9.600000000000001e-06]
+[9.600000000000001e-06]
+
+
+curr_lr =  [9.600000000000001e-06]
+curr_lr =  curr_lr = curr_lr = [1e-05]
+  [1e-05][1e-05]
+
+curr_lr = curr_lr =   [1e-05]curr_lr = [1e-05]
+
+ [1e-05]
+curr_lr =  [1e-05]
+curr_lr =  [1e-05]
+curr_lr = curr_lr =   curr_lr = curr_lr = [9.998662207357859e-06][9.998662207357859e-06]
+
+  [9.998662207357859e-06]
+[9.998662207357859e-06]
+curr_lr =  [9.998662207357859e-06]
+curr_lr =  [9.998662207357859e-06]
+curr_lr =  [9.998662207357859e-06]
+curr_lr =  [9.998662207357859e-06]
+curr_lr =  curr_lr =  curr_lr = [9.99732441471572e-06] 
+[9.99732441471572e-06]
+[9.99732441471572e-06]
+curr_lr =  [9.99732441471572e-06]
+curr_lr =  curr_lr = [9.99732441471572e-06]
+ [9.99732441471572e-06]
+curr_lr =  [9.99732441471572e-06]
+curr_lr =  [9.99732441471572e-06]
+[2024-02-19 03:41:21,502] [INFO] [logging.py:96:log_dist] [Rank 0] step=40, skipped=22, lr=[9.99665551839465e-06], mom=[(0.9, 0.95)]
+curr_lr =  curr_lr = [9.995986622073579e-06]
+ curr_lr =  [9.995986622073579e-06]
+[9.995986622073579e-06]
+curr_lr = curr_lr =   [9.995986622073579e-06]
+curr_lr =  [9.995986622073579e-06]
+[9.995986622073579e-06]
+curr_lr =  [9.995986622073579e-06]
+[2024-02-19 03:41:21,703] [INFO] [timer.py:260:stop] epoch=0/micro_step=800/global_step=40, RunningAvgSamplesPerSec=15.349594111050456, CurrSamplesPerSec=12.272072395462414, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.995986622073579e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =   curr_lr = Epoch: [0][ 41/500]       Time 229.567 (176.363)  Loss 11.6857 (15.0603)  VQALoss 0.0000 (0.0000) VGLoss 11.6857 (15.0603)curr_lr =   
+ [9.994648829431439e-06] [9.994648829431439e-06]
+
+[9.994648829431439e-06][9.994648829431439e-06]
+
+[9.994648829431439e-06][9.994648829431439e-06]
+
+ [9.994648829431439e-06]
+curr_lr =  [9.994648829431439e-06]
+curr_lr =  curr_lr =  [9.993311036789299e-06]
+curr_lr = [9.993311036789299e-06]
+ curr_lr = [9.993311036789299e-06]
+ [9.993311036789299e-06]
+curr_lr =  [9.993311036789299e-06]
+curr_lr =  [9.993311036789299e-06]
+curr_lr =  [9.993311036789299e-06]
+curr_lr =  [9.993311036789299e-06]
+curr_lr =  [9.991973244147159e-06]
+curr_lr =  curr_lr =  curr_lr = [9.991973244147159e-06][9.991973244147159e-06]
+ 
+[9.991973244147159e-06]
+curr_lr =  [9.991973244147159e-06]
+curr_lr =  [9.991973244147159e-06]
+curr_lr =  [9.991973244147159e-06]
+curr_lr =  [9.991973244147159e-06]
+curr_lr = curr_lr = curr_lr =    [9.990635451505017e-06][9.990635451505017e-06]
+[9.990635451505017e-06]
+
+curr_lr =  [9.990635451505017e-06]
+curr_lr =  [9.990635451505017e-06]
+curr_lr =  [9.990635451505017e-06]
+curr_lr =  [9.990635451505017e-06]curr_lr = 
+ [9.990635451505017e-06]
+curr_lr =  [9.989297658862878e-06]
+curr_lr = curr_lr =   [9.989297658862878e-06]
+[9.989297658862878e-06]
+curr_lr = curr_lr =   [9.989297658862878e-06]
+[9.989297658862878e-06]
+curr_lr =  [9.989297658862878e-06]
+curr_lr =  [9.989297658862878e-06]
+curr_lr =  [9.989297658862878e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =   curr_lr = curr_lr =      [9.987959866220737e-06]
+[9.987959866220737e-06]
+[9.987959866220737e-06][9.987959866220737e-06]Epoch: [0][ 46/500]       Time 148.104 (148.212)  Loss 12.7107 (14.3821)  VQALoss 0.0000 (0.0000) VGLoss 12.7107 (14.3821)[9.987959866220737e-06]
+
+
+[9.987959866220737e-06][9.987959866220737e-06]
+
+
+curr_lr =  [9.987959866220737e-06]
+curr_lr =  curr_lr =  [9.986622073578597e-06]
+curr_lr = [9.986622073578597e-06] 
+[9.986622073578597e-06]
+curr_lr = curr_lr =   [9.986622073578597e-06][9.986622073578597e-06]
+
+curr_lr =  curr_lr = [9.986622073578597e-06]
+ [9.986622073578597e-06]
+curr_lr =  [9.986622073578597e-06]
+curr_lr =  curr_lr =  [9.985284280936456e-06]curr_lr = 
+ [9.985284280936456e-06]
+curr_lr = [9.985284280936456e-06]
+ [9.985284280936456e-06]
+curr_lr =  curr_lr = [9.985284280936456e-06] 
+[9.985284280936456e-06]
+curr_lr =  [9.985284280936456e-06]
+curr_lr =  [9.985284280936456e-06]
+curr_lr =  curr_lr =  [9.983946488294315e-06]
+[9.983946488294315e-06]
+curr_lr =  [9.983946488294315e-06]
+curr_lr =  curr_lr =  [9.983946488294315e-06]
+[9.983946488294315e-06]curr_lr = 
+ [9.983946488294315e-06]
+curr_lr =  [9.983946488294315e-06]
+curr_lr =  [9.983946488294315e-06]
+[2024-02-19 04:10:02,323] [INFO] [logging.py:96:log_dist] [Rank 0] step=50, skipped=22, lr=[9.983277591973245e-06], mom=[(0.9, 0.95)]
+curr_lr = curr_lr =   [9.982608695652175e-06][9.982608695652175e-06]
+curr_lr = 
+curr_lr =   [9.982608695652175e-06]
+[9.982608695652175e-06]
+curr_lr = curr_lr =   [9.982608695652175e-06]
+[9.982608695652175e-06]
+curr_lr =  [9.982608695652175e-06]
+[2024-02-19 04:10:02,530] [INFO] [timer.py:260:stop] epoch=0/micro_step=1000/global_step=50, RunningAvgSamplesPerSec=15.25027578836547, CurrSamplesPerSec=17.27533008749438, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.982608695652175e-06]
+curr_lr = curr_lr = curr_lr = curr_lr =   curr_lr = curr_lr =  curr_lr =   [9.981270903010034e-06][9.981270903010034e-06] 
+
+[9.981270903010034e-06] 
+[9.981270903010034e-06]
+[9.981270903010034e-06]
+[9.981270903010034e-06][9.981270903010034e-06]
+
+Epoch: [0][ 51/500]     Time 148.153 (179.670)  Loss 11.1575 (14.0690)  VQALoss 0.0000 (0.0000) VGLoss 11.1575 (14.0690)
+curr_lr =  [9.981270903010034e-06]
+[2024-02-19 04:12:34,845] [INFO] [logging.py:96:log_dist] [Rank 0] [Torch] Checkpoint global_step51 is about to be saved!
+[2024-02-19 04:12:46,902] [INFO] [logging.py:96:log_dist] [Rank 0] Saving model checkpoint: ./outputs/epoch_0/global_step51/mp_rank_00_model_states.pt
+[2024-02-19 04:12:46,902] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step51/mp_rank_00_model_states.pt...
+[2024-02-19 04:22:19,168] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step51/mp_rank_00_model_states.pt.
+[2024-02-19 04:22:20,470] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step51/zero_pp_rank_0_mp_rank_00_optim_states.pt...
+[2024-02-19 04:22:20,470] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step51/zero_pp_rank_4_mp_rank_00_optim_states.pt...
+[2024-02-19 04:22:20,470] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step51/zero_pp_rank_6_mp_rank_00_optim_states.pt...
+[2024-02-19 04:22:20,470] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step51/zero_pp_rank_3_mp_rank_00_optim_states.pt...
+[2024-02-19 04:22:20,470] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step51/zero_pp_rank_5_mp_rank_00_optim_states.pt...
+[2024-02-19 04:22:20,470] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step51/zero_pp_rank_7_mp_rank_00_optim_states.pt...
+[2024-02-19 04:22:20,470] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step51/zero_pp_rank_1_mp_rank_00_optim_states.pt...
+[2024-02-19 04:22:20,470] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step51/zero_pp_rank_2_mp_rank_00_optim_states.pt...
+[2024-02-19 04:22:24,535] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step51/zero_pp_rank_4_mp_rank_00_optim_states.pt.
+[2024-02-19 04:22:24,535] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step51/zero_pp_rank_4_mp_rank_00_optim_states.pt
+[2024-02-19 04:22:24,536] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step51 is ready now!
+[2024-02-19 04:22:24,554] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step51/zero_pp_rank_2_mp_rank_00_optim_states.pt.
+[2024-02-19 04:22:24,555] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step51/zero_pp_rank_2_mp_rank_00_optim_states.pt
+[2024-02-19 04:22:24,555] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step51 is ready now!
+[2024-02-19 04:22:24,631] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step51/zero_pp_rank_6_mp_rank_00_optim_states.pt.
+[2024-02-19 04:22:24,631] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step51/zero_pp_rank_6_mp_rank_00_optim_states.pt
+[2024-02-19 04:22:24,631] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step51 is ready now!
+[2024-02-19 04:22:24,660] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step51/zero_pp_rank_7_mp_rank_00_optim_states.pt.
+[2024-02-19 04:22:24,660] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step51/zero_pp_rank_7_mp_rank_00_optim_states.pt
+[2024-02-19 04:22:24,660] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step51 is ready now!
+[2024-02-19 04:22:24,712] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step51/zero_pp_rank_1_mp_rank_00_optim_states.pt.
+[2024-02-19 04:22:24,713] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step51/zero_pp_rank_1_mp_rank_00_optim_states.pt
+[2024-02-19 04:22:24,713] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step51 is ready now!
+[2024-02-19 04:22:24,823] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step51/zero_pp_rank_3_mp_rank_00_optim_states.pt.
+[2024-02-19 04:22:24,824] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step51/zero_pp_rank_3_mp_rank_00_optim_states.pt
+[2024-02-19 04:22:24,824] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step51 is ready now!
+[2024-02-19 04:22:24,858] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step51/zero_pp_rank_0_mp_rank_00_optim_states.pt.
+[2024-02-19 04:22:24,860] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step51/zero_pp_rank_5_mp_rank_00_optim_states.pt.
+[2024-02-19 04:22:24,860] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step51/zero_pp_rank_5_mp_rank_00_optim_states.pt
+[2024-02-19 04:22:24,860] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step51 is ready now!
+[2024-02-19 04:22:24,866] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step51/zero_pp_rank_0_mp_rank_00_optim_states.pt
+[2024-02-19 04:22:24,866] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step51 is ready now!
+curr_lr = curr_lr =   [9.979933110367894e-06]curr_lr = 
+[9.979933110367894e-06]
+curr_lr =   [9.979933110367894e-06]
+[9.979933110367894e-06]
+curr_lr =  [9.979933110367894e-06]
+curr_lr =  [9.979933110367894e-06]
+curr_lr =  [9.979933110367894e-06]
+curr_lr =  [9.979933110367894e-06]
+curr_lr = curr_lr =   [9.978595317725753e-06]curr_lr = curr_lr = [9.978595317725753e-06]
+
+  [9.978595317725753e-06]
+[9.978595317725753e-06]
+curr_lr =  curr_lr =  [9.978595317725753e-06]
+[9.978595317725753e-06]
+curr_lr =  [9.978595317725753e-06]
+curr_lr =  [9.978595317725753e-06]
+curr_lr = curr_lr = curr_lr =    [9.977257525083612e-06]
+[9.977257525083612e-06][9.977257525083612e-06]
+
+curr_lr =  [9.977257525083612e-06]
+curr_lr = curr_lr = curr_lr =    [9.977257525083612e-06]
+[9.977257525083612e-06]
+[9.977257525083612e-06]
+curr_lr =  [9.977257525083612e-06]
+curr_lr = curr_lr = curr_lr =    [9.975919732441472e-06]
+[9.975919732441472e-06]
+[9.975919732441472e-06]
+curr_lr =  [9.975919732441472e-06]
+curr_lr = curr_lr =   [9.975919732441472e-06][9.975919732441472e-06]
+
+curr_lr =  [9.975919732441472e-06]
+curr_lr =  [9.975919732441472e-06]
+curr_lr = curr_lr =  curr_lr = curr_lr =  curr_lr =  curr_lr =  [9.974581939799332e-06]curr_lr = 
+ [9.974581939799332e-06]Epoch: [0][ 56/500]     Time 148.107 (267.092)  Loss 16.3954 (13.2702)  VQALoss 0.0000 (0.0000) VGLoss 16.3954 (13.2702) 
+[9.974581939799332e-06] [9.974581939799332e-06]
+
+[9.974581939799332e-06]
+
+[9.974581939799332e-06]
+[9.974581939799332e-06]
+curr_lr =  [9.974581939799332e-06]
+curr_lr =  curr_lr =  [9.973244147157192e-06]curr_lr = 
+ [9.973244147157192e-06]
+[9.973244147157192e-06]
+curr_lr =  curr_lr =  [9.973244147157192e-06]
+[9.973244147157192e-06]
+curr_lr =  [9.973244147157192e-06]
+curr_lr =  [9.973244147157192e-06]
+curr_lr =  [9.973244147157192e-06]
+curr_lr =  [9.97190635451505e-06]
+curr_lr =  [9.97190635451505e-06]
+curr_lr =  [9.97190635451505e-06]
+curr_lr =  [9.97190635451505e-06]
+curr_lr = curr_lr =   [9.97190635451505e-06]
+[9.97190635451505e-06]
+curr_lr =  [9.97190635451505e-06]
+curr_lr =  [9.97190635451505e-06]
+curr_lr =  curr_lr = [9.97056856187291e-06]
+curr_lr =   [9.97056856187291e-06]
+[9.97056856187291e-06]
+curr_lr =  curr_lr = [9.97056856187291e-06]
+ curr_lr = [9.97056856187291e-06] 
+[9.97056856187291e-06]
+curr_lr =  [9.97056856187291e-06]
+curr_lr =  [9.97056856187291e-06]
+[2024-02-19 04:44:38,945] [INFO] [logging.py:96:log_dist] [Rank 0] step=60, skipped=22, lr=[9.96989966555184e-06], mom=[(0.9, 0.95)]
+curr_lr =  curr_lr = curr_lr = [9.96923076923077e-06] curr_lr = 
+  [9.96923076923077e-06][9.96923076923077e-06]
+
+[9.96923076923077e-06]
+curr_lr =  curr_lr = [9.96923076923077e-06] 
+[9.96923076923077e-06]
+curr_lr =  [9.96923076923077e-06]
+[2024-02-19 04:44:39,147] [INFO] [timer.py:260:stop] epoch=0/micro_step=1200/global_step=60, RunningAvgSamplesPerSec=15.565504375776605, CurrSamplesPerSec=17.234257743958693, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.96923076923077e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = Epoch: [0][ 61/500]   Time 147.206 (148.042)  Loss 8.8656 (12.7409)   VQALoss 0.0000 (0.0000) VGLoss 8.8656 (12.7409)  curr_lr =  curr_lr =  
+   [9.96789297658863e-06][9.96789297658863e-06][9.96789297658863e-06][9.96789297658863e-06][9.96789297658863e-06][9.96789297658863e-06]
+
+
+
+[9.96789297658863e-06]
+
+
+curr_lr =  [9.96789297658863e-06]
+curr_lr = curr_lr =   [9.966555183946488e-06]
+curr_lr = [9.966555183946488e-06]
+curr_lr =   [9.966555183946488e-06]
+[9.966555183946488e-06]
+curr_lr =  curr_lr =  [9.966555183946488e-06]
+[9.966555183946488e-06]
+curr_lr =  [9.966555183946488e-06]curr_lr = 
+ [9.966555183946488e-06]
+curr_lr = curr_lr =   curr_lr = [9.965217391304348e-06]
+ [9.965217391304348e-06]
+curr_lr = [9.965217391304348e-06]
+ [9.965217391304348e-06]
+curr_lr =  curr_lr =  [9.965217391304348e-06]
+[9.965217391304348e-06]
+curr_lr =  [9.965217391304348e-06]
+curr_lr =  [9.965217391304348e-06]
+curr_lr = curr_lr =   curr_lr = [9.963879598662208e-06] 
+[9.963879598662208e-06]
+curr_lr = [9.963879598662208e-06]
+ curr_lr =  [9.963879598662208e-06]
+[9.963879598662208e-06]
+curr_lr =  [9.963879598662208e-06]
+curr_lr =  [9.963879598662208e-06]
+curr_lr =  [9.963879598662208e-06]
+curr_lr = curr_lr =  curr_lr =   [9.962541806020068e-06][9.962541806020068e-06]curr_lr = 
+
+ [9.962541806020068e-06]
+[9.962541806020068e-06]curr_lr = 
+ [9.962541806020068e-06]curr_lr = 
+ [9.962541806020068e-06]
+curr_lr =  [9.962541806020068e-06]
+curr_lr =  [9.962541806020068e-06]
+curr_lr = curr_lr =  curr_lr = curr_lr =    Epoch: [0][ 66/500] Time 148.820 (148.456)  Loss 12.7464 (12.5910)  VQALoss 0.0000 (0.0000) VGLoss 12.7464 (12.5910)curr_lr = [9.961204013377928e-06]curr_lr = 
+
+[9.961204013377928e-06][9.961204013377928e-06] [9.961204013377928e-06]
+ 
+
+curr_lr =  [9.961204013377928e-06]
+[9.961204013377928e-06]
+[9.961204013377928e-06]
+curr_lr =  [9.961204013377928e-06]
+curr_lr =  [9.959866220735786e-06]curr_lr = 
+ [9.959866220735786e-06]
+curr_lr = curr_lr =   [9.959866220735786e-06]
+[9.959866220735786e-06]
+curr_lr = curr_lr =   [9.959866220735786e-06]
+[9.959866220735786e-06]
+curr_lr =  [9.959866220735786e-06]
+curr_lr =  [9.959866220735786e-06]
+curr_lr = curr_lr =  curr_lr = [9.958528428093646e-06] 
+curr_lr =   [9.958528428093646e-06][9.958528428093646e-06]
+
+[9.958528428093646e-06]
+curr_lr =  curr_lr =  [9.958528428093646e-06]
+[9.958528428093646e-06]
+curr_lr =  [9.958528428093646e-06]
+curr_lr =  [9.958528428093646e-06]
+curr_lr =  curr_lr =  [9.957190635451506e-06]
+[9.957190635451506e-06]
+curr_lr =  curr_lr =  curr_lr = [9.957190635451506e-06]
+[9.957190635451506e-06]
+ curr_lr = [9.957190635451506e-06]
+ [9.957190635451506e-06]
+curr_lr =  [9.957190635451506e-06]
+curr_lr =  [9.957190635451506e-06]
+[2024-02-19 05:09:21,176] [INFO] [logging.py:96:log_dist] [Rank 0] step=70, skipped=22, lr=[9.956521739130436e-06], mom=[(0.9, 0.95)]
+curr_lr = curr_lr = curr_lr =    [9.955852842809364e-06]
+[9.955852842809364e-06]
+curr_lr =  [9.955852842809364e-06]
+[9.955852842809364e-06]
+curr_lr =  [9.955852842809364e-06]curr_lr = 
+ [9.955852842809364e-06]
+curr_lr =  [9.955852842809364e-06]
+[2024-02-19 05:09:21,378] [INFO] [timer.py:260:stop] epoch=0/micro_step=1400/global_step=70, RunningAvgSamplesPerSec=15.796131905282211, CurrSamplesPerSec=17.258800332915833, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.955852842809364e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =  curr_lr =  curr_lr =  Epoch: [0][ 71/500]    Time 147.536 (148.056)  Loss 8.4453 (12.6830)   VQALoss 0.0000 (0.0000) VGLoss 8.4453 (12.6830)  [9.954515050167226e-06] 
+
+[9.954515050167226e-06][9.954515050167226e-06]
+ 
+[9.954515050167226e-06]
+[9.954515050167226e-06]
+[9.954515050167226e-06]
+[9.954515050167226e-06]
+curr_lr =  [9.954515050167226e-06]
+curr_lr =  [9.953177257525084e-06]curr_lr = 
+curr_lr =   [9.953177257525084e-06]
+[9.953177257525084e-06]
+curr_lr = curr_lr = curr_lr =    [9.953177257525084e-06][9.953177257525084e-06]
+[9.953177257525084e-06]
+
+curr_lr =  [9.953177257525084e-06]
+curr_lr =  [9.953177257525084e-06]
+curr_lr =  curr_lr =  curr_lr = [9.951839464882944e-06][9.951839464882944e-06]curr_lr = 
+
+  [9.951839464882944e-06]
+[9.951839464882944e-06]
+curr_lr =  curr_lr =  [9.951839464882944e-06]
+[9.951839464882944e-06]
+curr_lr =  [9.951839464882944e-06]
+curr_lr =  [9.951839464882944e-06]
+curr_lr =  curr_lr =  curr_lr = [9.950501672240804e-06]
+ curr_lr = [9.950501672240804e-06]
+ [9.950501672240804e-06]
+[9.950501672240804e-06]
+curr_lr = curr_lr =   [9.950501672240804e-06][9.950501672240804e-06]
+
+curr_lr =  [9.950501672240804e-06]
+curr_lr =  [9.950501672240804e-06]
+curr_lr = curr_lr =   [9.949163879598664e-06]
+[9.949163879598664e-06]
+curr_lr =  [9.949163879598664e-06]
+curr_lr =  curr_lr = [9.949163879598664e-06] 
+curr_lr = [9.949163879598664e-06]
+ [9.949163879598664e-06]
+curr_lr =  [9.949163879598664e-06]
+curr_lr =  [9.949163879598664e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =      curr_lr =  Epoch: [0][ 76/500] Time 148.560 (148.316)  Loss 10.1266 (12.1478)  VQALoss 0.0000 (0.0000) VGLoss 10.1266 (12.1478) [9.947826086956522e-06][9.947826086956522e-06][9.947826086956522e-06]
+[9.947826086956522e-06][9.947826086956522e-06]
+
+[9.947826086956522e-06]
+
+
+[9.947826086956522e-06]
+
+curr_lr =  [9.947826086956522e-06]
+curr_lr =  [9.946488294314382e-06]
+curr_lr =  curr_lr =  [9.946488294314382e-06]
+[9.946488294314382e-06]
+curr_lr = curr_lr =   [9.946488294314382e-06][9.946488294314382e-06]
+
+curr_lr =  [9.946488294314382e-06]
+curr_lr =  [9.946488294314382e-06]
+curr_lr =  [9.946488294314382e-06]
+curr_lr =  curr_lr = [9.945150501672242e-06]
+ [9.945150501672242e-06]curr_lr = 
+ [9.945150501672242e-06]
+curr_lr = curr_lr =   [9.945150501672242e-06]
+[9.945150501672242e-06]
+curr_lr =  [9.945150501672242e-06]
+curr_lr =  [9.945150501672242e-06]
+curr_lr =  [9.945150501672242e-06]
+curr_lr =  [9.9438127090301e-06]curr_lr = 
+curr_lr =   [9.9438127090301e-06]
+[9.9438127090301e-06]curr_lr = 
+ [9.9438127090301e-06]
+curr_lr =  curr_lr = [9.9438127090301e-06] 
+[9.9438127090301e-06]
+curr_lr =  [9.9438127090301e-06]
+curr_lr =  [9.9438127090301e-06]
+[2024-02-19 05:34:02,410] [INFO] [logging.py:96:log_dist] [Rank 0] step=80, skipped=22, lr=[9.94314381270903e-06], mom=[(0.9, 0.95)]
+curr_lr =  curr_lr = curr_lr =   [9.942474916387962e-06]
+[9.942474916387962e-06][9.942474916387962e-06]
+
+curr_lr = curr_lr =   [9.942474916387962e-06]
+[9.942474916387962e-06]
+curr_lr =  [9.942474916387962e-06]
+curr_lr =  [9.942474916387962e-06]
+[2024-02-19 05:34:02,610] [INFO] [timer.py:260:stop] epoch=0/micro_step=1600/global_step=80, RunningAvgSamplesPerSec=15.973444506272564, CurrSamplesPerSec=17.273423649459186, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.942474916387962e-06]
+curr_lr = curr_lr = curr_lr = curr_lr =  curr_lr = curr_lr =    curr_lr =   Epoch: [0][ 81/500] Time 147.652 (147.954)  Loss 10.0080 (12.0625)  VQALoss 0.0000 (0.0000) VGLoss 10.0080 (12.0625)[9.94113712374582e-06] [9.94113712374582e-06][9.94113712374582e-06]
+
+[9.94113712374582e-06]
+[9.94113712374582e-06]
+
+[9.94113712374582e-06]
+[9.94113712374582e-06]
+
+curr_lr =  [9.94113712374582e-06]
+curr_lr = curr_lr =   [9.93979933110368e-06]
+[9.93979933110368e-06]
+curr_lr =  curr_lr = [9.93979933110368e-06]
+ [9.93979933110368e-06]curr_lr = 
+ [9.93979933110368e-06]
+curr_lr =  [9.93979933110368e-06]
+curr_lr =  [9.93979933110368e-06]
+curr_lr =  [9.93979933110368e-06]
+curr_lr =  [9.93846153846154e-06]
+curr_lr = curr_lr = curr_lr =    [9.93846153846154e-06]
+[9.93846153846154e-06][9.93846153846154e-06]
+
+curr_lr =  [9.93846153846154e-06]
+curr_lr =  [9.93846153846154e-06]
+curr_lr =  [9.93846153846154e-06]
+curr_lr =  [9.93846153846154e-06]
+curr_lr = curr_lr = curr_lr =    curr_lr = [9.9371237458194e-06]
+[9.9371237458194e-06] 
+[9.9371237458194e-06]
+[9.9371237458194e-06]
+curr_lr =  curr_lr = [9.9371237458194e-06]
+ [9.9371237458194e-06]
+curr_lr =  [9.9371237458194e-06]
+curr_lr =  [9.9371237458194e-06]
+curr_lr = curr_lr =   curr_lr = [9.935785953177258e-06] 
+[9.935785953177258e-06][9.935785953177258e-06]
+
+curr_lr =  [9.935785953177258e-06]
+curr_lr =  [9.935785953177258e-06]
+curr_lr =  [9.935785953177258e-06]
+curr_lr =  [9.935785953177258e-06]
+curr_lr =  [9.935785953177258e-06]
+curr_lr = curr_lr = curr_lr = curr_lr =     curr_lr = [9.934448160535118e-06][9.934448160535118e-06]curr_lr = 
+
+[9.934448160535118e-06]curr_lr =  
+[9.934448160535118e-06]  
+Epoch: [0][ 86/500]     Time 148.859 (148.380)  Loss 8.0856 (11.4242)   VQALoss 0.0000 (0.0000) VGLoss 8.0856 (11.4242)[9.934448160535118e-06]
+
+[9.934448160535118e-06][9.934448160535118e-06]
+
+curr_lr =  [9.934448160535118e-06]
+curr_lr =  curr_lr =  [9.933110367892978e-06]
+[9.933110367892978e-06]
+curr_lr =  [9.933110367892978e-06]
+curr_lr =  curr_lr = [9.933110367892978e-06]
+curr_lr =   [9.933110367892978e-06]
+[9.933110367892978e-06]
+curr_lr =  [9.933110367892978e-06]
+curr_lr =  [9.933110367892978e-06]
+curr_lr = curr_lr =   curr_lr = [9.931772575250836e-06]curr_lr = 
+[9.931772575250836e-06] 
+ [9.931772575250836e-06]
+[9.931772575250836e-06]curr_lr = 
+ [9.931772575250836e-06]
+curr_lr =  [9.931772575250836e-06]
+curr_lr =  [9.931772575250836e-06]
+curr_lr =  [9.931772575250836e-06]
+curr_lr = curr_lr =   curr_lr =  [9.930434782608697e-06][9.930434782608697e-06]
+
+curr_lr = [9.930434782608697e-06]
+ [9.930434782608697e-06]
+curr_lr =  curr_lr = [9.930434782608697e-06]
+ [9.930434782608697e-06]
+curr_lr =  [9.930434782608697e-06]
+curr_lr =  [9.930434782608697e-06]
+[2024-02-19 05:58:45,721] [INFO] [logging.py:96:log_dist] [Rank 0] step=90, skipped=22, lr=[9.929765886287627e-06], mom=[(0.9, 0.95)]
+curr_lr =  curr_lr =  [9.929096989966556e-06]
+curr_lr =  [9.929096989966556e-06][9.929096989966556e-06]
+curr_lr = 
+ [9.929096989966556e-06]
+curr_lr = curr_lr =   [9.929096989966556e-06]
+[9.929096989966556e-06]
+curr_lr =  [9.929096989966556e-06]
+[2024-02-19 05:58:45,926] [INFO] [timer.py:260:stop] epoch=0/micro_step=1800/global_step=90, RunningAvgSamplesPerSec=16.110883041032704, CurrSamplesPerSec=17.188806785984806, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.929096989966556e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =    Epoch: [0][ 91/500]    Time 147.406 (148.234)  Loss 7.9508 (11.5464)   VQALoss 0.0000 (0.0000) VGLoss 7.9508 (11.5464)  
+  [9.927759197324415e-06][9.927759197324415e-06]
+[9.927759197324415e-06][9.927759197324415e-06]
+
+
+[9.927759197324415e-06][9.927759197324415e-06]
+[9.927759197324415e-06]
+
+curr_lr =  [9.927759197324415e-06]
+curr_lr =  [9.926421404682275e-06]
+curr_lr = curr_lr =   curr_lr = [9.926421404682275e-06]
+ [9.926421404682275e-06]
+[9.926421404682275e-06]
+curr_lr = curr_lr =   [9.926421404682275e-06]
+[9.926421404682275e-06]
+curr_lr =  [9.926421404682275e-06]
+curr_lr =  [9.926421404682275e-06]
+curr_lr =  curr_lr = curr_lr =  [9.925083612040135e-06] 
+[9.925083612040135e-06]
+[9.925083612040135e-06]
+curr_lr =  [9.925083612040135e-06]
+curr_lr =  [9.925083612040135e-06]
+curr_lr =  curr_lr =  [9.925083612040135e-06]
+[9.925083612040135e-06]
+curr_lr =  [9.925083612040135e-06]
+curr_lr = curr_lr =   curr_lr = curr_lr = [9.923745819397994e-06] 
+ [9.923745819397994e-06]
+[9.923745819397994e-06]
+[9.923745819397994e-06]
+curr_lr = curr_lr =   [9.923745819397994e-06][9.923745819397994e-06]
+
+curr_lr =  [9.923745819397994e-06]
+curr_lr =  [9.923745819397994e-06]
+curr_lr =  curr_lr = curr_lr =  [9.922408026755853e-06]
+ curr_lr = [9.922408026755853e-06]
+ [9.922408026755853e-06]
+[9.922408026755853e-06]
+curr_lr =  [9.922408026755853e-06]
+curr_lr =  [9.922408026755853e-06]
+curr_lr =  [9.922408026755853e-06]
+curr_lr =  [9.922408026755853e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =  curr_lr =  curr_lr =     [9.921070234113713e-06]Epoch: [0][ 96/500]  Time 148.282 (148.238)  Loss 8.9025 (10.8779)   VQALoss 0.0000 (0.0000) VGLoss 8.9025 (10.8779) [9.921070234113713e-06]
+[9.921070234113713e-06]
+[9.921070234113713e-06]
+[9.921070234113713e-06]
+
+[9.921070234113713e-06]
+
+[9.921070234113713e-06]
+curr_lr =  [9.921070234113713e-06]
+curr_lr =  [9.919732441471572e-06]
+curr_lr =  curr_lr =  [9.919732441471572e-06]
+[9.919732441471572e-06]
+curr_lr =  curr_lr = curr_lr =  [9.919732441471572e-06]
+ [9.919732441471572e-06]
+[9.919732441471572e-06]
+curr_lr =  [9.919732441471572e-06]
+curr_lr =  [9.919732441471572e-06]
+curr_lr = curr_lr =  curr_lr = curr_lr =    [9.918394648829433e-06]
+[9.918394648829433e-06]
+[9.918394648829433e-06][9.918394648829433e-06]
+
+curr_lr = curr_lr =   [9.918394648829433e-06]
+[9.918394648829433e-06]
+curr_lr =  [9.918394648829433e-06]
+curr_lr =  [9.918394648829433e-06]
+curr_lr =  [9.917056856187291e-06]curr_lr = curr_lr = 
+  [9.917056856187291e-06][9.917056856187291e-06]
+
+curr_lr =  curr_lr = [9.917056856187291e-06]
+ curr_lr =  [9.917056856187291e-06]
+[9.917056856187291e-06]
+curr_lr =  [9.917056856187291e-06]
+curr_lr =  [9.917056856187291e-06]
+[2024-02-19 06:23:28,461] [INFO] [logging.py:96:log_dist] [Rank 0] step=100, skipped=22, lr=[9.916387959866221e-06], mom=[(0.9, 0.95)]
+curr_lr =  curr_lr = [9.915719063545151e-06]curr_lr = 
+  curr_lr = [9.915719063545151e-06][9.915719063545151e-06]
+
+ [9.915719063545151e-06]
+curr_lr =  [9.915719063545151e-06]
+curr_lr =  [9.915719063545151e-06]
+curr_lr =  [9.915719063545151e-06]
+[2024-02-19 06:23:28,666] [INFO] [timer.py:260:stop] epoch=0/micro_step=2000/global_step=100, RunningAvgSamplesPerSec=16.222507865578038, CurrSamplesPerSec=17.253832110915262, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.915719063545151e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =        [9.914381270903011e-06]Epoch: [0][101/500] Time 147.741 (148.377)  Loss 6.2193 (10.9477)   VQALoss 0.0000 (0.0000) VGLoss 6.2193 (10.9477)[9.914381270903011e-06]
+[9.914381270903011e-06][9.914381270903011e-06][9.914381270903011e-06][9.914381270903011e-06][9.914381270903011e-06]
+
+
+
+
+
+
+curr_lr =  [9.914381270903011e-06]
+[2024-02-19 06:26:00,817] [INFO] [logging.py:96:log_dist] [Rank 0] [Torch] Checkpoint global_step101 is about to be saved!
+[2024-02-19 06:26:12,635] [INFO] [logging.py:96:log_dist] [Rank 0] Saving model checkpoint: ./outputs/epoch_0/global_step101/mp_rank_00_model_states.pt
+[2024-02-19 06:26:12,635] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step101/mp_rank_00_model_states.pt...
+[2024-02-19 06:28:27,811] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step101/mp_rank_00_model_states.pt.
+[2024-02-19 06:28:29,113] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step101/zero_pp_rank_0_mp_rank_00_optim_states.pt...
+[2024-02-19 06:28:29,113] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step101/zero_pp_rank_4_mp_rank_00_optim_states.pt...
+[2024-02-19 06:28:29,113] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step101/zero_pp_rank_7_mp_rank_00_optim_states.pt...
+[2024-02-19 06:28:29,113] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step101/zero_pp_rank_2_mp_rank_00_optim_states.pt...
+[2024-02-19 06:28:29,113] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step101/zero_pp_rank_5_mp_rank_00_optim_states.pt...
+[2024-02-19 06:28:29,114] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step101/zero_pp_rank_1_mp_rank_00_optim_states.pt...
+[2024-02-19 06:28:29,113] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step101/zero_pp_rank_3_mp_rank_00_optim_states.pt...
+[2024-02-19 06:28:29,114] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step101/zero_pp_rank_6_mp_rank_00_optim_states.pt...
+[2024-02-19 06:28:33,245] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step101/zero_pp_rank_6_mp_rank_00_optim_states.pt.
+[2024-02-19 06:28:33,246] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step101/zero_pp_rank_6_mp_rank_00_optim_states.pt
+[2024-02-19 06:28:33,246] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step101 is ready now!
+[2024-02-19 06:28:33,298] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step101/zero_pp_rank_7_mp_rank_00_optim_states.pt.
+[2024-02-19 06:28:33,298] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step101/zero_pp_rank_7_mp_rank_00_optim_states.pt
+[2024-02-19 06:28:33,298] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step101 is ready now!
+[2024-02-19 06:28:33,338] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step101/zero_pp_rank_4_mp_rank_00_optim_states.pt.
+[2024-02-19 06:28:33,338] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step101/zero_pp_rank_4_mp_rank_00_optim_states.pt
+[2024-02-19 06:28:33,338] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step101 is ready now!
+[2024-02-19 06:28:33,347] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step101/zero_pp_rank_3_mp_rank_00_optim_states.pt.
+[2024-02-19 06:28:33,347] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step101/zero_pp_rank_3_mp_rank_00_optim_states.pt
+[2024-02-19 06:28:33,348] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step101 is ready now!
+[2024-02-19 06:28:33,402] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step101/zero_pp_rank_1_mp_rank_00_optim_states.pt.
+[2024-02-19 06:28:33,402] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step101/zero_pp_rank_1_mp_rank_00_optim_states.pt
+[2024-02-19 06:28:33,403] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step101 is ready now!
+[2024-02-19 06:28:33,439] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step101/zero_pp_rank_5_mp_rank_00_optim_states.pt.
+[2024-02-19 06:28:33,440] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step101/zero_pp_rank_5_mp_rank_00_optim_states.pt
+[2024-02-19 06:28:33,440] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step101 is ready now!
+[2024-02-19 06:28:33,444] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step101/zero_pp_rank_2_mp_rank_00_optim_states.pt.
+[2024-02-19 06:28:33,444] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step101/zero_pp_rank_2_mp_rank_00_optim_states.pt
+[2024-02-19 06:28:33,444] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step101 is ready now!
+[2024-02-19 06:28:33,454] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step101/zero_pp_rank_0_mp_rank_00_optim_states.pt.
+[2024-02-19 06:28:33,462] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step101/zero_pp_rank_0_mp_rank_00_optim_states.pt
+[2024-02-19 06:28:33,462] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step101 is ready now!
+curr_lr = curr_lr =  curr_lr =  [9.913043478260871e-06] 
+curr_lr = [9.913043478260871e-06]
+ [9.913043478260871e-06]
+[9.913043478260871e-06]
+curr_lr =  curr_lr = [9.913043478260871e-06]
+ [9.913043478260871e-06]
+curr_lr =  [9.913043478260871e-06]
+curr_lr =  [9.913043478260871e-06]
+curr_lr =  curr_lr =  curr_lr = [9.91170568561873e-06]
+curr_lr =   [9.91170568561873e-06]
+[9.91170568561873e-06]
+[9.91170568561873e-06]
+curr_lr =  [9.91170568561873e-06]curr_lr = 
+ [9.91170568561873e-06]
+curr_lr =  [9.91170568561873e-06]
+curr_lr =  [9.91170568561873e-06]
+curr_lr = curr_lr = curr_lr = curr_lr =     [9.91036789297659e-06][9.91036789297659e-06]
+
+[9.91036789297659e-06][9.91036789297659e-06]
+
+curr_lr =  [9.91036789297659e-06]
+curr_lr =  [9.91036789297659e-06]
+curr_lr =  curr_lr =  [9.91036789297659e-06]
+[9.91036789297659e-06]
+curr_lr =  curr_lr =  [9.909030100334449e-06]
+[9.909030100334449e-06]
+curr_lr =  curr_lr = curr_lr =  [9.909030100334449e-06]
+ [9.909030100334449e-06]
+[9.909030100334449e-06]
+curr_lr = curr_lr =   [9.909030100334449e-06]
+[9.909030100334449e-06]
+curr_lr =  [9.909030100334449e-06]
+curr_lr = curr_lr = curr_lr =  curr_lr =  curr_lr = curr_lr =   curr_lr =  [9.907692307692309e-06][9.907692307692309e-06] 
+
+ Epoch: [0][106/500]    Time 148.475 (179.646)  Loss 10.7908 (10.6119)  VQALoss 0.0000 (0.0000) VGLoss 10.7908 (10.6119)[9.907692307692309e-06][9.907692307692309e-06][9.907692307692309e-06]
+
+
+[9.907692307692309e-06][9.907692307692309e-06]
+
+
+curr_lr =  [9.907692307692309e-06]
+curr_lr = curr_lr =   [9.906354515050169e-06]
+[9.906354515050169e-06]
+curr_lr = curr_lr =   [9.906354515050169e-06]
+[9.906354515050169e-06]
+curr_lr = curr_lr =   [9.906354515050169e-06][9.906354515050169e-06]
+
+curr_lr =  [9.906354515050169e-06]
+curr_lr =  [9.906354515050169e-06]
+curr_lr = curr_lr =   curr_lr = [9.905016722408027e-06]
+ [9.905016722408027e-06]
+curr_lr = [9.905016722408027e-06] 
+[9.905016722408027e-06]curr_lr = 
+ [9.905016722408027e-06]
+curr_lr =  [9.905016722408027e-06]
+curr_lr =  [9.905016722408027e-06]
+curr_lr =  [9.905016722408027e-06]
+curr_lr =  curr_lr =  [9.903678929765887e-06]
+[9.903678929765887e-06]
+curr_lr = curr_lr =   [9.903678929765887e-06]
+[9.903678929765887e-06]
+curr_lr =  [9.903678929765887e-06]
+curr_lr =  [9.903678929765887e-06]
+curr_lr =  [9.903678929765887e-06]
+curr_lr =  [9.903678929765887e-06]
+[2024-02-19 06:50:47,897] [INFO] [logging.py:96:log_dist] [Rank 0] step=110, skipped=22, lr=[9.903010033444817e-06], mom=[(0.9, 0.95)]
+curr_lr = curr_lr =   [9.902341137123747e-06][9.902341137123747e-06]curr_lr = 
+
+ [9.902341137123747e-06]
+curr_lr =  curr_lr = [9.902341137123747e-06]
+ [9.902341137123747e-06]
+curr_lr =  [9.902341137123747e-06]
+curr_lr =  [9.902341137123747e-06]
+[2024-02-19 06:50:48,098] [INFO] [timer.py:260:stop] epoch=0/micro_step=2200/global_step=110, RunningAvgSamplesPerSec=16.314947055187467, CurrSamplesPerSec=17.20380148859207, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.902341137123747e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =  curr_lr =  curr_lr =  Epoch: [0][111/500]    Time 147.872 (148.266)  Loss 20.3813 (10.6947)  VQALoss 0.0000 (0.0000) VGLoss 20.3813 (10.6947)  
+[9.901003344481607e-06] 
+[9.901003344481607e-06]
+ [9.901003344481607e-06]
+[9.901003344481607e-06][9.901003344481607e-06]
+[9.901003344481607e-06]
+
+[9.901003344481607e-06]
+curr_lr =  [9.901003344481607e-06]
+curr_lr =  curr_lr = [9.899665551839465e-06]
+curr_lr =   [9.899665551839465e-06][9.899665551839465e-06]
+
+curr_lr = curr_lr =  curr_lr = [9.899665551839465e-06] 
+ [9.899665551839465e-06][9.899665551839465e-06]
+
+curr_lr =  [9.899665551839465e-06]curr_lr = 
+ [9.899665551839465e-06]
+curr_lr =  curr_lr = [9.898327759197325e-06] 
+curr_lr = [9.898327759197325e-06] 
+[9.898327759197325e-06]
+curr_lr =  [9.898327759197325e-06]
+curr_lr = curr_lr = curr_lr =    [9.898327759197325e-06]
+[9.898327759197325e-06]
+[9.898327759197325e-06]
+curr_lr =  [9.898327759197325e-06]
+curr_lr =  curr_lr = curr_lr = curr_lr =  [9.896989966555185e-06] 
+ [9.896989966555185e-06]
+[9.896989966555185e-06][9.896989966555185e-06]
+
+curr_lr = curr_lr =   [9.896989966555185e-06]
+[9.896989966555185e-06]
+curr_lr =  [9.896989966555185e-06]
+curr_lr =  [9.896989966555185e-06]
+curr_lr = curr_lr =   [9.895652173913045e-06]
+[9.895652173913045e-06]curr_lr = 
+curr_lr =   [9.895652173913045e-06][9.895652173913045e-06]
+
+curr_lr = curr_lr =   [9.895652173913045e-06]
+[9.895652173913045e-06]
+curr_lr =  [9.895652173913045e-06]
+curr_lr =  [9.895652173913045e-06]
+curr_lr = curr_lr = curr_lr = curr_lr =     curr_lr = curr_lr = Epoch: [0][116/500]     Time 148.696 (148.313)  Loss 27.2933 (11.1288)  VQALoss 0.0000 (0.0000) VGLoss 27.2933 (11.1288)[9.894314381270905e-06][9.894314381270905e-06] [9.894314381270905e-06][9.894314381270905e-06] 
+
+curr_lr = 
+
+[9.894314381270905e-06]
+
+ [9.894314381270905e-06]
+[9.894314381270905e-06]
+curr_lr =  [9.894314381270905e-06]
+curr_lr = curr_lr =   [9.892976588628763e-06]curr_lr = 
+[9.892976588628763e-06]
+ [9.892976588628763e-06]
+curr_lr =  [9.892976588628763e-06]
+curr_lr =  [9.892976588628763e-06]
+curr_lr =  [9.892976588628763e-06]
+curr_lr =  [9.892976588628763e-06]
+curr_lr =  [9.892976588628763e-06]
+curr_lr = curr_lr =   curr_lr = [9.891638795986623e-06][9.891638795986623e-06]
+
+ [9.891638795986623e-06]
+curr_lr =  curr_lr =  [9.891638795986623e-06]
+curr_lr = [9.891638795986623e-06] 
+[9.891638795986623e-06]
+curr_lr =  [9.891638795986623e-06]
+curr_lr =  [9.891638795986623e-06]
+curr_lr =  curr_lr = [9.890301003344483e-06]
+curr_lr =  curr_lr =   [9.890301003344483e-06]
+[9.890301003344483e-06][9.890301003344483e-06]
+
+curr_lr =  [9.890301003344483e-06]
+curr_lr =  [9.890301003344483e-06]
+curr_lr =  [9.890301003344483e-06]
+curr_lr =  [9.890301003344483e-06]
+[2024-02-19 07:15:30,632] [INFO] [logging.py:96:log_dist] [Rank 0] step=120, skipped=22, lr=[9.889632107023413e-06], mom=[(0.9, 0.95)]
+curr_lr =  curr_lr =  [9.888963210702341e-06]
+curr_lr = [9.888963210702341e-06]
+ curr_lr =  [9.888963210702341e-06]
+[9.888963210702341e-06]
+curr_lr =  [9.888963210702341e-06]
+curr_lr =  [9.888963210702341e-06]
+curr_lr =  [9.888963210702341e-06]
+[2024-02-19 07:15:30,838] [INFO] [timer.py:260:stop] epoch=0/micro_step=2400/global_step=120, RunningAvgSamplesPerSec=16.392274740820234, CurrSamplesPerSec=17.19027986502629, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.888963210702341e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =       Epoch: [0][121/500] Time 147.694 (148.200)  Loss 8.4141 (10.6440)   VQALoss 0.0000 (0.0000) VGLoss 8.4141 (10.6440) [9.8876254180602e-06]
+
+[9.8876254180602e-06][9.8876254180602e-06][9.8876254180602e-06]
+
+[9.8876254180602e-06]
+[9.8876254180602e-06]
+
+[9.8876254180602e-06]
+curr_lr =  [9.8876254180602e-06]
+curr_lr =  [9.88628762541806e-06]
+curr_lr = curr_lr =   curr_lr =  [9.88628762541806e-06]
+[9.88628762541806e-06]curr_lr = [9.88628762541806e-06]
+
+ curr_lr = [9.88628762541806e-06]
+ [9.88628762541806e-06]
+curr_lr =  [9.88628762541806e-06]
+curr_lr =  [9.88628762541806e-06]
+curr_lr =  curr_lr = [9.88494983277592e-06] curr_lr = curr_lr = 
+  [9.88494983277592e-06]
+[9.88494983277592e-06]
+[9.88494983277592e-06]
+curr_lr =  [9.88494983277592e-06]
+curr_lr =  [9.88494983277592e-06]
+curr_lr =  [9.88494983277592e-06]
+curr_lr =  [9.88494983277592e-06]
+curr_lr = curr_lr = curr_lr =    curr_lr = [9.88361204013378e-06][9.88361204013378e-06]
+
+ [9.88361204013378e-06]
+[9.88361204013378e-06]
+curr_lr = curr_lr =   [9.88361204013378e-06]
+[9.88361204013378e-06]
+curr_lr =  [9.88361204013378e-06]
+curr_lr =  [9.88361204013378e-06]
+curr_lr = curr_lr =   curr_lr =  [9.88227424749164e-06]
+curr_lr = [9.88227424749164e-06]
+[9.88227424749164e-06]
+curr_lr =  curr_lr =   [9.88227424749164e-06][9.88227424749164e-06][9.88227424749164e-06]
+
+
+curr_lr =  [9.88227424749164e-06]
+curr_lr =  [9.88227424749164e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =       Epoch: [0][126/500] Time 148.316 (148.394)  Loss 5.7698 (10.3718)   VQALoss 0.0000 (0.0000) VGLoss 5.7698 (10.3718) [9.880936454849499e-06]
+[9.880936454849499e-06][9.880936454849499e-06][9.880936454849499e-06][9.880936454849499e-06][9.880936454849499e-06]
+
+
+
+
+
+[9.880936454849499e-06]
+curr_lr =  [9.880936454849499e-06]
+curr_lr =  curr_lr = [9.879598662207359e-06]
+ curr_lr =  [9.879598662207359e-06]
+[9.879598662207359e-06]
+curr_lr =  curr_lr = [9.879598662207359e-06]
+ [9.879598662207359e-06]
+curr_lr =  curr_lr = [9.879598662207359e-06]
+ [9.879598662207359e-06]
+curr_lr =  [9.879598662207359e-06]
+curr_lr = curr_lr = curr_lr = curr_lr =     [9.878260869565218e-06][9.878260869565218e-06][9.878260869565218e-06][9.878260869565218e-06]
+
+
+
+curr_lr =  [9.878260869565218e-06]
+curr_lr =  [9.878260869565218e-06]
+curr_lr =  [9.878260869565218e-06]
+curr_lr =  [9.878260869565218e-06]
+curr_lr =  [9.876923076923077e-06]
+curr_lr = curr_lr =   [9.876923076923077e-06]
+[9.876923076923077e-06]
+curr_lr = curr_lr =   curr_lr =  [9.876923076923077e-06][9.876923076923077e-06]
+
+[9.876923076923077e-06]
+curr_lr =  [9.876923076923077e-06]
+curr_lr =  [9.876923076923077e-06]
+[2024-02-19 07:40:13,786] [INFO] [logging.py:96:log_dist] [Rank 0] step=130, skipped=22, lr=[9.876254180602007e-06], mom=[(0.9, 0.95)]
+curr_lr = curr_lr = curr_lr =    curr_lr = [9.875585284280937e-06]
+ [9.875585284280937e-06]
+[9.875585284280937e-06]
+[9.875585284280937e-06]
+curr_lr =  [9.875585284280937e-06]curr_lr = 
+ [9.875585284280937e-06]
+curr_lr =  [9.875585284280937e-06]
+[2024-02-19 07:40:13,991] [INFO] [timer.py:260:stop] epoch=0/micro_step=2600/global_step=130, RunningAvgSamplesPerSec=16.457774906222625, CurrSamplesPerSec=17.211090680787596, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.875585284280937e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =  curr_lr =       [9.874247491638797e-06][9.874247491638797e-06]
+[9.874247491638797e-06]
+[9.874247491638797e-06][9.874247491638797e-06][9.874247491638797e-06]
+
+[9.874247491638797e-06]
+
+
+Epoch: [0][131/500]     Time 147.556 (148.209)  Loss 13.1187 (10.5588)  VQALoss 0.0000 (0.0000) VGLoss 13.1187 (10.5588)
+curr_lr =  [9.874247491638797e-06]
+curr_lr =  [9.872909698996656e-06]
+curr_lr = curr_lr =   [9.872909698996656e-06]
+[9.872909698996656e-06]curr_lr = 
+ curr_lr = [9.872909698996656e-06] 
+curr_lr =  [9.872909698996656e-06]
+[9.872909698996656e-06]
+curr_lr =  curr_lr =  [9.872909698996656e-06]
+[9.872909698996656e-06]
+curr_lr =  curr_lr = curr_lr =  [9.871571906354516e-06]curr_lr = 
+  [9.871571906354516e-06]
+[9.871571906354516e-06][9.871571906354516e-06]
+
+curr_lr =  [9.871571906354516e-06]
+curr_lr =  [9.871571906354516e-06]
+curr_lr =  [9.871571906354516e-06]
+curr_lr =  [9.871571906354516e-06]
+curr_lr =  curr_lr =  [9.870234113712376e-06]
+[9.870234113712376e-06]curr_lr = 
+curr_lr =   [9.870234113712376e-06]
+[9.870234113712376e-06]
+curr_lr =  [9.870234113712376e-06]
+curr_lr =  [9.870234113712376e-06]
+curr_lr =  [9.870234113712376e-06]
+curr_lr =  [9.870234113712376e-06]
+curr_lr = curr_lr =   curr_lr = [9.868896321070234e-06][9.868896321070234e-06] 
+
+curr_lr = [9.868896321070234e-06]
+ [9.868896321070234e-06]
+curr_lr =  [9.868896321070234e-06]
+curr_lr =  [9.868896321070234e-06]
+curr_lr =  [9.868896321070234e-06]
+curr_lr =  [9.868896321070234e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =       [9.867558528428094e-06]
+[9.867558528428094e-06][9.867558528428094e-06][9.867558528428094e-06]
+[9.867558528428094e-06]curr_lr = 
+
+
+[9.867558528428094e-06]
+ Epoch: [0][136/500]    Time 148.408 (148.421)  Loss 8.5841 (10.3972)   VQALoss 0.0000 (0.0000) VGLoss 8.5841 (10.3972)
+[9.867558528428094e-06]
+curr_lr =  [9.867558528428094e-06]
+curr_lr = curr_lr =   curr_lr = curr_lr = [9.866220735785954e-06] 
+ [9.866220735785954e-06]
+[9.866220735785954e-06]
+[9.866220735785954e-06]
+curr_lr = curr_lr =   [9.866220735785954e-06][9.866220735785954e-06]
+
+curr_lr =  [9.866220735785954e-06]
+curr_lr =  [9.866220735785954e-06]
+curr_lr =  [9.864882943143812e-06]
+curr_lr = curr_lr = curr_lr =    [9.864882943143812e-06]
+[9.864882943143812e-06]
+[9.864882943143812e-06]
+curr_lr =  [9.864882943143812e-06]
+curr_lr = curr_lr =   [9.864882943143812e-06]
+[9.864882943143812e-06]
+curr_lr =  [9.864882943143812e-06]
+curr_lr =  curr_lr = [9.863545150501674e-06]
+ [9.863545150501674e-06]
+curr_lr =  curr_lr = [9.863545150501674e-06] 
+curr_lr =  curr_lr = [9.863545150501674e-06] [9.863545150501674e-06]
+
+[9.863545150501674e-06]
+curr_lr =  [9.863545150501674e-06]
+curr_lr =  [9.863545150501674e-06]
+[2024-02-19 08:04:56,448] [INFO] [logging.py:96:log_dist] [Rank 0] step=140, skipped=22, lr=[9.862876254180604e-06], mom=[(0.9, 0.95)]
+curr_lr =  curr_lr =  [9.862207357859532e-06]
+curr_lr = [9.862207357859532e-06]
+ [9.862207357859532e-06]
+curr_lr =  [9.862207357859532e-06]
+curr_lr =  curr_lr =  [9.862207357859532e-06]
+[9.862207357859532e-06]
+curr_lr =  [9.862207357859532e-06]
+[2024-02-19 08:04:56,651] [INFO] [timer.py:260:stop] epoch=0/micro_step=2800/global_step=140, RunningAvgSamplesPerSec=16.514511498833034, CurrSamplesPerSec=17.244356067586466, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.862207357859532e-06]
+curr_lr = curr_lr = curr_lr =  curr_lr = curr_lr =  curr_lr =  Epoch: [0][141/500]      Time 147.710 (148.146)  Loss 6.2452 (9.8784)    VQALoss 0.0000 (0.0000) VGLoss 6.2452 (9.8784)[9.860869565217392e-06]  
+
+curr_lr =  [9.860869565217392e-06]
+[9.860869565217392e-06] 
+[9.860869565217392e-06][9.860869565217392e-06]
+
+[9.860869565217392e-06]
+[9.860869565217392e-06]
+curr_lr =  [9.860869565217392e-06]
+curr_lr =  curr_lr =  curr_lr = [9.859531772575252e-06]
+ [9.859531772575252e-06]curr_lr = 
+ [9.859531772575252e-06]
+curr_lr = [9.859531772575252e-06] 
+[9.859531772575252e-06]
+curr_lr =  [9.859531772575252e-06]
+curr_lr =  [9.859531772575252e-06]
+curr_lr =  [9.859531772575252e-06]
+curr_lr =  curr_lr = [9.858193979933112e-06]
+ curr_lr = [9.858193979933112e-06] 
+[9.858193979933112e-06]
+curr_lr =  [9.858193979933112e-06]
+curr_lr =  curr_lr =  [9.858193979933112e-06]
+[9.858193979933112e-06]
+curr_lr =  [9.858193979933112e-06]
+curr_lr =  [9.858193979933112e-06]
+curr_lr =  curr_lr =  [9.85685618729097e-06]
+curr_lr = [9.85685618729097e-06]
+ curr_lr = [9.85685618729097e-06] 
+[9.85685618729097e-06]
+curr_lr =  [9.85685618729097e-06]curr_lr = 
+ [9.85685618729097e-06]
+curr_lr =  [9.85685618729097e-06]
+curr_lr =  [9.85685618729097e-06]
+curr_lr =  curr_lr = curr_lr = [9.85551839464883e-06]curr_lr = 
+   [9.85551839464883e-06]
+[9.85551839464883e-06][9.85551839464883e-06]
+
+curr_lr = curr_lr =   [9.85551839464883e-06][9.85551839464883e-06]
+
+curr_lr =  [9.85551839464883e-06]
+curr_lr =  [9.85551839464883e-06]
+curr_lr = curr_lr = curr_lr =  curr_lr =  curr_lr = Epoch: [0][146/500] Time 148.875 (148.499)  Loss 7.8644 (10.0471)   VQALoss 0.0000 (0.0000) VGLoss 7.8644 (10.0471)  
+ curr_lr = [9.85418060200669e-06][9.85418060200669e-06]curr_lr = [9.85418060200669e-06]
+[9.85418060200669e-06]
+
+[9.85418060200669e-06]
+ 
+ [9.85418060200669e-06][9.85418060200669e-06]
+
+curr_lr =  [9.85418060200669e-06]
+curr_lr =  curr_lr =  [9.852842809364548e-06]
+[9.852842809364548e-06]
+curr_lr =  curr_lr = [9.852842809364548e-06]
+ [9.852842809364548e-06]
+curr_lr =  [9.852842809364548e-06]
+curr_lr =  [9.852842809364548e-06]
+curr_lr =  [9.852842809364548e-06]
+curr_lr =  [9.852842809364548e-06]
+curr_lr =  [9.85150501672241e-06]
+curr_lr = curr_lr =   [9.85150501672241e-06]
+[9.85150501672241e-06]
+curr_lr =  [9.85150501672241e-06]
+curr_lr =  [9.85150501672241e-06]curr_lr = 
+ [9.85150501672241e-06]
+curr_lr =  [9.85150501672241e-06]
+curr_lr =  [9.85150501672241e-06]
+curr_lr = curr_lr =   curr_lr =  [9.850167224080268e-06][9.850167224080268e-06]
+
+[9.850167224080268e-06]
+curr_lr =  curr_lr = curr_lr = [9.850167224080268e-06] 
+ [9.850167224080268e-06]
+[9.850167224080268e-06]
+curr_lr =  [9.850167224080268e-06]
+curr_lr =  [9.850167224080268e-06]
+[2024-02-19 08:29:40,122] [INFO] [logging.py:96:log_dist] [Rank 0] step=150, skipped=22, lr=[9.849498327759198e-06], mom=[(0.9, 0.95)]
+curr_lr =  curr_lr = [9.848829431438128e-06]curr_lr = 
+  curr_lr = [9.848829431438128e-06]
+ [9.848829431438128e-06]
+[9.848829431438128e-06]
+curr_lr =  [9.848829431438128e-06]
+curr_lr = curr_lr =   [9.848829431438128e-06]
+[9.848829431438128e-06]
+[2024-02-19 08:29:40,323] [INFO] [timer.py:260:stop] epoch=0/micro_step=3000/global_step=150, RunningAvgSamplesPerSec=16.56334881136126, CurrSamplesPerSec=17.251597655913308, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.848829431438128e-06]
+curr_lr = curr_lr = curr_lr = curr_lr =     curr_lr = curr_lr = curr_lr = [9.847491638795988e-06][9.847491638795988e-06]
+[9.847491638795988e-06]
+
+  [9.847491638795988e-06]
+ Epoch: [0][151/500]    Time 147.742 (148.237)  Loss 6.8873 (9.8320)    VQALoss 0.0000 (0.0000) VGLoss 6.8873 (9.8320)
+[9.847491638795988e-06][9.847491638795988e-06]
+
+[9.847491638795988e-06]
+curr_lr =  [9.847491638795988e-06]
+[2024-02-19 08:32:12,517] [INFO] [logging.py:96:log_dist] [Rank 0] [Torch] Checkpoint global_step151 is about to be saved!
+[2024-02-19 08:32:24,390] [INFO] [logging.py:96:log_dist] [Rank 0] Saving model checkpoint: ./outputs/epoch_0/global_step151/mp_rank_00_model_states.pt
+[2024-02-19 08:32:24,390] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step151/mp_rank_00_model_states.pt...
+[2024-02-19 08:34:41,668] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step151/mp_rank_00_model_states.pt.
+[2024-02-19 08:34:42,950] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step151/zero_pp_rank_0_mp_rank_00_optim_states.pt...
+[2024-02-19 08:34:42,950] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step151/zero_pp_rank_4_mp_rank_00_optim_states.pt...
+[2024-02-19 08:34:42,950] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step151/zero_pp_rank_3_mp_rank_00_optim_states.pt...
+[2024-02-19 08:34:42,950] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step151/zero_pp_rank_1_mp_rank_00_optim_states.pt...
+[2024-02-19 08:34:42,950] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step151/zero_pp_rank_2_mp_rank_00_optim_states.pt...
+[2024-02-19 08:34:42,950] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step151/zero_pp_rank_6_mp_rank_00_optim_states.pt...
+[2024-02-19 08:34:42,950] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step151/zero_pp_rank_5_mp_rank_00_optim_states.pt...
+[2024-02-19 08:34:42,950] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step151/zero_pp_rank_7_mp_rank_00_optim_states.pt...
+[2024-02-19 08:34:46,935] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step151/zero_pp_rank_7_mp_rank_00_optim_states.pt.
+[2024-02-19 08:34:46,935] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step151/zero_pp_rank_7_mp_rank_00_optim_states.pt
+[2024-02-19 08:34:46,935] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step151 is ready now!
+[2024-02-19 08:34:46,941] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step151/zero_pp_rank_4_mp_rank_00_optim_states.pt.
+[2024-02-19 08:34:46,941] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step151/zero_pp_rank_4_mp_rank_00_optim_states.pt
+[2024-02-19 08:34:46,941] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step151 is ready now!
+[2024-02-19 08:34:47,002] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step151/zero_pp_rank_6_mp_rank_00_optim_states.pt.
+[2024-02-19 08:34:47,003] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step151/zero_pp_rank_6_mp_rank_00_optim_states.pt
+[2024-02-19 08:34:47,003] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step151 is ready now!
+[2024-02-19 08:34:47,011] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step151/zero_pp_rank_2_mp_rank_00_optim_states.pt.
+[2024-02-19 08:34:47,012] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step151/zero_pp_rank_2_mp_rank_00_optim_states.pt
+[2024-02-19 08:34:47,012] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step151 is ready now!
+[2024-02-19 08:34:47,208] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step151/zero_pp_rank_5_mp_rank_00_optim_states.pt.
+[2024-02-19 08:34:47,209] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step151/zero_pp_rank_5_mp_rank_00_optim_states.pt
+[2024-02-19 08:34:47,209] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step151 is ready now!
+[2024-02-19 08:34:47,209] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step151/zero_pp_rank_3_mp_rank_00_optim_states.pt.
+[2024-02-19 08:34:47,210] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step151/zero_pp_rank_3_mp_rank_00_optim_states.pt
+[2024-02-19 08:34:47,210] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step151 is ready now!
+[2024-02-19 08:34:47,211] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step151/zero_pp_rank_1_mp_rank_00_optim_states.pt.
+[2024-02-19 08:34:47,211] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step151/zero_pp_rank_1_mp_rank_00_optim_states.pt
+[2024-02-19 08:34:47,212] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step151 is ready now!
+[2024-02-19 08:34:47,329] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step151/zero_pp_rank_0_mp_rank_00_optim_states.pt.
+[2024-02-19 08:34:47,339] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step151/zero_pp_rank_0_mp_rank_00_optim_states.pt
+[2024-02-19 08:34:47,339] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step151 is ready now!
+curr_lr =  curr_lr = curr_lr = [9.846153846153848e-06] 
+ [9.846153846153848e-06]
+[9.846153846153848e-06]curr_lr = 
+ curr_lr = curr_lr = [9.846153846153848e-06]
+  [9.846153846153848e-06]
+[9.846153846153848e-06]
+curr_lr =  [9.846153846153848e-06]
+curr_lr =  [9.846153846153848e-06]
+curr_lr = curr_lr =   curr_lr = [9.844816053511706e-06][9.844816053511706e-06] 
+curr_lr = 
+ [9.844816053511706e-06]
+[9.844816053511706e-06]
+curr_lr = curr_lr =   [9.844816053511706e-06]
+[9.844816053511706e-06]
+curr_lr =  [9.844816053511706e-06]
+curr_lr =  [9.844816053511706e-06]
+curr_lr =  curr_lr = curr_lr =   [9.843478260869566e-06]
+[9.843478260869566e-06][9.843478260869566e-06]
+
+curr_lr =  curr_lr = [9.843478260869566e-06]curr_lr =  
+ [9.843478260869566e-06]
+[9.843478260869566e-06]
+curr_lr =  [9.843478260869566e-06]
+curr_lr =  [9.843478260869566e-06]
+curr_lr =  curr_lr =  [9.842140468227426e-06]
+[9.842140468227426e-06]
+curr_lr =  curr_lr = [9.842140468227426e-06]curr_lr = 
+  curr_lr = [9.842140468227426e-06]
+[9.842140468227426e-06] 
+[9.842140468227426e-06]
+curr_lr =  [9.842140468227426e-06]
+curr_lr =  [9.842140468227426e-06]
+curr_lr = curr_lr = curr_lr = curr_lr =  curr_lr = curr_lr =   curr_lr =  Epoch: [0][156/500]   Time 149.040 (180.491)  Loss 27.9672 (10.3242)  VQALoss 0.0000 (0.0000) VGLoss 27.9672 (10.3242) [9.840802675585284e-06] 
+
+[9.840802675585284e-06][9.840802675585284e-06] 
+[9.840802675585284e-06]
+
+[9.840802675585284e-06][9.840802675585284e-06]
+
+[9.840802675585284e-06]
+curr_lr =  [9.840802675585284e-06]
+curr_lr =  [9.839464882943146e-06]curr_lr = 
+ curr_lr = [9.839464882943146e-06]curr_lr = curr_lr = 
+   [9.839464882943146e-06][9.839464882943146e-06]
+
+[9.839464882943146e-06]
+curr_lr = curr_lr =   [9.839464882943146e-06]
+[9.839464882943146e-06]
+curr_lr =  [9.839464882943146e-06]
+curr_lr =  [9.838127090301004e-06]
+curr_lr = curr_lr =   curr_lr = [9.838127090301004e-06]
+ [9.838127090301004e-06]
+[9.838127090301004e-06]curr_lr = curr_lr = 
+  [9.838127090301004e-06][9.838127090301004e-06]
+
+curr_lr =  [9.838127090301004e-06]
+curr_lr =  [9.838127090301004e-06]
+curr_lr = curr_lr =   curr_lr = curr_lr = [9.836789297658864e-06] 
+ [9.836789297658864e-06][9.836789297658864e-06]
+
+[9.836789297658864e-06]
+curr_lr =  [9.836789297658864e-06]
+curr_lr =  [9.836789297658864e-06]
+curr_lr =  [9.836789297658864e-06]
+curr_lr =  [9.836789297658864e-06]
+[2024-02-19 08:57:04,210] [INFO] [logging.py:96:log_dist] [Rank 0] step=160, skipped=22, lr=[9.836120401337794e-06], mom=[(0.9, 0.95)]
+curr_lr =  curr_lr = [9.835451505016724e-06]
+ curr_lr = curr_lr = [9.835451505016724e-06] 
+ [9.835451505016724e-06]
+[9.835451505016724e-06]
+curr_lr = curr_lr =   [9.835451505016724e-06][9.835451505016724e-06]
+
+curr_lr =  [9.835451505016724e-06]
+[2024-02-19 08:57:04,411] [INFO] [timer.py:260:stop] epoch=0/micro_step=3200/global_step=160, RunningAvgSamplesPerSec=16.605366968241427, CurrSamplesPerSec=17.234846054125104, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.835451505016724e-06]
+curr_lr = curr_lr = curr_lr = curr_lr =  curr_lr =  curr_lr =   Epoch: [0][161/500]     Time 147.733 (148.325)  Loss 5.3538 (9.4351)    VQALoss 0.0000 (0.0000) VGLoss 5.3538 (9.4351) curr_lr = [9.834113712374582e-06] [9.834113712374582e-06]
+
+[9.834113712374582e-06]
+
+[9.834113712374582e-06][9.834113712374582e-06]
+ 
+[9.834113712374582e-06]
+[9.834113712374582e-06]
+curr_lr =  [9.834113712374582e-06]
+curr_lr =  [9.832775919732442e-06]
+curr_lr = curr_lr = curr_lr =    [9.832775919732442e-06]
+[9.832775919732442e-06][9.832775919732442e-06]
+
+curr_lr =  [9.832775919732442e-06]
+curr_lr = curr_lr =   [9.832775919732442e-06]
+[9.832775919732442e-06]
+curr_lr =  [9.832775919732442e-06]
+curr_lr =  curr_lr =  [9.831438127090302e-06]
+[9.831438127090302e-06]
+curr_lr =  [9.831438127090302e-06]
+curr_lr = curr_lr = curr_lr =    [9.831438127090302e-06][9.831438127090302e-06][9.831438127090302e-06]
+
+
+curr_lr =  [9.831438127090302e-06]
+curr_lr =  [9.831438127090302e-06]
+curr_lr = curr_lr =   curr_lr =  [9.830100334448162e-06]
+[9.830100334448162e-06]
+[9.830100334448162e-06]
+curr_lr =  [9.830100334448162e-06]
+curr_lr =  [9.830100334448162e-06]
+curr_lr =  [9.830100334448162e-06]
+curr_lr =  [9.830100334448162e-06]
+curr_lr =  [9.830100334448162e-06]
+curr_lr =  curr_lr = curr_lr =  curr_lr = [9.82876254180602e-06] 
+ [9.82876254180602e-06][9.82876254180602e-06]
+
+[9.82876254180602e-06]
+curr_lr =  [9.82876254180602e-06]
+curr_lr = curr_lr =   [9.82876254180602e-06]
+[9.82876254180602e-06]
+curr_lr =  [9.82876254180602e-06]
+curr_lr = curr_lr =   curr_lr = curr_lr = [9.827424749163881e-06] [9.827424749163881e-06]
+
+ curr_lr = Epoch: [0][166/500]  Time 149.394 (148.425)  Loss 4.5862 (9.4383)    VQALoss 0.0000 (0.0000) VGLoss 4.5862 (9.4383)curr_lr = curr_lr =  
+[9.827424749163881e-06] [9.827424749163881e-06]
+
+ [9.827424749163881e-06]
+[9.827424749163881e-06]
+[9.827424749163881e-06]
+curr_lr =  [9.827424749163881e-06]
+curr_lr = curr_lr =   curr_lr =  [9.82608695652174e-06][9.82608695652174e-06]
+
+[9.82608695652174e-06]
+curr_lr =  curr_lr =  [9.82608695652174e-06]
+[9.82608695652174e-06]
+curr_lr =  [9.82608695652174e-06]
+curr_lr =  [9.82608695652174e-06]
+curr_lr =  [9.82608695652174e-06]
+curr_lr =  curr_lr = curr_lr = [9.8247491638796e-06] 
+ curr_lr = [9.8247491638796e-06] 
+[9.8247491638796e-06]
+curr_lr = [9.8247491638796e-06]
+curr_lr =   [9.8247491638796e-06]
+[9.8247491638796e-06]
+curr_lr =  [9.8247491638796e-06]
+curr_lr =  [9.8247491638796e-06]
+curr_lr =  curr_lr = [9.82341137123746e-06]
+ curr_lr = [9.82341137123746e-06]
+ [9.82341137123746e-06]curr_lr = 
+ [9.82341137123746e-06]
+curr_lr =  curr_lr =  [9.82341137123746e-06]
+[9.82341137123746e-06]
+curr_lr =  [9.82341137123746e-06]
+curr_lr =  [9.82341137123746e-06]
+[2024-02-19 09:21:47,318] [INFO] [logging.py:96:log_dist] [Rank 0] step=170, skipped=22, lr=[9.82274247491639e-06], mom=[(0.9, 0.95)]
+curr_lr =  curr_lr = [9.822073578595318e-06]
+ curr_lr =  [9.822073578595318e-06]
+curr_lr = [9.822073578595318e-06] 
+[9.822073578595318e-06]
+curr_lr =  [9.822073578595318e-06]
+curr_lr = curr_lr =   [9.822073578595318e-06]
+[9.822073578595318e-06]
+[2024-02-19 09:21:47,525] [INFO] [timer.py:260:stop] epoch=0/micro_step=3400/global_step=170, RunningAvgSamplesPerSec=16.643556167336396, CurrSamplesPerSec=17.218455826155, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.822073578595318e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =    Epoch: [0][171/500]      Time 147.449 (148.141)  Loss 6.5095 (9.7836)    VQALoss 0.0000 (0.0000) VGLoss 6.5095 (9.7836)  
+ [9.820735785953178e-06][9.820735785953178e-06][9.820735785953178e-06]
+
+[9.820735785953178e-06][9.820735785953178e-06]
+
+
+[9.820735785953178e-06]curr_lr = 
+ [9.820735785953178e-06]
+curr_lr =  [9.820735785953178e-06]
+curr_lr =  curr_lr =  curr_lr = [9.819397993311037e-06]
+ [9.819397993311037e-06]
+[9.819397993311037e-06]
+curr_lr = curr_lr =   curr_lr = [9.819397993311037e-06] 
+[9.819397993311037e-06]
+[9.819397993311037e-06]
+curr_lr =  [9.819397993311037e-06]
+curr_lr =  [9.819397993311037e-06]
+curr_lr =  curr_lr = [9.818060200668897e-06]
+ [9.818060200668897e-06]
+curr_lr =  curr_lr = curr_lr = [9.818060200668897e-06]  
+[9.818060200668897e-06]
+[9.818060200668897e-06]
+curr_lr =  [9.818060200668897e-06]curr_lr = 
+ [9.818060200668897e-06]
+curr_lr =  [9.818060200668897e-06]
+curr_lr = curr_lr =   [9.816722408026757e-06]curr_lr = 
+[9.816722408026757e-06]
+ curr_lr =  [9.816722408026757e-06]
+[9.816722408026757e-06]
+curr_lr = curr_lr =   [9.816722408026757e-06]
+[9.816722408026757e-06]
+curr_lr =  [9.816722408026757e-06]
+curr_lr =  [9.816722408026757e-06]
+curr_lr =  curr_lr = curr_lr =  [9.815384615384617e-06]
+ [9.815384615384617e-06]
+[9.815384615384617e-06]
+curr_lr =  curr_lr =  [9.815384615384617e-06]
+[9.815384615384617e-06]
+curr_lr =  [9.815384615384617e-06]
+curr_lr =  [9.815384615384617e-06]
+curr_lr =  [9.815384615384617e-06]
+curr_lr = curr_lr = curr_lr =  curr_lr = curr_lr =    [9.814046822742475e-06] curr_lr = curr_lr = 
+Epoch: [0][176/500]     Time 148.620 (148.346)  Loss 7.7730 (9.7911)    VQALoss 0.0000 (0.0000) VGLoss 7.7730 (9.7911)  
+[9.814046822742475e-06][9.814046822742475e-06][9.814046822742475e-06]
+
+
+[9.814046822742475e-06][9.814046822742475e-06][9.814046822742475e-06]
+
+
+curr_lr =  [9.814046822742475e-06]
+curr_lr =  curr_lr = [9.812709030100335e-06]
+ curr_lr =  [9.812709030100335e-06]
+[9.812709030100335e-06]
+curr_lr =  curr_lr =  [9.812709030100335e-06]
+[9.812709030100335e-06]
+curr_lr =  [9.812709030100335e-06]
+curr_lr =  [9.812709030100335e-06]
+curr_lr =  [9.812709030100335e-06]
+curr_lr = curr_lr =   [9.811371237458195e-06]
+curr_lr = [9.811371237458195e-06]
+ [9.811371237458195e-06]
+curr_lr = curr_lr =   [9.811371237458195e-06]
+[9.811371237458195e-06]
+curr_lr =  [9.811371237458195e-06]
+curr_lr =  [9.811371237458195e-06]
+curr_lr =  [9.811371237458195e-06]
+curr_lr = curr_lr =   curr_lr = [9.810033444816053e-06]
+ [9.810033444816053e-06][9.810033444816053e-06]
+
+curr_lr = curr_lr =  [9.810033444816053e-06] 
+curr_lr = [9.810033444816053e-06] 
+[9.810033444816053e-06]
+curr_lr =  [9.810033444816053e-06]
+curr_lr =  [9.810033444816053e-06]
+[2024-02-19 09:46:30,981] [INFO] [logging.py:96:log_dist] [Rank 0] step=180, skipped=22, lr=[9.809364548494983e-06], mom=[(0.9, 0.95)]
+curr_lr = curr_lr =   curr_lr = [9.808695652173913e-06]
+[9.808695652173913e-06]
+ curr_lr =  [9.808695652173913e-06]
+[9.808695652173913e-06]
+curr_lr =  [9.808695652173913e-06]
+curr_lr =  [9.808695652173913e-06]
+curr_lr =  [9.808695652173913e-06]
+[2024-02-19 09:46:31,183] [INFO] [timer.py:260:stop] epoch=0/micro_step=3600/global_step=180, RunningAvgSamplesPerSec=16.67727738467585, CurrSamplesPerSec=17.195857204194173, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.808695652173913e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =   curr_lr =    Epoch: [0][181/500]    Time 147.894 (148.474)  Loss 5.7801 (9.0905)    VQALoss 0.0000 (0.0000) VGLoss 5.7801 (9.0905) [9.807357859531773e-06][9.807357859531773e-06]
+curr_lr = 
+
+[9.807357859531773e-06][9.807357859531773e-06][9.807357859531773e-06]
+
+
+[9.807357859531773e-06] 
+[9.807357859531773e-06]
+curr_lr =  [9.807357859531773e-06]
+curr_lr = curr_lr =   curr_lr = [9.806020066889633e-06]curr_lr = [9.806020066889633e-06] 
+
+ [9.806020066889633e-06]
+[9.806020066889633e-06]
+curr_lr =  curr_lr =  [9.806020066889633e-06]
+[9.806020066889633e-06]
+curr_lr =  [9.806020066889633e-06]
+curr_lr =  [9.806020066889633e-06]
+curr_lr = curr_lr =   [9.804682274247493e-06]
+[9.804682274247493e-06]
+curr_lr =  [9.804682274247493e-06]
+curr_lr =  curr_lr = [9.804682274247493e-06] 
+[9.804682274247493e-06]
+curr_lr =  [9.804682274247493e-06]
+curr_lr =  [9.804682274247493e-06]
+curr_lr =  [9.804682274247493e-06]
+curr_lr = curr_lr =   [9.803344481605353e-06][9.803344481605353e-06]curr_lr = 
+
+ [9.803344481605353e-06]curr_lr = 
+ [9.803344481605353e-06]
+curr_lr = curr_lr =   [9.803344481605353e-06][9.803344481605353e-06]
+
+curr_lr =  [9.803344481605353e-06]
+curr_lr =  [9.803344481605353e-06]
+curr_lr = curr_lr =   curr_lr = [9.802006688963211e-06] 
+[9.802006688963211e-06]
+curr_lr = [9.802006688963211e-06]
+ curr_lr =  [9.802006688963211e-06]
+curr_lr = [9.802006688963211e-06]
+ [9.802006688963211e-06]
+curr_lr =  [9.802006688963211e-06]
+curr_lr =  [9.802006688963211e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =   curr_lr = curr_lr =     [9.800668896321071e-06] [9.800668896321071e-06]
+
+[9.800668896321071e-06][9.800668896321071e-06]
+
+[9.800668896321071e-06][9.800668896321071e-06]Epoch: [0][186/500]       Time 148.999 (148.586)  Loss 4.1961 (9.0640)    VQALoss 0.0000 (0.0000) VGLoss 4.1961 (9.0640)[9.800668896321071e-06]
+
+
+
+curr_lr =  [9.800668896321071e-06]
+curr_lr = curr_lr = curr_lr = curr_lr =     [9.799331103678931e-06][9.799331103678931e-06]
+
+[9.799331103678931e-06]
+[9.799331103678931e-06]
+curr_lr =  [9.799331103678931e-06]
+curr_lr =  [9.799331103678931e-06]
+curr_lr =  [9.799331103678931e-06]
+curr_lr =  [9.799331103678931e-06]
+curr_lr =  [9.79799331103679e-06]
+curr_lr = curr_lr =   [9.79799331103679e-06][9.79799331103679e-06]
+
+curr_lr =  curr_lr = [9.79799331103679e-06] 
+[9.79799331103679e-06]curr_lr = 
+ [9.79799331103679e-06]
+curr_lr =  [9.79799331103679e-06]
+curr_lr =  [9.79799331103679e-06]
+curr_lr =  curr_lr = curr_lr = [9.796655518394649e-06] 
+ [9.796655518394649e-06]
+[9.796655518394649e-06]
+curr_lr =  curr_lr = [9.796655518394649e-06]
+ [9.796655518394649e-06]
+curr_lr =  curr_lr =  [9.796655518394649e-06][9.796655518394649e-06]
+
+curr_lr =  [9.796655518394649e-06]
+[2024-02-19 10:11:15,613] [INFO] [logging.py:96:log_dist] [Rank 0] step=190, skipped=22, lr=[9.795986622073579e-06], mom=[(0.9, 0.95)]
+curr_lr =  curr_lr = curr_lr = curr_lr =  [9.795317725752509e-06] 
+ [9.795317725752509e-06]
+[9.795317725752509e-06][9.795317725752509e-06]
+
+curr_lr =  [9.795317725752509e-06]
+curr_lr =  [9.795317725752509e-06]curr_lr = 
+ [9.795317725752509e-06]
+[2024-02-19 10:11:15,813] [INFO] [timer.py:260:stop] epoch=0/micro_step=3800/global_step=190, RunningAvgSamplesPerSec=16.707009039579987, CurrSamplesPerSec=17.243028438361687, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.795317725752509e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =     curr_lr =   Epoch: [0][191/500] Time 148.034 (148.368)  Loss 6.0503 (9.1941)    VQALoss 0.0000 (0.0000) VGLoss 6.0503 (9.1941)[9.793979933110369e-06] [9.793979933110369e-06][9.793979933110369e-06][9.793979933110369e-06][9.793979933110369e-06]
+
+[9.793979933110369e-06]
+
+
+
+
+[9.793979933110369e-06]
+curr_lr =  [9.793979933110369e-06]
+curr_lr = curr_lr =   [9.792642140468229e-06]
+[9.792642140468229e-06]
+curr_lr =  [9.792642140468229e-06]
+curr_lr =  [9.792642140468229e-06]
+curr_lr =  [9.792642140468229e-06]
+curr_lr =  [9.792642140468229e-06]
+curr_lr =  [9.792642140468229e-06]
+curr_lr =  [9.792642140468229e-06]
+curr_lr =  curr_lr = [9.791304347826089e-06]curr_lr = curr_lr = 
+   [9.791304347826089e-06]
+[9.791304347826089e-06][9.791304347826089e-06]
+
+curr_lr =  [9.791304347826089e-06]
+curr_lr =  [9.791304347826089e-06]
+curr_lr =  [9.791304347826089e-06]
+curr_lr =  [9.791304347826089e-06]
+curr_lr =  curr_lr =  [9.789966555183947e-06]
+curr_lr = [9.789966555183947e-06]
+ [9.789966555183947e-06]
+curr_lr =  curr_lr = [9.789966555183947e-06]
+ [9.789966555183947e-06]
+curr_lr = curr_lr =   [9.789966555183947e-06]
+[9.789966555183947e-06]
+curr_lr =  [9.789966555183947e-06]
+curr_lr =  [9.788628762541807e-06]curr_lr = curr_lr = 
+  curr_lr = [9.788628762541807e-06][9.788628762541807e-06]
+
+ curr_lr = [9.788628762541807e-06] 
+[9.788628762541807e-06]
+curr_lr =  [9.788628762541807e-06]
+curr_lr =  [9.788628762541807e-06]
+curr_lr =  [9.788628762541807e-06]
+curr_lr = curr_lr = curr_lr = curr_lr =   curr_lr = Epoch: [0][196/500] Time 149.348 (148.795)  Loss 8.9286 (9.3039)    VQALoss 0.0000 (0.0000) VGLoss 8.9286 (9.3039)  
+curr_lr = curr_lr =   [9.787290969899667e-06][9.787290969899667e-06]
+
+[9.787290969899667e-06][9.787290969899667e-06][9.787290969899667e-06]
+
+
+ [9.787290969899667e-06]
+[9.787290969899667e-06]
+curr_lr =  [9.787290969899667e-06]
+curr_lr =  curr_lr = [9.785953177257525e-06]
+ curr_lr =  [9.785953177257525e-06]
+[9.785953177257525e-06]
+curr_lr = curr_lr = curr_lr =    [9.785953177257525e-06][9.785953177257525e-06]
+
+[9.785953177257525e-06]
+curr_lr =  [9.785953177257525e-06]
+curr_lr =  [9.785953177257525e-06]
+curr_lr = curr_lr = curr_lr =    [9.784615384615387e-06]
+[9.784615384615387e-06]
+[9.784615384615387e-06]
+curr_lr = curr_lr =   curr_lr = [9.784615384615387e-06]
+[9.784615384615387e-06]
+ [9.784615384615387e-06]
+curr_lr =  [9.784615384615387e-06]
+curr_lr =  [9.784615384615387e-06]
+curr_lr =  curr_lr = curr_lr = [9.783277591973245e-06] 
+curr_lr =   [9.783277591973245e-06]
+[9.783277591973245e-06]
+[9.783277591973245e-06]
+curr_lr = curr_lr =   [9.783277591973245e-06]
+[9.783277591973245e-06]
+curr_lr =  [9.783277591973245e-06]
+curr_lr =  [9.783277591973245e-06]
+[2024-02-19 10:36:01,779] [INFO] [logging.py:96:log_dist] [Rank 0] step=200, skipped=22, lr=[9.782608695652175e-06], mom=[(0.9, 0.95)]
+curr_lr =  [9.781939799331105e-06]
+curr_lr = curr_lr =   [9.781939799331105e-06]
+[9.781939799331105e-06]
+curr_lr = curr_lr =   [9.781939799331105e-06]
+[9.781939799331105e-06]
+curr_lr =  [9.781939799331105e-06]
+curr_lr =  [9.781939799331105e-06]
+[2024-02-19 10:36:01,979] [INFO] [timer.py:260:stop] epoch=0/micro_step=4000/global_step=200, RunningAvgSamplesPerSec=16.73296594186646, CurrSamplesPerSec=17.204459311240043, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.781939799331105e-06]
+curr_lr = curr_lr = curr_lr = curr_lr =  curr_lr = curr_lr =   curr_lr =    [9.780602006688965e-06] 
+[9.780602006688965e-06][9.780602006688965e-06]
+
+[9.780602006688965e-06][9.780602006688965e-06][9.780602006688965e-06]Epoch: [0][201/500]        Time 145.374 (147.906)  Loss 7.7817 (9.0196)    VQALoss 0.0000 (0.0000) VGLoss 7.7817 (9.0196)[9.780602006688965e-06]
+
+
+
+
+curr_lr =  [9.780602006688965e-06]
+[2024-02-19 10:38:31,471] [INFO] [logging.py:96:log_dist] [Rank 0] [Torch] Checkpoint global_step201 is about to be saved!
+[2024-02-19 10:38:43,231] [INFO] [logging.py:96:log_dist] [Rank 0] Saving model checkpoint: ./outputs/epoch_0/global_step201/mp_rank_00_model_states.pt
+[2024-02-19 10:38:43,231] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step201/mp_rank_00_model_states.pt...
+[2024-02-19 10:40:58,570] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step201/mp_rank_00_model_states.pt.
+[2024-02-19 10:40:59,865] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step201/zero_pp_rank_0_mp_rank_00_optim_states.pt...
+[2024-02-19 10:40:59,865] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step201/zero_pp_rank_3_mp_rank_00_optim_states.pt...
+[2024-02-19 10:40:59,865] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step201/zero_pp_rank_2_mp_rank_00_optim_states.pt...
+[2024-02-19 10:40:59,865] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step201/zero_pp_rank_1_mp_rank_00_optim_states.pt...
+[2024-02-19 10:40:59,865] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step201/zero_pp_rank_7_mp_rank_00_optim_states.pt...
+[2024-02-19 10:40:59,865] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step201/zero_pp_rank_6_mp_rank_00_optim_states.pt...
+[2024-02-19 10:40:59,865] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step201/zero_pp_rank_4_mp_rank_00_optim_states.pt...
+[2024-02-19 10:40:59,865] [INFO] [torch_checkpoint_engine.py:21:save] [Torch] Saving ./outputs/epoch_0/global_step201/zero_pp_rank_5_mp_rank_00_optim_states.pt...
+[2024-02-19 10:41:03,848] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step201/zero_pp_rank_4_mp_rank_00_optim_states.pt.
+[2024-02-19 10:41:03,848] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step201/zero_pp_rank_4_mp_rank_00_optim_states.pt
+[2024-02-19 10:41:03,848] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step201 is ready now!
+[2024-02-19 10:41:03,938] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step201/zero_pp_rank_2_mp_rank_00_optim_states.pt.
+[2024-02-19 10:41:03,939] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step201/zero_pp_rank_2_mp_rank_00_optim_states.pt
+[2024-02-19 10:41:03,939] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step201 is ready now!
+[2024-02-19 10:41:03,965] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step201/zero_pp_rank_7_mp_rank_00_optim_states.pt.
+[2024-02-19 10:41:03,965] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step201/zero_pp_rank_7_mp_rank_00_optim_states.pt
+[2024-02-19 10:41:03,966] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step201 is ready now!
+[2024-02-19 10:41:03,966] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step201/zero_pp_rank_6_mp_rank_00_optim_states.pt.
+[2024-02-19 10:41:03,966] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step201/zero_pp_rank_6_mp_rank_00_optim_states.pt
+[2024-02-19 10:41:03,966] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step201 is ready now!
+[2024-02-19 10:41:04,076] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step201/zero_pp_rank_5_mp_rank_00_optim_states.pt.
+[2024-02-19 10:41:04,076] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step201/zero_pp_rank_5_mp_rank_00_optim_states.pt
+[2024-02-19 10:41:04,076] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step201 is ready now!
+[2024-02-19 10:41:04,146] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step201/zero_pp_rank_1_mp_rank_00_optim_states.pt.
+[2024-02-19 10:41:04,147] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step201/zero_pp_rank_1_mp_rank_00_optim_states.pt
+[2024-02-19 10:41:04,147] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step201 is ready now!
+[2024-02-19 10:41:04,193] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step201/zero_pp_rank_3_mp_rank_00_optim_states.pt.
+[2024-02-19 10:41:04,193] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step201/zero_pp_rank_3_mp_rank_00_optim_states.pt
+[2024-02-19 10:41:04,193] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step201 is ready now!
+[2024-02-19 10:41:04,270] [INFO] [torch_checkpoint_engine.py:23:save] [Torch] Saved ./outputs/epoch_0/global_step201/zero_pp_rank_0_mp_rank_00_optim_states.pt.
+[2024-02-19 10:41:04,278] [INFO] [engine.py:3381:_save_zero_checkpoint] zero checkpoint saved ./outputs/epoch_0/global_step201/zero_pp_rank_0_mp_rank_00_optim_states.pt
+[2024-02-19 10:41:04,278] [INFO] [torch_checkpoint_engine.py:33:commit] [Torch] Checkpoint global_step201 is ready now!
+curr_lr =  curr_lr = curr_lr =   [9.779264214046823e-06]
+[9.779264214046823e-06][9.779264214046823e-06]
+
+curr_lr =  curr_lr = curr_lr = [9.779264214046823e-06]
+  [9.779264214046823e-06]
+[9.779264214046823e-06]
+curr_lr =  [9.779264214046823e-06]
+curr_lr =  [9.779264214046823e-06]
+curr_lr = curr_lr = curr_lr =    curr_lr =  [9.777926421404683e-06][9.777926421404683e-06][9.777926421404683e-06]
+
+
+[9.777926421404683e-06]
+curr_lr =  [9.777926421404683e-06]
+curr_lr =  [9.777926421404683e-06]
+curr_lr =  curr_lr = [9.777926421404683e-06]
+ [9.777926421404683e-06]
+curr_lr =  [9.776588628762543e-06]
+curr_lr =  curr_lr = [9.776588628762543e-06] 
+[9.776588628762543e-06]
+curr_lr =  [9.776588628762543e-06]
+curr_lr =  [9.776588628762543e-06]
+curr_lr = curr_lr =   [9.776588628762543e-06][9.776588628762543e-06]
+
+curr_lr =  [9.776588628762543e-06]
+curr_lr =  curr_lr = curr_lr = [9.775250836120403e-06] curr_lr = 
+ [9.775250836120403e-06]
+ [9.775250836120403e-06]
+[9.775250836120403e-06]
+curr_lr = curr_lr =   [9.775250836120403e-06]
+[9.775250836120403e-06]
+curr_lr =  [9.775250836120403e-06]
+curr_lr =  [9.775250836120403e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =    curr_lr =    [9.77391304347826e-06] [9.77391304347826e-06]
+[9.77391304347826e-06]
+Epoch: [0][206/500]     Time 148.542 (180.176)  Loss 16.8365 (9.1600)   VQALoss 0.0000 (0.0000) VGLoss 16.8365 (9.1600)
+[9.77391304347826e-06]
+
+[9.77391304347826e-06]
+[9.77391304347826e-06]
+[9.77391304347826e-06]
+curr_lr =  [9.77391304347826e-06]
+curr_lr = curr_lr =   curr_lr = [9.772575250836122e-06][9.772575250836122e-06]
+
+curr_lr =   [9.772575250836122e-06]
+[9.772575250836122e-06]
+curr_lr =  [9.772575250836122e-06]
+curr_lr = curr_lr =   [9.772575250836122e-06]
+[9.772575250836122e-06]
+curr_lr =  [9.772575250836122e-06]
+curr_lr = curr_lr =   curr_lr = curr_lr =  [9.77123745819398e-06][9.77123745819398e-06] 
+
+[9.77123745819398e-06]
+[9.77123745819398e-06]
+curr_lr =  curr_lr = [9.77123745819398e-06]
+ [9.77123745819398e-06]
+curr_lr =  [9.77123745819398e-06]
+curr_lr =  [9.77123745819398e-06]
+curr_lr = curr_lr = curr_lr =    [9.76989966555184e-06][9.76989966555184e-06]
+
+[9.76989966555184e-06]
+curr_lr =  [9.76989966555184e-06]
+curr_lr =  [9.76989966555184e-06]
+curr_lr =  [9.76989966555184e-06]
+curr_lr =  [9.76989966555184e-06]
+curr_lr =  [9.76989966555184e-06]
+[2024-02-19 11:03:21,669] [INFO] [logging.py:96:log_dist] [Rank 0] step=210, skipped=22, lr=[9.76923076923077e-06], mom=[(0.9, 0.95)]
+curr_lr = curr_lr = curr_lr =    [9.7685618729097e-06]
+[9.7685618729097e-06][9.7685618729097e-06]
+curr_lr = 
+ [9.7685618729097e-06]
+curr_lr =  [9.7685618729097e-06]
+curr_lr =  curr_lr =  [9.7685618729097e-06]
+[9.7685618729097e-06]
+[2024-02-19 11:03:21,872] [INFO] [timer.py:260:stop] epoch=0/micro_step=4200/global_step=210, RunningAvgSamplesPerSec=16.758214227976385, CurrSamplesPerSec=17.21644675093337, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.7685618729097e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =    curr_lr =  Epoch: [0][211/500]   Time 148.456 (148.420)  Loss 6.9790 (8.9222)    VQALoss 0.0000 (0.0000) VGLoss 6.9790 (8.9222) [9.767224080267559e-06]  [9.767224080267559e-06][9.767224080267559e-06]
+
+
+[9.767224080267559e-06]
+[9.767224080267559e-06]
+[9.767224080267559e-06]
+[9.767224080267559e-06]
+
+curr_lr =  [9.767224080267559e-06]
+curr_lr = curr_lr =   [9.765886287625419e-06][9.765886287625419e-06]
+
+curr_lr =  [9.765886287625419e-06]
+curr_lr = curr_lr = curr_lr =    [9.765886287625419e-06]
+[9.765886287625419e-06]
+[9.765886287625419e-06]
+curr_lr =  [9.765886287625419e-06]
+curr_lr =  [9.765886287625419e-06]
+curr_lr =  curr_lr = curr_lr = [9.764548494983278e-06] 
+ [9.764548494983278e-06]
+curr_lr = [9.764548494983278e-06] 
+[9.764548494983278e-06]curr_lr = 
+ [9.764548494983278e-06]
+curr_lr =  [9.764548494983278e-06]
+curr_lr =  [9.764548494983278e-06]
+curr_lr =  [9.764548494983278e-06]
+curr_lr = curr_lr =   curr_lr =  [9.763210702341138e-06]
+[9.763210702341138e-06]
+[9.763210702341138e-06]
+curr_lr =  curr_lr = [9.763210702341138e-06]
+curr_lr =   [9.763210702341138e-06]
+[9.763210702341138e-06]
+curr_lr =  [9.763210702341138e-06]
+curr_lr =  [9.763210702341138e-06]
+curr_lr =  [9.761872909698997e-06]
+curr_lr = curr_lr =  curr_lr =  curr_lr =   [9.761872909698997e-06][9.761872909698997e-06]
+
+[9.761872909698997e-06][9.761872909698997e-06]
+
+curr_lr =  [9.761872909698997e-06]
+curr_lr =  [9.761872909698997e-06]
+curr_lr =  [9.761872909698997e-06]
+curr_lr = curr_lr = curr_lr = curr_lr =  curr_lr = curr_lr =    curr_lr =    [9.760535117056858e-06][9.760535117056858e-06][9.760535117056858e-06][9.760535117056858e-06]
+[9.760535117056858e-06]
+
+
+
+[9.760535117056858e-06][9.760535117056858e-06]
+
+Epoch: [0][216/500]     Time 149.340 (148.275)  Loss 6.3867 (9.4006)    VQALoss 0.0000 (0.0000) VGLoss 6.3867 (9.4006)
+curr_lr =  [9.760535117056858e-06]
+curr_lr = curr_lr =   curr_lr =  curr_lr = [9.759197324414716e-06]
+[9.759197324414716e-06]
+[9.759197324414716e-06] 
+[9.759197324414716e-06]
+curr_lr =  curr_lr = [9.759197324414716e-06] 
+[9.759197324414716e-06]
+curr_lr =  [9.759197324414716e-06]
+curr_lr =  [9.759197324414716e-06]
+curr_lr = curr_lr =   curr_lr = [9.757859531772576e-06]
+curr_lr =  [9.757859531772576e-06]
+ [9.757859531772576e-06]
+[9.757859531772576e-06]
+curr_lr =  curr_lr = [9.757859531772576e-06] 
+[9.757859531772576e-06]
+curr_lr =  [9.757859531772576e-06]
+curr_lr =  [9.757859531772576e-06]
+curr_lr = curr_lr =   curr_lr = [9.756521739130436e-06]
+[9.756521739130436e-06] 
+curr_lr =  [9.756521739130436e-06]
+[9.756521739130436e-06]
+curr_lr =  curr_lr = [9.756521739130436e-06]
+ [9.756521739130436e-06]
+curr_lr =  [9.756521739130436e-06]
+curr_lr =  [9.756521739130436e-06]
+[2024-02-19 11:28:05,436] [INFO] [logging.py:96:log_dist] [Rank 0] step=220, skipped=22, lr=[9.755852842809366e-06], mom=[(0.9, 0.95)]
+curr_lr = curr_lr =   [9.755183946488294e-06]
+[9.755183946488294e-06]
+curr_lr =  curr_lr =  [9.755183946488294e-06]
+[9.755183946488294e-06]
+curr_lr =  curr_lr = [9.755183946488294e-06]
+ [9.755183946488294e-06]
+curr_lr =  [9.755183946488294e-06]
+[2024-02-19 11:28:05,638] [INFO] [timer.py:260:stop] epoch=0/micro_step=4400/global_step=220, RunningAvgSamplesPerSec=16.780766210318742, CurrSamplesPerSec=17.200381698719234, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.755183946488294e-06]
+curr_lr = curr_lr = curr_lr =    curr_lr = curr_lr = curr_lr =  [9.753846153846154e-06][9.753846153846154e-06][9.753846153846154e-06]Epoch: [0][221/500]        Time 148.723 (148.532)  Loss 12.0466 (8.7274)   VQALoss 0.0000 (0.0000) VGLoss 12.0466 (8.7274)
+ 
+
+
+ curr_lr = [9.753846153846154e-06]
+[9.753846153846154e-06]
+ [9.753846153846154e-06]
+[9.753846153846154e-06]
+curr_lr =  [9.753846153846154e-06]
+curr_lr =  [9.752508361204014e-06]curr_lr = 
+ curr_lr = curr_lr =  [9.752508361204014e-06] 
+[9.752508361204014e-06]curr_lr = 
+curr_lr = [9.752508361204014e-06]
+  [9.752508361204014e-06][9.752508361204014e-06]
+
+curr_lr =  [9.752508361204014e-06]
+curr_lr =  [9.752508361204014e-06]
+curr_lr = curr_lr = curr_lr =   curr_lr =   [9.751170568561874e-06][9.751170568561874e-06]
+
+[9.751170568561874e-06][9.751170568561874e-06]
+
+curr_lr = curr_lr =   [9.751170568561874e-06][9.751170568561874e-06]
+
+curr_lr =  [9.751170568561874e-06]
+curr_lr =  [9.751170568561874e-06]
+curr_lr =  curr_lr =  [9.749832775919732e-06]
+curr_lr = [9.749832775919732e-06] 
+[9.749832775919732e-06]
+curr_lr =  curr_lr = [9.749832775919732e-06] 
+[9.749832775919732e-06]
+curr_lr =  [9.749832775919732e-06]
+curr_lr =  [9.749832775919732e-06]curr_lr = 
+ [9.749832775919732e-06]
+curr_lr =  curr_lr = curr_lr = [9.748494983277594e-06]curr_lr =  
+  [9.748494983277594e-06][9.748494983277594e-06][9.748494983277594e-06]
+
+
+curr_lr =  curr_lr =  [9.748494983277594e-06]
+[9.748494983277594e-06]
+curr_lr =  [9.748494983277594e-06]
+curr_lr =  [9.748494983277594e-06]
+curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr = curr_lr =        [9.747157190635452e-06][9.747157190635452e-06][9.747157190635452e-06][9.747157190635452e-06][9.747157190635452e-06]
+[9.747157190635452e-06]
+
+
+
+[9.747157190635452e-06]
+Epoch: [0][226/500]     Time 149.370 (148.468)  Loss 9.2152 (8.8491)    VQALoss 0.0000 (0.0000) VGLoss 9.2152 (8.8491)
+
+curr_lr =  [9.747157190635452e-06]
+curr_lr = curr_lr =   curr_lr =  [9.745819397993312e-06]
+[9.745819397993312e-06]
+[9.745819397993312e-06]
+curr_lr =  [9.745819397993312e-06]
+curr_lr =  [9.745819397993312e-06]
+curr_lr =  [9.745819397993312e-06]
+curr_lr =  curr_lr = [9.745819397993312e-06]
+ [9.745819397993312e-06]
+curr_lr = curr_lr = curr_lr = curr_lr =     [9.744481605351172e-06][9.744481605351172e-06]
+
+[9.744481605351172e-06]
+[9.744481605351172e-06]
+curr_lr =  curr_lr =  [9.744481605351172e-06]
+[9.744481605351172e-06]
+curr_lr =  [9.744481605351172e-06]
+curr_lr =  [9.744481605351172e-06]
+curr_lr =  curr_lr =  [9.74314381270903e-06]
+curr_lr = [9.74314381270903e-06]
+ [9.74314381270903e-06]
+curr_lr =  curr_lr = [9.74314381270903e-06]
+ [9.74314381270903e-06]
+curr_lr = curr_lr =   [9.74314381270903e-06]
+[9.74314381270903e-06]
+curr_lr =  [9.74314381270903e-06]
+[2024-02-19 11:52:50,594] [INFO] [logging.py:96:log_dist] [Rank 0] step=230, skipped=22, lr=[9.74247491638796e-06], mom=[(0.9, 0.95)]
+curr_lr = curr_lr =   [9.74180602006689e-06]
+curr_lr = [9.74180602006689e-06] 
+curr_lr = [9.74180602006689e-06]
+ curr_lr =  [9.74180602006689e-06]
+[9.74180602006689e-06]
+curr_lr =  [9.74180602006689e-06]
+curr_lr =  [9.74180602006689e-06]
+[2024-02-19 11:52:50,797] [INFO] [timer.py:260:stop] epoch=0/micro_step=4600/global_step=230, RunningAvgSamplesPerSec=16.80071441051349, CurrSamplesPerSec=17.20041840001949, MemAllocated=27.34GB, MaxMemAllocated=40.63GB
+curr_lr =  [9.74180602006689e-06]
+curr_lr = curr_lr =  curr_lr = curr_lr =  curr_lr = curr_lr = curr_lr = [9.74046822742475e-06]    [9.74046822742475e-06]
+Epoch: [0][231/500]     Time 148.629 (148.545)  Loss 8.4539 (8.8802)    VQALoss 0.0000 (0.0000) VGLoss 8.4539 (8.8802) 
+[9.74046822742475e-06][9.74046822742475e-06][9.74046822742475e-06][9.74046822742475e-06]
+
+
+
+[9.74046822742475e-06]
+
+curr_lr =  [9.74046822742475e-06]
+curr_lr =  [9.73913043478261e-06]
+curr_lr = curr_lr =   [9.73913043478261e-06]
+[9.73913043478261e-06]curr_lr = 
+ curr_lr = [9.73913043478261e-06]
+ [9.73913043478261e-06]
+curr_lr =  [9.73913043478261e-06]
+curr_lr =  curr_lr =  [9.73913043478261e-06]
+[9.73913043478261e-06]
+curr_lr = curr_lr =   [9.737792642140468e-06][9.737792642140468e-06]
+
+curr_lr =  [9.737792642140468e-06]
+curr_lr =  [9.737792642140468e-06]
+curr_lr =  curr_lr = [9.737792642140468e-06]
+ [9.737792642140468e-06]
+curr_lr =  [9.737792642140468e-06]
+curr_lr =  [9.737792642140468e-06]
+curr_lr =  curr_lr =  [9.73645484949833e-06]
+curr_lr = [9.73645484949833e-06] 
+curr_lr =  [9.73645484949833e-06]
+[9.73645484949833e-06]
+curr_lr =  [9.73645484949833e-06]
+curr_lr =  [9.73645484949833e-06]
+curr_lr =  [9.73645484949833e-06]
+curr_lr =  [9.73645484949833e-06]
+curr_lr =  curr_lr =  [9.735117056856188e-06]
+curr_lr = [9.735117056856188e-06]
+ [9.735117056856188e-06]
+curr_lr =  curr_lr = [9.735117056856188e-06]
+ curr_lr = [9.735117056856188e-06]
+ [9.735117056856188e-06]
+curr_lr =  [9.735117056856188e-06]
+curr_lr =  [9.735117056856188e-06]
+curr_lr = curr_lr =  curr_lr = curr_lr =  curr_lr = curr_lr = [9.733779264214048e-06]  
+curr_lr = [9.733779264214048e-06] 
+ [9.733779264214048e-06]Epoch: [0][236/500]     Time 149.133 (148.563)  Loss 6.9271 (9.3474)    VQALoss 0.0000 (0.0000) VGLoss 6.9271 (9.3474) 
+[9.733779264214048e-06]
+[9.733779264214048e-06]
+
+[9.733779264214048e-06]
+[9.733779264214048e-06]
+curr_lr =  [9.733779264214048e-06]
