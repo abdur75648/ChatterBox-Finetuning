@@ -1,36 +1,36 @@
 [
 {
-    "image_id": "403385",
-    "filename": "000000403385.jpg",
+    "image_id": "1",
+    "filename": "1.png",
     "wh": [
-        640,
-        511
+        2560,
+        1208
     ],
-    "catgory": "toilet",
-    "question": "Where is the toilet?",
-    "answer": "<toilet:[411.1, 237.7, 93.00999999999999, 242.3]>",
+    "catgory": "button",
+    "question": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: None \nGive me the next action?",
+    "answer": "CLICK: Click on the Search  button. <button: [26, 228, 377, 278]>",
     "gt_box": [
-        411.1,
-        237.7,
-        93.00999999999999,
-        242.3
+        26,
+        228,
+        377,
+        278
     ]
     },
     {
-    "image_id": "403385",
-    "filename": "000000403385.jpg",
+    "image_id": "2",
+    "filename": "2.jpg",
     "wh": [
-        640,
-        511
+        2560,
+        1214
     ],
-    "catgory": "sink",
-    "question": "Where is the sink?",
-    "answer": "<sink:[9.21, 313.62, 142.71, 78.25999999999999]>",
+    "catgory": "button",
+    "question": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: CLICK: Click on the Search button \nGive me the next action?",
+    "answer": "CLICK: Click on the More Filters  button. <button: [740, 472, 958, 526]>",
     "gt_box": [
-        9.21,
-        313.62,
-        142.71,
-        78.25999999999999
+        740,
+        472,
+        958,
+        526
     ]
     }
 ]
