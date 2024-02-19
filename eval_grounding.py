@@ -215,7 +215,7 @@ def main(args):
         load_in_8bit=args.load_in_8bit,
         load_in_4bit=args.load_in_4bit,
         vision_tower=args.vision_tower,
-        vision_tower_aux=args.vision_tower_aux,
+        # vision_tower_aux=args.vision_tower_aux,
         vision_branch_args=vision_args,
     )
   
