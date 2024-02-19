@@ -17,6 +17,7 @@ import torchvision
 
 def parse_args(args):
     parser = argparse.ArgumentParser(description="ChatterBox Chat")
+    parser.add_argument("--local_rank", default=0, type=int, help="node rank")
     parser.add_argument("--version", default="/path/to/llava-llama-2-13b-chat-lightning-preview")
     parser.add_argument("--vis_save_path", default="./vis_output", type=str)
     parser.add_argument("--vision_pretrained", default="groundingdino_swinb_cogcoor.pth", type=str)
