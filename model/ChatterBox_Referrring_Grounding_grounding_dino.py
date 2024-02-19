@@ -342,7 +342,7 @@ class ChatterBox(nn.Module):
                 bboxes = bboxes_gt_list[i]
                 labels = label_gt_list[i]      
                 target.append({
-                        'boxes': bboxes[0].to(images.device),  # tensor([[0.6243, 0.0892, 0.0247, 0.0820], [0.4349, 0.1022, 0.3568, 0.2044]]), 
+                        'boxes': bboxes[0].unsqueeze(0).to(images.device),  # tensor([[0.6243, 0.0892, 0.0247, 0.0820], [0.4349, 0.1022, 0.3568, 0.2044]]), 
                         'labels': torch.tensor([0]).to(images.device)
                 })
             sample = NestedTensor(

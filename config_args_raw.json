@@ -23,6 +23,6 @@
   "world_size": 1,
   "dist_url": "env://",
   "rank": 0,
-  "local_rank": 0,
+  "local_rank": 5,
   "amp": false
 }

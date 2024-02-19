@@ -1,13 +1,10 @@
-llava-llama-2-13b-chat-lightning-preview/mm_projector.bin
-llava-llama-2-13b-chat-lightning-preview/pytorch_model-00001-of-00003.bin
-llava-llama-2-13b-chat-lightning-preview/pytorch_model-00002-of-00003.bin
-llava-llama-2-13b-chat-lightning-preview/pytorch_model-00002-of-00003.bin.1
-llava-llama-2-13b-chat-lightning-preview/pytorch_model-00003-of-00003.bin
-llava-llama-2-13b-chat-lightning-preview/
+llava-llama-2-13b-chat-lightning-preview/*
 groundingdino_swinb_cogcoor.pth
+Augmented-Apollo-MLLM-data/
+CB-300K/
 mmcv-1.4.7/
 runs/
-CB-300K/
+outputs/
 __MACOSX/
 __pycache__/
 *.pth
@@ -16,4 +13,5 @@ __pycache__/
 *.h5
 *.ckpt
 *.log
+    
     

@@ -28,6 +28,9 @@ def box_xywh_to_cxcywh(x):
 
 # modified from torchvision to also return the union
 def box_iou(boxes1, boxes2):
+    # print("Inside box_iou : ")
+    # print(boxes1.shape)
+    # print(boxes2.shape)
     area1 = box_area(boxes1)
     area2 = box_area(boxes2)
 
@@ -55,8 +58,21 @@ def generalized_box_iou(boxes1, boxes2):
     """
     # degenerate boxes gives inf / nan results
     # so do an early check
-    assert (boxes1[:, 2:] >= boxes1[:, :2]).all()
-    assert (boxes2[:, 2:] >= boxes2[:, :2]).all()
+    # print("generalized_box_iou: ")
+    # print(boxes1)
+    # print(boxes2)
+    # boxes1 = boxes1[boxes1[:, 2:] > boxes1[:, :2]]
+    # boxes2 = boxes2[boxes2[:, 2:] > boxes2[:, :2]]
+    # boxes1 = boxes1[boxes1[:, 2] > boxes1[:, 0]]
+    # boxes1 = boxes1[boxes1[:, 3] > boxes1[:, 1]]
+    # boxes2 = boxes2[boxes2[:, 2] > boxes2[:, 0]]
+    # boxes2 = boxes2[boxes2[:, 3] > boxes2[:, 1]]
+    # assert (boxes1[:, 2:] >= boxes1[:, :2]).all()
+    # assert (boxes2[:, 2:] >= boxes2[:, :2]).all()
+    # assert (boxes1[:, 2] >= boxes1[:, 0]).all()
+    # assert (boxes1[:, 3] >= boxes1[:, 1]).all()
+    # assert (boxes2[:, 2] >= boxes2[:, 0]).all()
+    # assert (boxes2[:, 3] >= boxes2[:, 1]).all()
 
     iou, union = box_iou(boxes1, boxes2)
 

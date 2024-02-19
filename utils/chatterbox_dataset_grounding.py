@@ -2,6 +2,7 @@ import glob
 import json
 import os
 import random
+import copy
 
 import cv2
 import numpy as np
@@ -63,7 +64,7 @@ class RefCOCOGroundingDataset(torch.utils.data.Dataset):
         self.jack_json = jack_json['data']
 
     def __len__(self):
-        return self.samples_per_epoch
+        return len(self.jack_json)
 
     def transform(self, x):
         trans = T.Compose([
@@ -265,7 +266,7 @@ class COCOGroundingDataset(torch.utils.data.Dataset):
         self.jack_json = jack_json['data']
 
     def __len__(self):
-        return self.samples_per_epoch
+        return len(self.jack_json)
 
     def transform(self, x):
         trans = T.Compose([
@@ -446,13 +447,11 @@ class MyGroundingDataset(torch.utils.data.Dataset):
             tokenizer,
             vision_tower,
             anno_path,
-            samples_per_epoch=500 * 8 * 2 * 10,
             precision: str = "fp32",
             image_size: int = 224,
             num_classes_per_sample: int = 3,
             query_bbox_rate: float = 0.5,  # note to use this args or not ?
     ):
-        self.samples_per_epoch = samples_per_epoch
         self.num_classes_per_sample = num_classes_per_sample
         self.query_bbox_rate = query_bbox_rate
 
@@ -463,17 +462,17 @@ class MyGroundingDataset(torch.utils.data.Dataset):
         # self.transform = dino_transform  # transforms for dino detection
         self.clip_image_processor = CLIPImageProcessor.from_pretrained(vision_tower)
         self.data_path = os.path.join(base_root)
-        with open(os.path.join(anno_path, 'CB_GND.json')) as f:
+        with open(os.path.join(anno_path, 'apollo_8k_GND.json')) as f:
             jack_json = json.load(f)
         self.jack_json = jack_json['data']
 
         self.replace_names = ['the region', 'this region']
 
-        self.first_q = "This is an image. Can you answer the next questions about the specific regions in the image?  "
-        self.first_a = "Sure, I will answer your questions.  "
+        self.first_q = "This is an image of a user interface. Given a task and previous action done on the app, can you please tell me the next step to complete the task"
+        self.first_a = "Sure, I can provide the next action you need to take on this interface. Please provide the task details, image, and any actions you've already taken."
 
     def __len__(self):
-        return self.samples_per_epoch
+        return len(self.jack_json)
 
     def transform(self, x):
         trans = T.Compose([
@@ -530,131 +529,130 @@ class MyGroundingDataset(torch.utils.data.Dataset):
 
     def __getitem__(self, idx):
 
-        while True:
-            idx = random.randint(0, len(self.jack_json) - 1)
-            image_path = os.path.join(self.data_path, self.jack_json[idx]['image'])
-            img = cv2.imread(image_path)
-            images_ori = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-            ori_size = images_ori.shape[:2]
+        idx = random.randint(0, len(self.jack_json) - 1)
+        image_path = os.path.join(self.data_path, self.jack_json[idx]['image'])
+        img = cv2.imread(image_path)
+        images_ori = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        ori_size = images_ori.shape[:2]
 
-            # preprocess images for clip
-            images_clip = self.clip_image_processor.preprocess(images_ori, return_tensors="pt")[
-                "pixel_values"
-            ][0]
-            image_token_len = (images_clip.shape[1] // 14) * (
-                    images_clip.shape[2] // 14
-            )  # FIXME: 14 is hardcoded patch size
+        # preprocess images for clip
+        images_clip = self.clip_image_processor.preprocess(images_ori, return_tensors="pt")[
+            "pixel_values"
+        ][0]
+        image_token_len = (images_clip.shape[1] // 14) * (
+                images_clip.shape[2] // 14
+        )  # FIXME: 14 is hardcoded patch size
 
-            images, _, ratios = self.transform(Image.fromarray(images_ori))  # preprocess images for dino, check this
-            # resize = images.shape[:2]
+        images, _, ratios = self.transform(Image.fromarray(images_ori))  # preprocess images for dino, check this
+        # resize = images.shape[:2]
 
-            source = self.jack_json[idx]["conversation"]
+        source = copy.deepcopy(self.jack_json[idx]["conversation"])
 
-            conv = get_default_conv_template(
-                "vicuna"
-            ).copy()  # conversation_lib.default_conversation.copy()
-            roles = {"human": conv.roles[0], "gpt": conv.roles[1]}
+        conv = get_default_conv_template(
+            "vicuna"
+        ).copy()  # conversation_lib.default_conversation.copy()
+        roles = {"human": conv.roles[0], "gpt": conv.roles[1]}
 
-            conversations = []
-            bboxes_human = []
-            bboxes_gpt = []
+        conversations = []
+        # bboxes_human = []
+        bboxes_gpt = []
 
-            replace_name = -2
-            # random sample convs from start_id -> note logical reasoning NOT has this
-            len_conv = len(source)
-            start_id = 0
-            if len_conv > 2:
-                rand_id = random.randint(0, len_conv - 1)
-                start_id = \
-                random.sample([rand_id, int(len_conv // 2), int(len_conv // 4), int(len_conv // 6), int(len_conv // 8)],
-                              1)[0]
-                start_id = start_id // 2 * 2
-                source = source[start_id:]
+        replace_name = -2
+        # random sample convs from start_id -> note logical reasoning NOT has this
+        len_conv = len(source)
+        start_id = 0
+        if len(source) != 2:
+            raise ValueError("The length of sample conversation is not 2")
 
-            if roles[source[0]["from"]] != conv.roles[0]:
-                # Skip the first one if it is not from human
-                source = source[1:]
-            conv.messages = []
+        if roles[source[0]["from"]] != conv.roles[0]:
+            raise ValueError("The first role is not human")
+        conv.messages = []
 
-            label = -1
-
-            for j, sentence in enumerate(source):  # note here: the model_max_length only contains about 6-7 VQAs
-                role = roles[sentence["from"]]
-                assert role == conv.roles[j % 2], f"{j}"
-
-                if j % 2 == 0:
-
-                    # 'the cup is on the desk. <cup:[238, 249, 298, 511], red and orange desk:[241, 289, 300, 390]>'
-                    # extract the bboxes string: <cup:[238, 249, 298, 511], red and orange desk:[241, 289, 300, 390]>
-                    bboxes_str = re.findall(r"<(.+?)>", sentence["value"])
+        # Here len(source) == 2
+        # j==0 means human
+        # j==1 means gpt
+        for sentence in source:
+            role = roles[sentence["from"]]
+            if sentence["from"] == "human":
+                bboxes_str = re.findall(r"<(.+?)>", sentence["value"])
+                # sentence['value'] = sentence['value'][:sentence['value'].find('<')]
+                if len(bboxes_str) > 0:
+                    print(idx)
+                    print("source = ",source)
+                    raise ValueError("The human inputs cannot contain any bounding boxes")
+                sentence["value"] = '<image>\n' + ' ' + sentence["value"] + '[VG]'  # put <image> in the most front
+            elif sentence["from"] == "gpt":
+                bboxes_str = re.findall(r"<(.+?)>", sentence["value"])
+                if len(bboxes_str) !=1:
+                    print(idx)
+                    print(bboxes_str)
+                    print(sentence["value"])
+                    print("source = ",source)
+                    raise ValueError("The gpt inputs should contain only one bounding box")
+                gt_bboxes = self.strbbox2bbox(bboxes_str)
+                
+                bboxes_gpt.append(gt_bboxes[0])
+                if '<' in sentence['value']:
                     sentence['value'] = sentence['value'][:sentence['value'].find('<')]
+            else:
+                raise ValueError("Only human and GPT source can be there")
+                
+        # for j, sentence in enumerate(source):  # note here: the model_max_length only contains about 6-7 VQAs
+        #     role = roles[sentence["from"]]
+        #     assert role == conv.roles[j % 2], f"{j}"
 
-                    bboxes_human.append([])
+        #     if j % 2 == 0:
+        #         # First One (From Human)
+        #         bboxes_str = re.findall(r"<(.+?)>", sentence["value"])
+        #         sentence['value'] = sentence['value'][:sentence['value'].find('<')]
+        #         if len(bboxes_str) > 0:
+        #             print(idx)
+        #             print("source = ",source)
+        #             raise ValueError("The human inputs cannot contain any bounding boxes")
+        #         sentence["value"] = '<image>\n' + ' ' + sentence["value"]  # put <image> in the most front
 
-                    ########################## find coco classes #########################
-                    sentence_next = source[j + 1]
-                    bboxes_str_next = re.findall(r"<(.+?)>", sentence_next["value"])
-                    bboxes_next = self.strbbox2bbox(bboxes_str_next)
-                    if len(bboxes_next) == 1:
-                        ins_name = bboxes_str_next[0].split('<')[-1].split(':')[0]
-                    ######################################################################
-                    if label != -1:
-                        sentence["value"] = sentence["value"] + '[VG]'
+        #     elif j % 2 == 1:
+        #         # Second One (From GPT)
+        #         bboxes_str = re.findall(r"<(.+?)>", sentence["value"])
+        #         if len(bboxes_str) !=1:
+        #             print(idx)
+        #             print("source = ",source)
+        #             raise ValueError("The gpt inputs should contain only one bounding box")
+        #         gt_bboxes = self.strbbox2bbox(bboxes_str)
+        #         bboxes_gpt.append(gt_bboxes[0])
+                
+        #         if '<' in sentence['value']:
+        #             sentence['value'] = sentence['value'][:sentence['value'].find('<')]
 
-                    if j == 0:
-                        sentence["value"] = '<image>\n' + ' ' + sentence["value"]  # put <image> in the most front
+            conv.append_message(role, sentence["value"])
 
-                elif j % 2 == 1:
-                    if label != -1:
-                        bboxes_str = re.findall(r"<(.+?)>", sentence["value"])
-                        gt_bboxes = self.strbbox2bbox(bboxes_str)
-                        if len(gt_bboxes) > 0:
-                            bboxes_gpt.append(gt_bboxes)
+        conversations.append(conv.get_prompt())
 
-                    if '<' in sentence['value']:
-                        sentence['value'] = sentence['value'][:sentence['value'].find('<')]
+        # replace <image> token
+        # region_token_len = 256
+        for i in range(len(conversations)):
+            replace_token = DEFAULT_IMAGE_PATCH_TOKEN * image_token_len
+            replace_token = (
+                    DEFAULT_IM_START_TOKEN + replace_token + DEFAULT_IM_END_TOKEN
+            )
+            conversations[i] = conversations[i].replace(
+                DEFAULT_IMAGE_TOKEN, replace_token
+            )
 
-                    if replace_name == j - 1:
-                        if ins_name in sentence["value"]:
-                            sentence["value"] = sentence["value"].replace(ins_name, name_re)
+        # images = self.preprocess(torch.from_numpy(images).permute(2, 0, 1).contiguous())
+        images = self.preprocess(torch.from_numpy(np.array(images)).permute(2, 0, 1).contiguous())
 
-                conv.append_message(role, sentence["value"])
-
-                if label != -1 and j % 2 == 1:
-                    break
-
-            conversations.append(conv.get_prompt())
-
-            questions = conversations
-            sampled_classes = conversations
-
-            # replace <image> token
-            # region_token_len = 256
-            for i in range(len(conversations)):
-                replace_token = DEFAULT_IMAGE_PATCH_TOKEN * image_token_len
-                replace_token = (
-                        DEFAULT_IM_START_TOKEN + replace_token + DEFAULT_IM_END_TOKEN
-                )
-                conversations[i] = conversations[i].replace(
-                    DEFAULT_IMAGE_TOKEN, replace_token
-                )
-
-            # images = self.preprocess(torch.from_numpy(images).permute(2, 0, 1).contiguous())
-            images = self.preprocess(torch.from_numpy(np.array(images)).permute(2, 0, 1).contiguous())
-
-            #### postprocess bbox
-            bboxes_gpt = self.postprocess_bbox(bboxes_gpt, ratios)  # for DINO prediction
-            # print('JackGroundingDataset >>', bboxes_gpt)
-
-            if conversations[0].count("<im_start>") == 1 and conversations[0].count("[VG]") == 1 and label != -1:
-                break
+        #### postprocess bbox
+        bboxes_gpt = self.postprocess_bbox(bboxes_gpt, ratios)  # for DINO prediction
+        
+        label = -1
 
         return (
-            images,
-            images_clip,
-            conversations,
-            bboxes_gpt,
-            [label],
+            images, # torch.Size([3, 512, 512])
+            images_clip, # torch.Size([3, 224, 224])
+            conversations, # list
+            bboxes_gpt, # list
+            [label], # list
         )
 
 
@@ -697,7 +695,7 @@ class JackGroundingDataset(torch.utils.data.Dataset):
         self.first_a = "Sure, I will answer your questions.  "
 
     def __len__(self):
-        return self.samples_per_epoch
+        return len(self.jack_json)
 
     def transform(self, x):
         trans = T.Compose([
@@ -754,98 +752,101 @@ class JackGroundingDataset(torch.utils.data.Dataset):
 
     def __getitem__(self, idx):
 
-        while True:
-            idx = random.randint(0, len(self.jack_json) - 1)
-            image_path = os.path.join(self.data_path, self.jack_json[idx]['image'])
-            img = cv2.imread(image_path)
-            images_ori = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-            ori_size = images_ori.shape[:2]
+        # while True:
+        idx = random.randint(0, len(self.jack_json) - 1)
+        image_path = os.path.join(self.data_path, self.jack_json[idx]['image'])
+        img = cv2.imread(image_path)
+        images_ori = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        ori_size = images_ori.shape[:2]
 
-            # preprocess images for clip
-            images_clip = self.clip_image_processor.preprocess(images_ori, return_tensors="pt")[
-                "pixel_values"
-            ][0]
-            image_token_len = (images_clip.shape[1] // 14) * (
-                    images_clip.shape[2] // 14
-            )  # FIXME: 14 is hardcoded patch size
+        # preprocess images for clip
+        images_clip = self.clip_image_processor.preprocess(images_ori, return_tensors="pt")[
+            "pixel_values"
+        ][0]
+        image_token_len = (images_clip.shape[1] // 14) * (
+                images_clip.shape[2] // 14
+        )  # FIXME: 14 is hardcoded patch size
 
-            images, _, ratios = self.transform(Image.fromarray(images_ori))  # preprocess images for dino, check this
-            # resize = images.shape[:2]
+        images, _, ratios = self.transform(Image.fromarray(images_ori))  # preprocess images for dino, check this
+        # resize = images.shape[:2]
 
-            source = self.jack_json[idx]["conversation"]
+        source = self.jack_json[idx]["conversation"]
 
-            conv = get_default_conv_template(
-                "vicuna"
-            ).copy()  # conversation_lib.default_conversation.copy()
-            roles = {"human": conv.roles[0], "gpt": conv.roles[1]}
+        conv = get_default_conv_template(
+            "vicuna"
+        ).copy()  # conversation_lib.default_conversation.copy()
+        roles = {"human": conv.roles[0], "gpt": conv.roles[1]}
 
-            conversations = []
-            bboxes_human = []
-            bboxes_gpt = []
+        conversations = []
+        bboxes_human = []
+        bboxes_gpt = []
 
-            replace_name = -2
-            # random sample convs from start_id -> note logical reasoning NOT has this
-            len_conv = len(source)
-            start_id = 0
-            if len_conv > 2:
-                rand_id = random.randint(0, len_conv - 1)
-                start_id = \
-                random.sample([rand_id, int(len_conv // 2), int(len_conv // 4), int(len_conv // 6), int(len_conv // 8)],
-                              1)[0]
-                start_id = start_id // 2 * 2
-                source = source[start_id:]
+        replace_name = -2
+        # random sample convs from start_id -> note logical reasoning NOT has this
+        len_conv = len(source)
+        start_id = 0
+        if len_conv > 2:
+            rand_id = random.randint(0, len_conv - 1)
+            start_id = \
+            random.sample([rand_id, int(len_conv // 2), int(len_conv // 4), int(len_conv // 6), int(len_conv // 8)],
+                          1)[0]
+            start_id = start_id // 2 * 2
+            source = source[start_id:]
 
-            if roles[source[0]["from"]] != conv.roles[0]:
-                # Skip the first one if it is not from human
-                source = source[1:]
-            conv.messages = []
+        if roles[source[0]["from"]] != conv.roles[0]:
+            # Skip the first one if it is not from human
+            source = source[1:]
+        conv.messages = []
 
-            label = -1
+        label = -1
 
-            for j, sentence in enumerate(source):  # note here: the model_max_length only contains about 6-7 VQAs
-                role = roles[sentence["from"]]
-                assert role == conv.roles[j % 2], f"{j}"
+        for j, sentence in enumerate(source):  # note here: the model_max_length only contains about 6-7 VQAs
+            role = roles[sentence["from"]]
+            assert role == conv.roles[j % 2], f"{j}"
 
-                if j % 2 == 0:
+            if j % 2 == 0:
 
-                    # 'the cup is on the desk. <cup:[238, 249, 298, 511], red and orange desk:[241, 289, 300, 390]>'
-                    # extract the bboxes string: <cup:[238, 249, 298, 511], red and orange desk:[241, 289, 300, 390]>
-                    bboxes_str = re.findall(r"<(.+?)>", sentence["value"])
+                # 'the cup is on the desk. <cup:[238, 249, 298, 511], red and orange desk:[241, 289, 300, 390]>'
+                # extract the bboxes string: <cup:[238, 249, 298, 511], red and orange desk:[241, 289, 300, 390]>
+                bboxes_str = re.findall(r"<(.+?)>", sentence["value"])
+                sentence['value'] = sentence['value'][:sentence['value'].find('<')]
+
+                bboxes_human.append([])
+
+                ########################## find coco classes #########################
+                sentence_next = source[j + 1]
+                bboxes_str_next = re.findall(r"<(.+?)>", sentence_next["value"])
+                bboxes_next = self.strbbox2bbox(bboxes_str_next)
+                if len(bboxes_next) == 1:
+                    ins_name = bboxes_str_next[0].split('<')[-1].split(':')[0]
+                ######################################################################
+                if label != -1:
+                    sentence["value"] = sentence["value"] + '[VG]'
+
+                if j == 0:
+                    sentence["value"] = '<image>\n' + ' ' + sentence["value"]  # put <image> in the most front
+
+            elif j % 2 == 1:
+                # if label != -1:
+                bboxes_str = re.findall(r"<(.+?)>", sentence["value"])
+                gt_bboxes = self.strbbox2bbox(bboxes_str)
+                if len(gt_bboxes) > 0:
+                    bboxes_gpt.append(gt_bboxes)
+
+                if '<' in sentence['value']:
                     sentence['value'] = sentence['value'][:sentence['value'].find('<')]
 
-                    bboxes_human.append([])
+                if replace_name == j - 1:
+                    if ins_name in sentence["value"]:
+                        sentence["value"] = sentence["value"].replace(ins_name, name_re)
 
-                    ########################## find coco classes #########################
-                    sentence_next = source[j + 1]
-                    bboxes_str_next = re.findall(r"<(.+?)>", sentence_next["value"])
-                    bboxes_next = self.strbbox2bbox(bboxes_str_next)
-                    if len(bboxes_next) == 1:
-                        ins_name = bboxes_str_next[0].split('<')[-1].split(':')[0]
-                    ######################################################################
-                    if label != -1:
-                        sentence["value"] = sentence["value"] + '[VG]'
+            conv.append_message(role, sentence["value"])
 
-                    if j == 0:
-                        sentence["value"] = '<image>\n' + ' ' + sentence["value"]  # put <image> in the most front
+            if j==1:
+                break
 
-                elif j % 2 == 1:
-                    if label != -1:
-                        bboxes_str = re.findall(r"<(.+?)>", sentence["value"])
-                        gt_bboxes = self.strbbox2bbox(bboxes_str)
-                        if len(gt_bboxes) > 0:
-                            bboxes_gpt.append(gt_bboxes)
-
-                    if '<' in sentence['value']:
-                        sentence['value'] = sentence['value'][:sentence['value'].find('<')]
-
-                    if replace_name == j - 1:
-                        if ins_name in sentence["value"]:
-                            sentence["value"] = sentence["value"].replace(ins_name, name_re)
-
-                conv.append_message(role, sentence["value"])
-
-                if label != -1 and j % 2 == 1:
-                    break
+            # if label != -1 and j % 2 == 1:
+            #     break
 
             conversations.append(conv.get_prompt())
 
@@ -870,8 +871,8 @@ class JackGroundingDataset(torch.utils.data.Dataset):
             bboxes_gpt = self.postprocess_bbox(bboxes_gpt, ratios)  # for DINO prediction
             # print('JackGroundingDataset >>', bboxes_gpt)
 
-            if conversations[0].count("<im_start>") == 1 and conversations[0].count("[VG]") == 1 and label != -1:
-                break
+            # if conversations[0].count("<im_start>") == 1 and conversations[0].count("[VG]") == 1 and label != -1:
+            #     break
 
         return (
             images,
@@ -916,7 +917,7 @@ class JackLogicGroundingDataset(torch.utils.data.Dataset):
         self.jack_json = jack_json['data']
 
     def __len__(self):
-        return self.samples_per_epoch
+        return len(self.jack_json)
 
     def transform(self, x):
         trans = T.Compose([
@@ -1190,6 +1191,8 @@ class GroundingDataset(torch.utils.data.Dataset):
 
         self.datasets = dataset.split("||")
 
+        self.numSamples = 0
+
         self.all_datasets = []
         for dataset in self.datasets:
             if dataset == "refcocoground":
@@ -1201,6 +1204,7 @@ class GroundingDataset(torch.utils.data.Dataset):
                         anno_path="../datasets/CB-materials/"
                     )
                 )
+                self.numSamples += len(self.all_datasets[-1])
             elif dataset == "cocoground":
                 self.all_datasets.append(
                     COCOGroundingDataset(
@@ -1210,6 +1214,7 @@ class GroundingDataset(torch.utils.data.Dataset):
                         anno_path='../datasets/CB-materials/'
                     )
                 )
+                self.numSamples += len(self.all_datasets[-1])
             elif dataset == "jackground":
                 self.all_datasets.append(
                     JackGroundingDataset(
@@ -1219,17 +1224,17 @@ class GroundingDataset(torch.utils.data.Dataset):
                         anno_path='CB-300K/'
                     )
                 )
-            
+                self.numSamples += len(self.all_datasets[-1])
             elif dataset == "mygr":
                 self.all_datasets.append(
                     MyGroundingDataset(
-                        base_root=self.base_image_dir, # path to images in grounding_gt.json
+                        base_root="Augmented-Apollo-MLLM-data/", # path to images in grounding_gt.json
                         tokenizer=tokenizer,
                         vision_tower=vision_tower,
-                        anno_path='../scratch/cbox_data/'
+                        anno_path='Augmented-Apollo-MLLM-data/'
                     )
                 )
-                
+                self.numSamples += len(self.all_datasets[-1])
             elif dataset == "jacklogicground":
                 self.all_datasets.append(
                     JackLogicGroundingDataset(
@@ -1239,12 +1244,12 @@ class GroundingDataset(torch.utils.data.Dataset):
                         anno_path='CB-300K/'
                     )
                 )
-
+                self.numSamples += len(self.all_datasets[-1])
     def __len__(self):
-        return 1000000
+        return self.numSamples
 
     def __getitem__(self, idx):
-        ind = np.random.choice(list(range(len(self.datasets))), p=self.sample_rate)
-        data = self.all_datasets[ind]
+        ind = np.random.choice(list(range(len(self.all_datasets))), p=self.sample_rate)
+        dataset_part = self.all_datasets[ind]
 
-        return data[0]
+        return dataset_part[0]

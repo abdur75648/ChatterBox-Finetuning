@@ -549,11 +549,26 @@ class SetCriterion(nn.Module):
             label_map=torch.stack(label_map,dim=0).squeeze(1)
             label_map_list.append(label_map)
         for j in range(bs): # bs
+            # print("\nj = ",j)
+            # print(outputs['pred_logits'][j].shape)
+            # print(outputs['pred_logits'][j].unsqueeze(0).shape)
+            # print(outputs['pred_boxes'][j].shape)
+            # print(outputs['pred_boxes'][j].unsqueeze(0).shape)
+            # print(targets[j]['boxes'].shape)
+            # print(targets[j]['labels'].shape)
             for_match = {
                 "pred_logits" : outputs['pred_logits'][j].unsqueeze(0),
                 "pred_boxes" : outputs['pred_boxes'][j].unsqueeze(0)
             }
+            # print(targets[j]['boxes'].shape)
+            # targets[j]['boxes'] = targets[j]['boxes'].unsqueeze(0)
+            # print(outputs['pred_boxes'][j].shape)
+            # print(targets[j]['boxes'].shape)
+            # print(targets[j]['boxes'].shape)
+            # targets[j]['labels'] = targets[j]['labels'].unsqueeze(0)
             inds = self.matcher(for_match, [targets[j]], label_map_list[j])
+            # targets[j]['boxes'] = targets[j]['boxes'].squeeze(0)
+            # print(targets[j]['boxes'].shape)
             indices.extend(inds)
         # indices : A list of size batch_size, containing tuples of (index_i, index_j) where:
         # - index_i is the indices of the selected predictions (in order)

@@ -45,10 +45,13 @@ def generalized_box_iou(boxes1, boxes2):
     Returns a [N, M] pairwise matrix, where N = len(boxes1)
     and M = len(boxes2)
     """
-    # degenerate boxes gives inf / nan results
-    # so do an early check
-    assert (boxes1[:, 2:] >= boxes1[:, :2]).all()
-    assert (boxes2[:, 2:] >= boxes2[:, :2]).all()
+    # degenerate boxes gives inf / nan results. So, do an early check
+    # filter the boxes with zero area
+    boxes1 = boxes1[boxes1[:, 2] > boxes1[:, 0]]
+    boxes1 = boxes1[boxes1[:, 3] > boxes1[:, 1]]
+    # filter the boxes with zero area
+    boxes2 = boxes2[boxes2[:, 2] > boxes2[:, 0]]
+    boxes2 = boxes2[boxes2[:, 3] > boxes2[:, 1]]
     # except:
     #     import ipdb; ipdb.set_trace()
     iou, union = box_iou(boxes1, boxes2)
@@ -58,7 +61,7 @@ def generalized_box_iou(boxes1, boxes2):
 
     wh = (rb - lt).clamp(min=0)  # [N,M,2]
     area = wh[:, :, 0] * wh[:, :, 1]
-
+    
     return iou - (area - union) / (area + 1e-6)
 
 

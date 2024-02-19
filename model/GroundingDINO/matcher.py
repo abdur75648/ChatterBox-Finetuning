@@ -62,12 +62,14 @@ class HungarianMatcher(nn.Module):
             For each batch element, it holds:
                 len(index_i) = len(index_j) = min(num_queries, num_target_boxes)
         """
-
+        # print("Matching Started...")
         bs, num_queries = outputs["pred_logits"].shape[:2]
 
         # We flatten to compute the cost matrices in a batch
         out_prob = outputs["pred_logits"].flatten(0, 1).sigmoid()  # [batch_size * num_queries, num_classes]
         out_bbox = outputs["pred_boxes"].flatten(0, 1)  # [batch_size * num_queries, 4]
+
+        # print("targets[0][boxes]'s shape: ", targets[0]["boxes"].shape)
 
         # Also concat the target labels and boxes
         tgt_ids = torch.cat([v["labels"] for v in targets])
@@ -82,9 +84,17 @@ class HungarianMatcher(nn.Module):
         neg_cost_class = (1 - alpha) * (out_prob ** gamma) * (-(1 - out_prob + 1e-8).log())
         pos_cost_class = alpha * ((1 - out_prob) ** gamma) * (-(out_prob + 1e-8).log())
         new_label_map=new_label_map.to(pos_cost_class.device)
-        
-        cost_bbox = torch.cdist(out_bbox, tgt_bbox, p=1)
 
+        # print("Before cdist: ")
+        # print(out_bbox.shape)
+        # print(tgt_bbox.shape)
+        cost_bbox = torch.cdist(out_bbox, tgt_bbox.unsqueeze(0), p=1)
+        # print("cost_bxbox: ", cost_bbox)
+
+        # print(tgt_bbox.shape)
+        # tgt_bbox = tgt_bbox.flatten(0, 1)
+        # print(tgt_bbox.shape)
+        
         # cost_class=(pos_cost_class @ new_label_map.T - neg_cost_class@ new_label_map.T)
         cost_class=[]
         for idx_map in new_label_map:       
@@ -99,6 +109,7 @@ class HungarianMatcher(nn.Module):
 
         # Compute the giou cost betwen boxes
         cost_giou = -generalized_box_iou(box_cxcywh_to_xyxy(out_bbox), box_cxcywh_to_xyxy(tgt_bbox))
+        # print("cost_giou: ", cost_giou)
         # import pdb;pdb.set_trace()
         # Final cost matrix
         C = self.cost_bbox * cost_bbox + self.cost_class * cost_class + self.cost_giou * cost_giou
