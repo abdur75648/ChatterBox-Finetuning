@@ -16,7 +16,7 @@ git https://github.com/abdur75648/ChatterBox-Finetuning.git
 cd ChatterBox-Finetuning
 ```
 
-2.1 Install Packages (Runpod)
+2.1 Install Packages (Runpod with template `2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04`)
 ```Shell
 apt-get update
 apt-get install zip unzip
@@ -84,12 +84,16 @@ deepspeed --include localhost:0,1 --master_port 54906 train_stage2.py --version 
 
 ## Evaluation
 
-See details at [evaluation](evaluation/readme.md).
+* Evaluate ChatterBox
 
-
-## Demo
-
-Coming soon
+```Shell
+deepspeed --include localhost:0,1 --master_port 54906 eval_grounding.py \
+--version llava-llama-2-13b-chat-lightning-preview \
+--weight outputs/epoch_0/global_step201/mp_rank_00_model_states.pt \
+--images_path eval_gnd_data/ \
+--gnd_file_path eval_gnd_data/grouding_qa.json \
+--save_out_path eval_gnd_data/prediction.json
+```
 
 
 ## Citation
