@@ -409,12 +409,14 @@ def main(args):
             text_output = tokenizer.decode(output_ids[0], skip_special_tokens=False)
             answer.append(text_output.split("ASSISTANT:")[-1].split("[VG]")[0])
 
+            text_output = text_output.split("ASSISTANT:")[-1].replace("</s>","")
             text_output = (
                 text_output.replace(DEFAULT_IMAGE_PATCH_TOKEN, "")
-                .replace("\n", "")
+                # .replace("\n", "")
                 .replace("  ", "")
             )
             print("text_output: ", text_output)
+            output_dict['answer'] = text_output
 
             # for grounding task
             if len(pred_box) > 0:
