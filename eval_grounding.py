@@ -393,6 +393,8 @@ def main(args):
                 prompt = conv.get_prompt()
                 question.append(prompt)
 
+            print("Prompt: ", prompt)
+            
             #evaluate
             input_ids = tokenizer(prompt).input_ids
             input_ids = torch.LongTensor(input_ids).unsqueeze(0).cuda()

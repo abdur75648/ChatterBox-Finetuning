@@ -392,6 +392,7 @@ class ChatterBox(nn.Module):
     ):
 
         with torch.no_grad():
+            print("Passing through the LLM")
             outputs = self.lm.generate(
                 images=images_clip,
                 bboxes=bboxes_list,
@@ -411,6 +412,7 @@ class ChatterBox(nn.Module):
             samples = images
 
 
+        print("Passing through the DINO")
         dtype = images.dtype
         if dtype == torch.float16:
             with torch.cuda.amp.autocast(enabled=True):
@@ -428,6 +430,7 @@ class ChatterBox(nn.Module):
         )
         pred_boxes = []
         if vg_token_mask.sum():
+            print("Extracting last hidden states for VG tokens")
             hidden_states = []
             assert len(self.text_hidden_fcs) == 1
             hidden_states.append(self.text_hidden_fcs[0](output_hidden_states[-1]))
@@ -440,7 +443,7 @@ class ChatterBox(nn.Module):
             pred_embeddings = [pred_embeddings]
             
             for i in range(len(pred_embeddings)):  # process each data
-    
+                print("Passing through the DINO for VG token", i)
                 with torch.cuda.amp.autocast(enabled=True):
                     outputs = self.visual_grounding_model.forward_enc_dec(samples, features, poss, query_embedding=pred_embeddings[i].unsqueeze(1))
                     pred_boxes.append(outputs)
