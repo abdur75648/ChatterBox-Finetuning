@@ -22,7 +22,7 @@
   "world_size": 1,
   "dist_url": "env://",
   "rank": 0,
-  "local_rank": 0,
+  "local_rank": null,
   "amp": false,
   "version": "llava-llama-2-13b-chat-lightning-preview",
   "weight": "outputs_20Feb/epoch_0/global_step451/mp_rank_00_model_states.pt",
