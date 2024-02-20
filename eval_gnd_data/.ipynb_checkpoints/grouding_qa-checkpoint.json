@@ -1,0 +1,36 @@
+[
+{
+    "image_id": "1",
+    "filename": "1.png",
+    "wh": [
+        2560,
+        1208
+    ],
+    "catgory": "button",
+    "question": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: None \nGive me the next action?",
+    "answer": "CLICK: Click on the Search  button. <button: [26, 228, 377, 278]>",
+    "gt_box": [
+        26,
+        228,
+        377,
+        278
+    ]
+    },
+    {
+    "image_id": "2",
+    "filename": "2.jpg",
+    "wh": [
+        2560,
+        1214
+    ],
+    "catgory": "button",
+    "question": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: CLICK: Click on the Search button \nGive me the next action?",
+    "answer": "CLICK: Click on the More Filters  button. <button: [740, 472, 958, 526]>",
+    "gt_box": [
+        740,
+        472,
+        958,
+        526
+    ]
+    }
+]

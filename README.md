@@ -61,6 +61,7 @@ cd mmcv-1.4.7/
 MMCV_WITH_OPS=1 pip install -e .
 cd ../model/GroundingDINO/ops
 python setup.py build install
+cd ../../../
 wget https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha2/groundingdino_swinb_cogcoor.pth
 git lfs install
 git clone https://huggingface.co/liuhaotian/llava-llama-2-13b-chat-lightning-preview

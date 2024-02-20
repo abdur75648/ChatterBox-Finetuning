@@ -5,6 +5,7 @@ CB-300K/
 mmcv-1.4.7/
 runs/
 outputs/
+outputs_*/
 __MACOSX/
 __pycache__/
 *.pth

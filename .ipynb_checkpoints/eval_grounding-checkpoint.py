@@ -1,33 +1,27 @@
 import argparse
 import os
 import sys
-
 import cv2
-import glob
 import numpy as np
 import torch
-import torch.nn.functional as F
 import transformers
 from transformers import AutoTokenizer, CLIPImageProcessor
-
-from model.ChatterBox_Referrring_Grounding_grounding_dino import JACK
-from model.segment_anything.utils.transforms import ResizeLongestSide
+from model.ChatterBox_Referrring_Grounding_grounding_dino import ChatterBox
 from utils.conversation import get_default_conv_template
-
 import utils.transforms as T
 from PIL import Image
-import matplotlib.pyplot as plt
-import random
 import json
 from utils.slconfig import DictAction, SLConfig
 import torchvision
 
+
 def parse_args(args):
-    parser = argparse.ArgumentParser(description="JACK chat")
-    parser.add_argument("--version", default="./llava-llama-2-13b-chat-lightning-preview")
+    parser = argparse.ArgumentParser(description="ChatterBox Chat")
+    parser.add_argument("--local_rank", default=0, type=int, help="node rank")
+    parser.add_argument("--version", default="/path/to/llava-llama-2-13b-chat-lightning-preview")
     parser.add_argument("--vis_save_path", default="./vis_output", type=str)
-    parser.add_argument("--vision_pretrained", default="PATH_TO_DINO", type=str)
-    parser.add_argument("--weight", default="./Jack_grounding_dino/output_refer_gnd_vqa_resume_v3/epoch_3/global_step11963/mp_rank_00_model_states.pt", type=str)
+    parser.add_argument("--vision_pretrained", default="groundingdino_swinb_cogcoor.pth", type=str)
+    parser.add_argument("--weight", default="outputs/epoch_0/global_step201/mp_rank_00_model_states.pt", type=str)#chatterbox_model_weight
     parser.add_argument(
         "--precision",
         default="fp16",
@@ -38,16 +32,15 @@ def parse_args(args):
     parser.add_argument("--image-size", default=768, type=int, help="image size")
     parser.add_argument("--model-max-length", default=2048, type=int)
     parser.add_argument("--lora-r", default=16, type=int)
-    parser.add_argument(
-        
-        "--vision-tower", default="openai/clip-vit-large-patch14", type=str
-    )
-    parser.add_argument(
-        "--vision_tower_aux",default="openai/clip-vit-large-patch14", type=str
-    )
+    parser.add_argument("--vision-tower", default="openai/clip-vit-large-patch14", type=str)
+    parser.add_argument("--vision_tower_aux",default="openai/clip-vit-large-patch14", type=str)
     parser.add_argument("--local-rank", default=0, type=int, help="node rank")
     parser.add_argument("--load_in_8bit", action="store_true", default=False)
     parser.add_argument("--load_in_4bit", action="store_true", default=False)
+    parser.add_argument("--images_path", default="/path/to/images/")#image
+    parser.add_argument("--gnd_file_path", default="eval_gnd_data/grouding_qa.json")#question and gt answer
+    parser.add_argument("--save_out_path", default="eval_gnd_data/prediction.json")#predicted answer
+    parser.add_argument('--pretrained', default="groundingdino_swinb_cogcoor.pth",)
     return parser.parse_args(args)
 
 def vision_branch_args():
@@ -96,6 +89,14 @@ def vision_branch_args():
         parser.add_argument("--local-rank", type=int, help='local rank for DistributedDataParallel')
         parser.add_argument('--amp', action='store_true',
                             help="Train with mixed precision")
+        parser.add_argument("--version", default="/path/to/llava-llama-2-13b-chat-lightning-preview")
+        parser.add_argument("--weight", default="/path/to/chatterbox_grounding_ckp.pt",
+                            type=str)  # chatterbox_model_weight
+        parser.add_argument("--vision-tower", default="openai/clip-vit-large-patch14", type=str)
+        parser.add_argument("--vision_tower_aux", default="openai/clip-vit-large-patch14", type=str)
+        parser.add_argument("--images_path", default="/path/to/images/")  # image
+        parser.add_argument("--gnd_file_path", default="eval_gnd_data/grouding_qa.json")  # question and gt answer
+        parser.add_argument("--save_out_path", default="eval_gnd_data/prediction.json")  # predicted answer
         return parser
 
     parser = argparse.ArgumentParser('DETR training and evaluation script', parents=[get_args_parser()])
@@ -105,9 +106,6 @@ def vision_branch_args():
     if args.options is not None:
         cfg.merge_from_dict(args.options)
 
-    # if args.rank == 0:
-    save_cfg_path = os.path.join(args.output_dir, "config_cfg.py")
-    # cfg.dump(save_cfg_path)
     save_json_path = os.path.join(args.output_dir, "config_args_raw.json")
     with open(save_json_path, 'w') as f:
         json.dump(vars(args), f, indent=2)
@@ -147,31 +145,57 @@ def transform(x,size):
 
 def seg_prompt_for_bbox(prompt):
     question,bbox=prompt.split('?')
-    # bbox,question2=bbox1.split('>')
-    # bbox='['+bbox+']'
     bbox=eval(bbox)
     question=question+'?'
     return bbox,question
 
-def get_list(path):
+def get_gnd_qa_list(path):
+    """
+    convert original question to fit chatterbox input, record other information(including image id, image path, gt bbox, etc)
+    input:
+        path:gnd_file_path
+    return:
+        prompt_list:['Where is the toilet? [VG]'] (question for an image)
+        file_name_list:['000000403385.jpg'] (filename for an image)
+        gt_list:[[411.1, 237.7, 93.00999999999999, 242.3]]#left_x,left_y,w,h (gt bbox)
+        object_name_list:['toilet'] (gt label)
+        image_id_list:['403385'](image id)
+    """
     prompt_list=[]
     file_name_list=[]
-    image_id_list=[]
     gt_list=[]
-    ref_id_list = []
+    int_gt_list=[]
+    object_name_list=[]
+    answer_sent_list=[]
+    image_id_list=[]
     with open(path,'r') as fr:
         file=json.load(fr)
-    for f in file:
-        prompt_list.append(f['question'])
-        file_name_list.append(f['file_name'])
-        gt_list.append(f['answer'])
-        image_id_list.append(f['image_id'])
-        ref_id_list.append(f['ref_id'])
-    return prompt_list,file_name_list,gt_list,image_id_list,ref_id_list
+        for f in file:
+            image_id_list.append(f['image_id'])
+            file_name_list.append(f['filename'])
+            question=f['question']+' [VG]'
+            prompt_list.append(question)
+            answer=f['answer']
+            sent,name_box=answer.split('<')
+            sent+='.'
+            answer_sent_list.append(sent)
+            name_box=name_box.rstrip('>')
+            name,box=name_box.split(':')
+            bbox=eval(box)
+            gt_list.append(bbox)
+            int_gt_list.append([int(bbox[0]),int(bbox[1]),int(bbox[2]),int(bbox[3])])
+            object_name_list.append(name)
+    return prompt_list,file_name_list,gt_list,object_name_list,image_id_list
+
 
 def main(args):
     args = parse_args(args)
     os.makedirs(args.vis_save_path, exist_ok=True)
+
+    prompt_list, file_name_list, gt_list, object_name_list, answer_sent_list = get_gnd_qa_list(args.gnd_file_path)#get questions
+    print("Loaded questions: ", len(prompt_list))
+    # for i in range(len(prompt_list)):
+    #     print("Prompt ", str(i+1), ": ", prompt_list[i])
 
     # Create model
     tokenizer = transformers.AutoTokenizer.from_pretrained(
@@ -185,8 +209,11 @@ def main(args):
     num_added_tokens = tokenizer.add_tokens("[VG]")
     ret_token_idx = tokenizer("[VG]", add_special_tokens=False).input_ids
     args.vg_token_idx = ret_token_idx[0]  # 30523
+    print("Tokenizer Loaded!")
+    
     vision_args = vision_branch_args()
-    model = JACK(
+    print("Creating Model...")
+    model = ChatterBox(
         args.local_rank,
         args.vg_token_idx,
         tokenizer,
@@ -196,19 +223,19 @@ def main(args):
         load_in_8bit=args.load_in_8bit,
         load_in_4bit=args.load_in_4bit,
         vision_tower=args.vision_tower,
-        vision_tower_aux=args.vision_tower_aux,
+        # vision_tower_aux=args.vision_tower_aux,
         vision_branch_args=vision_args,
     )
+    print("Model Created!")
+    
   
     if args.weight:
-        print('loading from ', args.weight)
+        print('Loading model weights from ', args.weight)
         state_dict = torch.load(args.weight, map_location="cpu")['module']
-        # state_dict = torch.load(args.weight, map_location="cpu")
-        # print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
-        # print(state_dict.keys())
-        # print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
         model.load_state_dict(state_dict, strict=True)
-        
+        print("Weights Loaded!")
+
+    print("args.precision = ", args.precision)
     if args.precision == "bf16":
         model = model.bfloat16().cuda()
     elif args.precision == "fp16":
@@ -229,52 +256,33 @@ def main(args):
     DEFAULT_IM_START_TOKEN = "<im_start>"
     DEFAULT_IM_END_TOKEN = "<im_end>"
 
-    
     image_token_len = 256
-
-    
+    print("Creating CLIP Image Processor...")
     clip_image_processor = CLIPImageProcessor.from_pretrained(args.vision_tower)
-    
-    
-    refcocog_test_path = "./evaluation/referring/gt/refcocog/test.json"
-    save_out_path = './evaluation/referring/output/refcocog_test.json'
-    refcoco_testb_path = refcocog_test_path
-    prompt_list,image_path_list,gt_list,image_list,ref_id_list=get_list(refcoco_testb_path)
-    # id_list,image_id_list,category_id_list,question_list,answer_list=get_list(refcoco_testb_path)
-    cnt=0
-    cnt+=1
-    output_list=[]
-    for idx in range(len(image_path_list)):
+    print("CLIP Image Processor Created!")
+
+    #Evaluate grouding
+    output_list = []
+    for idx in range(len(prompt_list)):
+        print("Inference for prompt idx = ", str(idx))
         output_dict = {}
-        gt=gt_list[idx]
-        image_id=image_list[idx]
-        ref_id = ref_id_list[idx]
-        output_dict['gt']=gt
-        output_dict['ref_id'] = ref_id
-        output_dict['id']=image_id
-        coco2014_path="./datasets/MSCOCO2014/images/train2014/"
-        image_name,jpg=image_path_list[idx].split('.')
-        image_name_list=image_name.split('_')
-        image_name2=''
-        for i in range(len(image_name_list)-1):
-            image_name2 += image_name_list[i]
-            if i < len(image_name_list)-2:
-                image_name2 += '_'
-        image_name2+='.'
-        image_name2+=jpg
-        #image_path_or=os.path.join(coco2014_path,image_path_list[idx])
-        image_path_or=os.path.join(coco2014_path,image_name2)
-        output_dict['image_abs_path']=image_path_or
+        #annotation
+        gt = gt_list[idx]
+        output_dict['gt'] = gt
+        output_dict['out_category'] = object_name_list[idx]
+        image_path_or = os.path.join(args.images_path,file_name_list[idx])
+        output_dict['image_abs_path'] = image_path_or
         image_path = image_path_or
         if not os.path.exists(image_path):
             print("File not found in {}".format(image_path))
             continue
 
+        #load image
         image = cv2.imread(image_path)
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         ori_image = image
         original_size_list = image.shape[:2]
-
+        
         if args.precision == "bf16":
             images_clip = (
                 clip_image_processor.preprocess(image, return_tensors="pt")[
@@ -302,92 +310,73 @@ def main(args):
                 .cuda()
                 .float()
             )
-        # images = transform.apply_image(image)
+        print("Image Processing with CLIP Done")
         images, _, _ = transform(Image.fromarray(ori_image),512)
         images = preprocess(torch.from_numpy(np.array(images)).permute(2, 0, 1).contiguous()).unsqueeze(0).cuda().half()
-        # images = transform(Image.fromarray(image), 512)
-        # resize_list = [images.shape[:2]]
-        resize_list = []
+
+        #generate conversation
+        print("Generating Conversation")
         init_input = "Get Start"
         conversation_round = 0
         conv = get_default_conv_template("vicuna").copy()
         question = []
         answer = []
-        #while init_input:
+
+        #get input box
+        region_list = []
         if init_input:
             conv.messages = []
-
-            #prompt = input("Input EOS to change Image. Please input your prompt: ")
-            prompt=prompt_list[idx] 
-            # prompt=question_list[idx]
-            bbox,prompt=seg_prompt_for_bbox(prompt)
-            output_dict['input_bbox'] = bbox
-            output_dict['prompt'] = prompt 
-            # print(prompt)
+            prompt = prompt_list[idx]
+            output_dict['prompt'] = prompt
             if prompt == "EOS":
                 break
-            img = cv2.imread(image_path)
-            # a = []
-            # b = []
-            a=[bbox[0][0],bbox[0][2]]
-            b=[bbox[0][1],bbox[0][3]]
-
-            def on_EVENT_LBUTTONDOWN(event, x, y, flags, param):
-                if event == cv2.EVENT_LBUTTONDOWN:
-                    xy = "%d,%d" % (x, y)
-                    a.append(x)
-                    b.append(y)
-                    cv2.circle(img, (x, y), 1, (0, 0, 255), thickness=-1)
-                    cv2.putText(img, xy, (x, y), cv2.FONT_HERSHEY_PLAIN,
-                                1.0, (0, 0, 0), thickness=1)
-                    cv2.imshow("image", img)
-                    print(x,y)
-
-
-            # cv2.namedWindow("image")
-            # cv2.setMouseCallback("image", on_EVENT_LBUTTONDOWN)
-            # cv2.imshow("image", img)
-            # cv2.resizeWindow("image", img.shape[1] + 50, img.shape[0] + 50)
-            # cv2.waitKey(0)
-            # cv2.destroyAllWindows()
+            a = []
+            b = []
             has_box = 0
-            region_list = []
-            if len(a) == 0:
-                region_list = []
-            elif len(a) == 2:
+            if len(a) == 0:#no box input
+                region_list = region_list
+            elif len(a) == len(b) and len(a)%2 == 0:
                 w , h = image.shape[:2]
-
-                input_box = [[a[0],b[0],a[1],b[1]]]
-                # region_list.append(torch.tensor(input_box) / torch.tensor([w, h, w, h], dtype=torch.half))
-                tensor_box = torch.tensor(input_box) / torch.tensor([[h, w, h, w]])
-                tensor_box = tensor_box.half()
-                region_list.append(tensor_box.cuda())
-                # region_list = [[b[0],a[0],b[1],a[1]]]
+                last_box = None
+                the_box = None
+                for i in range(int(len(a)/2)):
+                    input_box = [a[2*i],b[2*i],a[2*i+1],b[2*i+1]]
+                    tensor_box = torch.tensor([input_box]) / torch.tensor([h, w, h, w])
+                    tensor_box = tensor_box.half()
+                    if last_box != None:
+                        the_box = torch.cat((the_box,tensor_box),dim=0)
+                    else:
+                        the_box = tensor_box
+                        last_box = 1
+                if region_list == []:
+                    region_list.append(the_box.cuda())
+                else:
+                    internal_box = torch.cat((region_list[0],the_box.cuda()),dim=0)
+                    region_list = [internal_box]
                 has_box = 1
             else:
-                print("can only input 2 points")
-                break
-
-            if has_box and len(region_list) > 1:
-                print("Only one box can be input now, please retry!")
+                print("Please input correct number of points")
                 break
             if has_box:
                 print(region_list)
-                # regions.append(extract_regions([region_list], torch.from_numpy(ori_image),clip_image_processor_aux)[0])
+            if "<bbox>" in prompt and len(a) == 0:
+                print("please input box")
+                break
+
+            #convert token & format
             if conversation_round == 0:
-                prompt = DEFAULT_IMAGE_TOKEN + " " + prompt + 'Please give a brief answer in one sentence less than 10 words.'
+                prompt = DEFAULT_IMAGE_TOKEN + " " + prompt
                 replace_image_token = DEFAULT_IMAGE_PATCH_TOKEN * image_token_len
                 replace_image_token = DEFAULT_IM_START_TOKEN + replace_image_token + DEFAULT_IM_END_TOKEN
                 prompt = prompt.replace(DEFAULT_IMAGE_TOKEN, replace_image_token)
                 conversation_round += 1
             else:
                 conversation_round += 1
-
             conv.append_message(conv.roles[0], prompt)
             conv.append_message(conv.roles[1], "")
             new_prompt = ""
             if conversation_round -1 > 0:
-                prompt = conv.get_prompt(False)
+                prompt = conv.get_prompt()
                 question.append(prompt)
                 if len(question) > 1:
                     question[-2] = (
@@ -399,28 +388,21 @@ def main(args):
                         new_prompt += answer[i]
                     else:
                         new_prompt += question[i]
-
-                prompt = new_prompt
+                prompt = new_prompt  
             else:
-                prompt = conv.get_prompt(True)
+                prompt = conv.get_prompt()
                 question.append(prompt)
 
-            # print(prompt)
-            # print(question)
-            # print(answer)
-
+            #evaluate
             input_ids = tokenizer(prompt).input_ids
             input_ids = torch.LongTensor(input_ids).unsqueeze(0).cuda()
-
             output_ids,pred_box = model.evaluate(
                 images_clip,
                 images,
                 region_list,
                 input_ids,
-                max_new_tokens=320,
+                max_new_tokens=512,
             )
-
-
 
             text_output = tokenizer.decode(output_ids[0], skip_special_tokens=False)
             answer.append(text_output.split("ASSISTANT:")[-1].split("[VG]")[0])
@@ -431,15 +413,44 @@ def main(args):
                 .replace("  ", "")
             )
             print("text_output: ", text_output)
-            save_text_output=text_output.split('ASSISTANT:')[-1]
-            save_text_output=save_text_output.split('</s>')[0]
-            print("answer:",save_text_output)
-            output_dict['text_output']=save_text_output
-            print('+++++++++++++++++++++++++++++++++++++++')
-            print(len(output_list))
-            print('+++++++++++++++++++++++++++++++++++++++')
+
+            # for grounding task
+            if len(pred_box) > 0:
+                box_threshold = 0.3
+                logits = pred_box[-1]["pred_logits"].sigmoid()[0]  # (nq, 256)
+                boxes = pred_box[-1]["pred_boxes"][0]  # (nq, 4)
+                logits_filt = logits.cpu().clone()
+                boxes_filt = boxes.cpu().clone()
+                filt_mask = logits_filt.max(dim=1)[0] > box_threshold
+                logits_filt = logits_filt[filt_mask]  # num_filt, 256
+                boxes_filt = boxes_filt[filt_mask]  # num_filt, 4
+                bbox = []
+                score = []
+                for i, box in enumerate(boxes_filt):
+                    box = box * torch.Tensor([original_size_list[1], original_size_list[0], original_size_list[1], original_size_list[0]])
+                    # from xywh to xyxy
+                    box[:2] -= box[2:] / 2
+                    box[2:] += box[:2]
+                    bbox.append([int(j.item()) for j in box[:]])
+                    score.append(logits_filt[i].max().item())
+
+                if len(score)==0:
+                    score=[0]
+                    bbox=[[0,0,1,1]]
+
+                #find bbox with max score
+                pos=score.index(max(score))
+                pred_box=bbox[pos]
+                pred_score=score[pos]
+                output_dict['score'] = pred_score
+                output_dict['out_boxes'] = pred_box
+                print('predict box: ',pred_box)
             output_list.append(output_dict)
-    with open(save_out_path,'w') as fw:
-        json.dump(output_list,fw,indent=1)
+
+    #save prediction results
+    os.makedirs(os.path.dirname(args.save_out_path), exist_ok=True)
+    with open(args.save_out_path, 'w') as fw:
+        json.dump(output_list, fw, indent=1)
+
 if __name__ == "__main__":
     main(sys.argv[1:])

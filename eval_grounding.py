@@ -192,6 +192,11 @@ def main(args):
     args = parse_args(args)
     os.makedirs(args.vis_save_path, exist_ok=True)
 
+    prompt_list, file_name_list, gt_list, object_name_list, answer_sent_list = get_gnd_qa_list(args.gnd_file_path)#get questions
+    print("Loaded questions: ", len(prompt_list))
+    # for i in range(len(prompt_list)):
+    #     print("Prompt ", str(i+1), ": ", prompt_list[i])
+
     # Create model
     tokenizer = transformers.AutoTokenizer.from_pretrained(
         args.version,
@@ -204,7 +209,10 @@ def main(args):
     num_added_tokens = tokenizer.add_tokens("[VG]")
     ret_token_idx = tokenizer("[VG]", add_special_tokens=False).input_ids
     args.vg_token_idx = ret_token_idx[0]  # 30523
+    print("Tokenizer Loaded!")
+    
     vision_args = vision_branch_args()
+    print("Creating Model...")
     model = ChatterBox(
         args.local_rank,
         args.vg_token_idx,
@@ -218,12 +226,16 @@ def main(args):
         # vision_tower_aux=args.vision_tower_aux,
         vision_branch_args=vision_args,
     )
+    print("Model Created!")
+    
   
     if args.weight:
-        print('loading from ', args.weight)
+        print('Loading model weights from ', args.weight)
         state_dict = torch.load(args.weight, map_location="cpu")['module']
         model.load_state_dict(state_dict, strict=True)
-        
+        print("Weights Loaded!")
+
+    print("args.precision = ", args.precision)
     if args.precision == "bf16":
         model = model.bfloat16().cuda()
     elif args.precision == "fp16":
@@ -245,12 +257,14 @@ def main(args):
     DEFAULT_IM_END_TOKEN = "<im_end>"
 
     image_token_len = 256
+    print("Creating CLIP Image Processor...")
     clip_image_processor = CLIPImageProcessor.from_pretrained(args.vision_tower)
+    print("CLIP Image Processor Created!")
 
     #Evaluate grouding
-    prompt_list, file_name_list, gt_list, object_name_list, answer_sent_list = get_gnd_qa_list(args.gnd_file_path)#get questions
     output_list = []
     for idx in range(len(prompt_list)):
+        print("Inference for prompt idx = ", str(idx))
         output_dict = {}
         #annotation
         gt = gt_list[idx]
@@ -296,10 +310,12 @@ def main(args):
                 .cuda()
                 .float()
             )
+        print("Image Processing with CLIP Done")
         images, _, _ = transform(Image.fromarray(ori_image),512)
         images = preprocess(torch.from_numpy(np.array(images)).permute(2, 0, 1).contiguous()).unsqueeze(0).cuda().half()
 
         #generate conversation
+        print("Generating Conversation")
         init_input = "Get Start"
         conversation_round = 0
         conv = get_default_conv_template("vicuna").copy()
@@ -339,7 +355,7 @@ def main(args):
                     region_list = [internal_box]
                 has_box = 1
             else:
-                print("please input corret number of points")
+                print("Please input correct number of points")
                 break
             if has_box:
                 print(region_list)
