@@ -1,0 +1,20 @@
+[
+ {
+  "gt": [
+   26,
+   228,
+   377,
+   278
+  ],
+  "out_category": "button",
+  "image_abs_path": "eval_gnd_data/1.png",
+  "prompt": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: None \nGive me the next action? [VG]",
+  "score": 0.7071013450622559,
+  "out_boxes": [
+   14,
+   223,
+   385,
+   275
+  ]
+ }
+]

@@ -415,6 +415,7 @@ def main(args):
                 .replace("  ", "")
             )
             print("text_output: ", text_output)
+            output_dict['answer'] = text_output
 
             # for grounding task
             if len(pred_box) > 0:
