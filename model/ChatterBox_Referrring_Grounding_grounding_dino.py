@@ -158,7 +158,7 @@ class ChatterBox(nn.Module):
             tokenizer=tokenizer,
             num_new_tokens=num_new_tokens,
             device=local_rank,
-            tune_mm_mlp_adapter=False,
+            tune_mm_mlp_adapter=self.lm.config.tune_mm_mlp_adapter,
         )
         if freeze_lm:
             for n, param in self.lm.named_parameters():
@@ -291,6 +291,10 @@ class ChatterBox(nn.Module):
             bbox_token_id=self.bbox_token_id,
             spi_module=self.spi_module
         )
+        # Output dict
+        # loss: Tensor with shape torch.Size([]) -> Scalar  tensor(2.7, device='cuda', dtype=torch.float16)
+        # logits: Tensor with shape torch.Size([B, 376, 32005])
+        # hidden_states: <class 'tuple'>
 
         output_hidden_states = output.hidden_states
 
@@ -373,11 +377,14 @@ class ChatterBox(nn.Module):
 
             vg_loss += loss
 
-
-            output['loss'] *= 0
+            # print("Initial Output loss: ", output['loss']) # tensor(2.8574, device='cuda:0', dtype=torch.float16)
+            # output['loss'] *= 0
+            # print("Final Output loss: ", output['loss']) # tensor(0., device='cuda:0', dtype=torch.float16)
         else:
             vg_loss = torch.tensor(0.0).to(output['loss'].device)
 
+        # print("vg_loss: ", vg_loss) # tensor(17.4923)
+        # print("vqa_loss: ", output['loss']) # tensor(0.)
         return {
             "vqa_loss": output['loss'],
             "vg_loss": vg_loss,
