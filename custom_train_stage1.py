@@ -76,7 +76,7 @@ def parse_args(args):
     parser.add_argument("--epochs", default=30, type=int)
     parser.add_argument("--steps_per_epoch", default=500, type=int)
 
-    parser.add_argument("--grounding_batch_size", default=16, type=int, help="batch size per device per step")
+    parser.add_argument("--grounding_batch_size", default=4, type=int, help="batch size per device per step")
     parser.add_argument("--referring_batch_size", default=16, type=int, help="batch size per device per step")
     parser.add_argument("--vqa_batch_size", default=16, type=int, help="batch size per device per step")
     parser.add_argument("--grounding_grad_accumulation_steps", default=20, type=int)

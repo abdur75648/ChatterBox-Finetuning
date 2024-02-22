@@ -174,8 +174,13 @@ class ChatterBox(nn.Module):
                 bias="none",
                 task_type="CAUSAL_LM",
             )
+            
+            print("\n\n\n\n\nLoRA config: ", config,"\n\n\n")
+            
             self.lm = get_peft_model(self.lm, config)
+            print("="*50)
             self.lm.print_trainable_parameters()
+            print("="*50)
 
         self.llm_version = llm_version
 
