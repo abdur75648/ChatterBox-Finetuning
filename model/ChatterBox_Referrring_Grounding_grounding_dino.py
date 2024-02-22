@@ -373,8 +373,9 @@ class ChatterBox(nn.Module):
 
             vg_loss += loss
 
-
+            print("Initial Output loss: ", output['loss'])
             output['loss'] *= 0
+            print("Final Output loss: ", output['loss'])
         else:
             vg_loss = torch.tensor(0.0).to(output['loss'].device)
 
