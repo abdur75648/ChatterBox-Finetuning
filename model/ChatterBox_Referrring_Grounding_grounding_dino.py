@@ -223,10 +223,13 @@ class ChatterBox(nn.Module):
             nn.Dropout(0.0),
         ]
         self.text_hidden_fcs = nn.ModuleList([nn.Sequential(*text_fc)])
+        self.text_hidden_fcs.requires_grad = True
 
         self.tgt_align = nn.Linear(out_dim, 256)
-        self.refpoint_align = nn.Linear(out_dim, 4)
+        self.tgt_align.requires_grad = True
 
+        self.refpoint_align = nn.Linear(out_dim, 4)
+        self.refpoint_align.requires_grad = True
         
     def load_vision_dict(self, state_dict, strict=False):
         msg = self.visual_grounding_model.load_state_dict(state_dict, strict=strict)
