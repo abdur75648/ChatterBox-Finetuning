@@ -7,3 +7,6 @@
 23	29816	1708252131000000000	/workspace/ChatterBox-Finetuning/model/GroundingDINO/ops/build/temp.linux-x86_64-cpython-310/workspace/ChatterBox-Finetuning/model/GroundingDINO/ops/src/vision.o	63f2f8ac60a3b81e
 48	13929	1708448807000000000	/workspace/ChatterBox-Finetuning/model/GroundingDINO/ops/build/temp.linux-x86_64-cpython-310/workspace/ChatterBox-Finetuning/model/GroundingDINO/ops/src/cpu/ms_deform_attn_cpu.o	f146d25761ac0f17
 49	27177	1708448820000000000	/workspace/ChatterBox-Finetuning/model/GroundingDINO/ops/build/temp.linux-x86_64-cpython-310/workspace/ChatterBox-Finetuning/model/GroundingDINO/ops/src/vision.o	63f2f8ac60a3b81e
+23	15248	1708628289000000000	/workspace/ChatterBox-Finetuning/model/GroundingDINO/ops/build/temp.linux-x86_64-cpython-310/workspace/ChatterBox-Finetuning/model/GroundingDINO/ops/src/cpu/ms_deform_attn_cpu.o	f146d25761ac0f17
+23	23641	1708628297000000000	/workspace/ChatterBox-Finetuning/model/GroundingDINO/ops/build/temp.linux-x86_64-cpython-310/workspace/ChatterBox-Finetuning/model/GroundingDINO/ops/src/cuda/ms_deform_attn_cuda.o	150a468c9e4fd5cd
+24	28981	1708628302000000000	/workspace/ChatterBox-Finetuning/model/GroundingDINO/ops/build/temp.linux-x86_64-cpython-310/workspace/ChatterBox-Finetuning/model/GroundingDINO/ops/src/vision.o	63f2f8ac60a3b81e

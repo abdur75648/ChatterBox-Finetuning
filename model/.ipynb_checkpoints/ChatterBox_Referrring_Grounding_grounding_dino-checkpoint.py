@@ -158,7 +158,7 @@ class ChatterBox(nn.Module):
             tokenizer=tokenizer,
             num_new_tokens=num_new_tokens,
             device=local_rank,
-            tune_mm_mlp_adapter=False,
+            tune_mm_mlp_adapter=self.lm.config.tune_mm_mlp_adapter,
         )
         if freeze_lm:
             for n, param in self.lm.named_parameters():
@@ -291,6 +291,10 @@ class ChatterBox(nn.Module):
             bbox_token_id=self.bbox_token_id,
             spi_module=self.spi_module
         )
+        # Output dict
+        # loss: Tensor with shape torch.Size([]) -> Scalar  tensor(2.7, device='cuda', dtype=torch.float16)
+        # logits: Tensor with shape torch.Size([B, 376, 32005])
+        # hidden_states: <class 'tuple'>
 
         output_hidden_states = output.hidden_states
 
@@ -373,11 +377,14 @@ class ChatterBox(nn.Module):
 
             vg_loss += loss
 
-
-            output['loss'] *= 0
+            # print("Initial Output loss: ", output['loss']) # tensor(2.8574, device='cuda:0', dtype=torch.float16)
+            # output['loss'] *= 0
+            # print("Final Output loss: ", output['loss']) # tensor(0., device='cuda:0', dtype=torch.float16)
         else:
             vg_loss = torch.tensor(0.0).to(output['loss'].device)
 
+        # print("vg_loss: ", vg_loss) # tensor(17.4923)
+        # print("vqa_loss: ", output['loss']) # tensor(0.)
         return {
             "vqa_loss": output['loss'],
             "vg_loss": vg_loss,
@@ -392,6 +399,7 @@ class ChatterBox(nn.Module):
     ):
 
         with torch.no_grad():
+            print("Passing through the LLM")
             outputs = self.lm.generate(
                 images=images_clip,
                 bboxes=bboxes_list,
@@ -411,6 +419,7 @@ class ChatterBox(nn.Module):
             samples = images
 
 
+        print("Passing through the DINO")
         dtype = images.dtype
         if dtype == torch.float16:
             with torch.cuda.amp.autocast(enabled=True):
@@ -428,6 +437,7 @@ class ChatterBox(nn.Module):
         )
         pred_boxes = []
         if vg_token_mask.sum():
+            print("Extracting last hidden states for VG tokens")
             hidden_states = []
             assert len(self.text_hidden_fcs) == 1
             hidden_states.append(self.text_hidden_fcs[0](output_hidden_states[-1]))
@@ -440,7 +450,7 @@ class ChatterBox(nn.Module):
             pred_embeddings = [pred_embeddings]
             
             for i in range(len(pred_embeddings)):  # process each data
-    
+                print("Passing through the DINO for VG token", i)
                 with torch.cuda.amp.autocast(enabled=True):
                     outputs = self.visual_grounding_model.forward_enc_dec(samples, features, poss, query_embedding=pred_embeddings[i].unsqueeze(1))
                     pred_boxes.append(outputs)

@@ -214,6 +214,18 @@ def main(args):
         load_in_4bit=args.load_in_4bit,
         vision_branch_args=vision_args,
     )
+    
+    # Number of trainable parameters (in Million)
+    num_params = sum(p.numel() for p in model.parameters() if p.requires_grad) / 1e6
+    print(f"Number of trainable parameters: {num_params:.2f}M")
+    # Number of trainable parameters (in Million) in model.lm
+    num_params = sum(p.numel() for p in model.lm.parameters() if p.requires_grad) / 1e6
+    print(f"Number of trainable parameters in model.lm: {num_params:.2f}M")
+    # Number of trainable parameters (in Million) in model.visual_grounding_model
+    num_params = sum(p.numel() for p in model.visual_grounding_model.parameters() if p.requires_grad) / 1e6
+    print(f"Number of trainable parameters in model.visual_grounding_model: {num_params:.2f}M")
+    # Use model.lm.print_trainable_parameters()
+    model.lm.print_trainable_parameters()
 
     if vision_args.pretrained:
         state_dict = torch.load(vision_args.pretrained, map_location='cpu')['model']
