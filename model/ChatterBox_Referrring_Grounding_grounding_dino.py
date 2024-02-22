@@ -161,25 +161,47 @@ class ChatterBox(nn.Module):
             tune_mm_mlp_adapter=self.lm.config.tune_mm_mlp_adapter,
         )
         
-        print(self.lm)
+        # print(self.lm)
+        # LlavaLlamaForCausalLM(
+        # (model): LlavaLlamaModel(
+        #     (embed_tokens): Embedding(32000, 5120, padding_idx=0)
+        #     (layers): ModuleList(
+        #     (0-39): 40 x LlamaDecoderLayer(
+        #         (self_attn): LlamaAttention(
+        #         (q_proj): Linear(in_features=5120, out_features=5120, bias=False)
+        #         (k_proj): Linear(in_features=5120, out_features=5120, bias=False)
+        #         (v_proj): Linear(in_features=5120, out_features=5120, bias=False)
+        #         (o_proj): Linear(in_features=5120, out_features=5120, bias=False)
+        #         (rotary_emb): LlamaRotaryEmbedding()
+        #         )
+        #         (mlp): LlamaMLP(
+        #         (gate_proj): Linear(in_features=5120, out_features=13824, bias=False)
+        #         (up_proj): Linear(in_features=5120, out_features=13824, bias=False)
+        #         (down_proj): Linear(in_features=13824, out_features=5120, bias=False)
+        #         (act_fn): SiLUActivation()
+        #         )
+        #         (input_layernorm): LlamaRMSNorm()
+        #         (post_attention_layernorm): LlamaRMSNorm()
+        #     )
+        #     )
+        #     (norm): LlamaRMSNorm()
+        #     (mm_projector): Linear(in_features=1024, out_features=5120, bias=True)
+        # )
+        # (lm_head): Linear(in_features=5120, out_features=32000, bias=False)
+        # )
         
-        print("Before freezing...")
-        count = 0
-        for n, param in self.lm.named_parameters():
-            if param.requires_grad:
-                count += 1
-        print(count / 1e6)
+        # print("Before freezing...", ) # 0.000364 M
         if freeze_lm:
             for n, param in self.lm.named_parameters():
                 param.requires_grad = False
-        print("After freezing...")
+        print("Not freezing...") # 0 M
         count = 0
         for n, param in self.lm.named_parameters():
             if param.requires_grad:
                 count += 1
         print(count / 1e6)
         for n, p in self.lm.named_parameters():
-            if any([x in n for x in ["lm_head", "embed_tokens"]]) and p.shape[0] == len(tokenizer):
+            if any([x in n for x in ["lm_head", "embed_tokens"]]):
                 p.requires_grad = True
         print("After unfreezing the head...")
         count = 0
@@ -206,6 +228,8 @@ class ChatterBox(nn.Module):
             if param.requires_grad:
                 count += 1
         print(count / 1e6)
+        
+        print("Total number of parameters in model: ", sum(p.numel() for p in self.lm.parameters())/1e6)
 
         # LoRA
         if lora_r > 0:
