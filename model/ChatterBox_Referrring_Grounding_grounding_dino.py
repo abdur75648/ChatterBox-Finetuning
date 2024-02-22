@@ -291,6 +291,15 @@ class ChatterBox(nn.Module):
             bbox_token_id=self.bbox_token_id,
             spi_module=self.spi_module
         )
+        
+        for key in output.keys():
+            value = output[key]
+            if isinstance(value, torch.Tensor):
+                print(f"{key}: Tensor with shape {value.shape}")
+            elif isinstance(value, list):
+                print(f"{key}: List with length {len(value)}")
+            else:
+                print(f"{key}: {type(value)}")
 
         output_hidden_states = output.hidden_states
 
