@@ -147,7 +147,7 @@ class ChatterBox(nn.Module):
             else:
                 vision_tower.to(device="cuda", dtype=torch.float32)
 
-        self.lm.config.tune_mm_mlp_adapter = False
+        self.lm.config.tune_mm_mlp_adapter = True
         self.lm.config.freeze_mm_mlp_adapter = False
         self.lm.config.mm_use_im_start_end = True
         vision_config.use_im_start_end = True
@@ -158,11 +158,17 @@ class ChatterBox(nn.Module):
             tokenizer=tokenizer,
             num_new_tokens=num_new_tokens,
             device=local_rank,
-            tune_mm_mlp_adapter=False,
+            tune_mm_mlp_adapter=self.lm.config.tune_mm_mlp_adapter,
         )
         if freeze_lm:
             for n, param in self.lm.named_parameters():
                 param.requires_grad = False
+        
+        for p in self.lm.lm_head.parameters():
+            p.requires_grad = True
+        for layer in self.lm.model.layers:
+            for param in layer.mlp.parameters():
+                param.requires_grad = True
 
         # LoRA
         if lora_r > 0:
@@ -217,9 +223,13 @@ class ChatterBox(nn.Module):
             nn.Dropout(0.0),
         ]
         self.text_hidden_fcs = nn.ModuleList([nn.Sequential(*text_fc)])
+        self.text_hidden_fcs.requires_grad = True
 
         self.tgt_align = nn.Linear(out_dim, 256)
+        self.tgt_align.requires_grad = True
+
         self.refpoint_align = nn.Linear(out_dim, 4)
+        self.refpoint_align.requires_grad = True
 
         
     def load_vision_dict(self, state_dict, strict=False):
