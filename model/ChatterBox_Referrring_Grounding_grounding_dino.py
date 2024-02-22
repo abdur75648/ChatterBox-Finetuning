@@ -164,17 +164,48 @@ class ChatterBox(nn.Module):
         print(self.lm)
         
         print("Before freezing...")
-        self.lm.print_trainable_parameters()
+        count = 0
+        for n, param in self.lm.named_parameters():
+            if param.requires_grad:
+                count += 1
+        print(count / 1e6)
         if freeze_lm:
             for n, param in self.lm.named_parameters():
                 param.requires_grad = False
         print("After freezing...")
-        self.lm.print_trainable_parameters()
+        count = 0
+        for n, param in self.lm.named_parameters():
+            if param.requires_grad:
+                count += 1
+        print(count / 1e6)
         for n, p in self.lm.named_parameters():
             if any([x in n for x in ["lm_head", "embed_tokens"]]) and p.shape[0] == len(tokenizer):
                 p.requires_grad = True
         print("After unfreezing the head...")
-        self.lm.print_trainable_parameters()
+        count = 0
+        for n, param in self.lm.named_parameters():
+            if param.requires_grad:
+                count += 1
+        print(count / 1e6)
+        
+        for p in self.lm.lm_head.parameters():
+            p.requires_grad = True
+        print("After unfreezing the head again...")
+        count = 0
+        for n, param in self.lm.named_parameters():
+            if param.requires_grad:
+                count += 1
+        print(count / 1e6)
+        
+        for layer in self.lm.model.layers:
+            for param in layer.mlp.parameters():
+                param.requires_grad = True
+        print("After unfreezing the mlp...")
+        count = 0
+        for n, param in self.lm.named_parameters():
+            if param.requires_grad:
+                count += 1
+        print(count / 1e6)
 
         # LoRA
         if lora_r > 0:
