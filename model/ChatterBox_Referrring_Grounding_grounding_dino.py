@@ -160,16 +160,10 @@ class ChatterBox(nn.Module):
             device=local_rank,
             tune_mm_mlp_adapter=self.lm.config.tune_mm_mlp_adapter,
         )
+        if freeze_lm:
+            for n, param in self.lm.named_parameters():
+                param.requires_grad = False
 
-        # if freeze_lm:
-        #     for n, param in self.lm.named_parameters():
-        #         param.requires_grad = False        
-        for p in self.lm.lm_head.parameters():
-            p.requires_grad = True
-        for layer in self.lm.model.layers:
-            for param in layer.mlp.parameters():
-                param.requires_grad = True
-        
         # LoRA
         if lora_r > 0:
             config = LoraConfig(
@@ -223,13 +217,10 @@ class ChatterBox(nn.Module):
             nn.Dropout(0.0),
         ]
         self.text_hidden_fcs = nn.ModuleList([nn.Sequential(*text_fc)])
-        self.text_hidden_fcs.requires_grad = True
 
         self.tgt_align = nn.Linear(out_dim, 256)
-        self.tgt_align.requires_grad = True
-
         self.refpoint_align = nn.Linear(out_dim, 4)
-        self.refpoint_align.requires_grad = True
+
         
     def load_vision_dict(self, state_dict, strict=False):
         msg = self.visual_grounding_model.load_state_dict(state_dict, strict=strict)
@@ -261,10 +252,6 @@ class ChatterBox(nn.Module):
         batch_size = images.shape[0]
         assert batch_size == len(offset) - 1  # note here !!!!
 
-        # Convert input_ids to normal text
-        input_text = self.tokenizer.batch_decode(input_ids, skip_special_tokens=True)
-        print("Input text: ", input_text)
-        
         vg_token_mask = input_ids[:, 1:] == self.vg_token_idx
         vg_token_mask = torch.cat(
             [
