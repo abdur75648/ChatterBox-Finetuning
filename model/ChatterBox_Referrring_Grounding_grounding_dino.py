@@ -147,7 +147,7 @@ class ChatterBox(nn.Module):
             else:
                 vision_tower.to(device="cuda", dtype=torch.float32)
 
-        self.lm.config.tune_mm_mlp_adapter = False
+        self.lm.config.tune_mm_mlp_adapter = True
         self.lm.config.freeze_mm_mlp_adapter = False
         self.lm.config.mm_use_im_start_end = True
         vision_config.use_im_start_end = True
@@ -158,11 +158,23 @@ class ChatterBox(nn.Module):
             tokenizer=tokenizer,
             num_new_tokens=num_new_tokens,
             device=local_rank,
-            tune_mm_mlp_adapter=False,
+            tune_mm_mlp_adapter=self.lm.config.tune_mm_mlp_adapter,
         )
+        
+        print(self.lm)
+        
+        print("Before freezing...")
+        self.lm.print_trainable_parameters()
         if freeze_lm:
             for n, param in self.lm.named_parameters():
                 param.requires_grad = False
+        print("After freezing...")
+        self.lm.print_trainable_parameters()
+        for n, p in self.lm.named_parameters():
+            if any([x in n for x in ["lm_head", "embed_tokens"]]) and p.shape[0] == len(tokenizer):
+                p.requires_grad = True
+        print("After unfreezing the head...")
+        self.lm.print_trainable_parameters()
 
         # LoRA
         if lora_r > 0:
@@ -174,13 +186,8 @@ class ChatterBox(nn.Module):
                 bias="none",
                 task_type="CAUSAL_LM",
             )
-            
-            print("\n\n\n\n\nLoRA config: ", config,"\n\n\n")
-            
             self.lm = get_peft_model(self.lm, config)
-            print("="*50)
             self.lm.print_trainable_parameters()
-            print("="*50)
 
         self.llm_version = llm_version
 
