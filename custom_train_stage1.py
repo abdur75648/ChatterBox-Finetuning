@@ -224,6 +224,8 @@ def main(args):
     # Number of trainable parameters (in Million) in model.visual_grounding_model
     num_params = sum(p.numel() for p in model.visual_grounding_model.parameters() if p.requires_grad) / 1e6
     print(f"Number of trainable parameters in model.visual_grounding_model: {num_params:.2f}M")
+    
+    exit(0)
 
     if vision_args.pretrained:
         state_dict = torch.load(vision_args.pretrained, map_location='cpu')['model']

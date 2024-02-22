@@ -147,7 +147,7 @@ class ChatterBox(nn.Module):
             else:
                 vision_tower.to(device="cuda", dtype=torch.float32)
 
-        self.lm.config.tune_mm_mlp_adapter = True
+        self.lm.config.tune_mm_mlp_adapter = False
         self.lm.config.freeze_mm_mlp_adapter = False
         self.lm.config.mm_use_im_start_end = True
         vision_config.use_im_start_end = True
@@ -158,7 +158,7 @@ class ChatterBox(nn.Module):
             tokenizer=tokenizer,
             num_new_tokens=num_new_tokens,
             device=local_rank,
-            tune_mm_mlp_adapter=self.lm.config.tune_mm_mlp_adapter,
+            tune_mm_mlp_adapter=False,
         )
         if freeze_lm:
             for n, param in self.lm.named_parameters():
