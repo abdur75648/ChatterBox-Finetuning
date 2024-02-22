@@ -160,77 +160,16 @@ class ChatterBox(nn.Module):
             device=local_rank,
             tune_mm_mlp_adapter=self.lm.config.tune_mm_mlp_adapter,
         )
-        
-        # print(self.lm)
-        # LlavaLlamaForCausalLM(
-        # (model): LlavaLlamaModel(
-        #     (embed_tokens): Embedding(32000, 5120, padding_idx=0)
-        #     (layers): ModuleList(
-        #     (0-39): 40 x LlamaDecoderLayer(
-        #         (self_attn): LlamaAttention(
-        #         (q_proj): Linear(in_features=5120, out_features=5120, bias=False)
-        #         (k_proj): Linear(in_features=5120, out_features=5120, bias=False)
-        #         (v_proj): Linear(in_features=5120, out_features=5120, bias=False)
-        #         (o_proj): Linear(in_features=5120, out_features=5120, bias=False)
-        #         (rotary_emb): LlamaRotaryEmbedding()
-        #         )
-        #         (mlp): LlamaMLP(
-        #         (gate_proj): Linear(in_features=5120, out_features=13824, bias=False)
-        #         (up_proj): Linear(in_features=5120, out_features=13824, bias=False)
-        #         (down_proj): Linear(in_features=13824, out_features=5120, bias=False)
-        #         (act_fn): SiLUActivation()
-        #         )
-        #         (input_layernorm): LlamaRMSNorm()
-        #         (post_attention_layernorm): LlamaRMSNorm()
-        #     )
-        #     )
-        #     (norm): LlamaRMSNorm()
-        #     (mm_projector): Linear(in_features=1024, out_features=5120, bias=True)
-        # )
-        # (lm_head): Linear(in_features=5120, out_features=32000, bias=False)
-        # )
-        
-        # print("Before freezing...", ) # 0.000364 M
-        if freeze_lm:
-            for n, param in self.lm.named_parameters():
-                param.requires_grad = False
-        print("Not freezing...") # 0 M
-        count = 0
-        for n, param in self.lm.named_parameters():
-            if param.requires_grad:
-                count += 1
-        print(count / 1e6)
-        for n, p in self.lm.named_parameters():
-            if any([x in n for x in ["lm_head", "embed_tokens"]]):
-                p.requires_grad = True
-        print("After unfreezing the head...")
-        count = 0
-        for n, param in self.lm.named_parameters():
-            if param.requires_grad:
-                count += 1
-        print(count / 1e6)
-        
+
+        # if freeze_lm:
+        #     for n, param in self.lm.named_parameters():
+        #         param.requires_grad = False        
         for p in self.lm.lm_head.parameters():
             p.requires_grad = True
-        print("After unfreezing the head again...")
-        count = 0
-        for n, param in self.lm.named_parameters():
-            if param.requires_grad:
-                count += 1
-        print(count / 1e6)
-        
         for layer in self.lm.model.layers:
             for param in layer.mlp.parameters():
                 param.requires_grad = True
-        print("After unfreezing the mlp...")
-        count = 0
-        for n, param in self.lm.named_parameters():
-            if param.requires_grad:
-                count += 1
-        print(count / 1e6)
         
-        print("Total number of parameters in model: ", sum(p.numel() for p in self.lm.parameters())/1e6)
-
         # LoRA
         if lora_r > 0:
             config = LoraConfig(
@@ -319,6 +258,10 @@ class ChatterBox(nn.Module):
         batch_size = images.shape[0]
         assert batch_size == len(offset) - 1  # note here !!!!
 
+        # Convert input_ids to normal text
+        input_text = self.tokenizer.batch_decode(input_ids, skip_special_tokens=True)
+        print("Input text: ", input_text)
+        
         vg_token_mask = input_ids[:, 1:] == self.vg_token_idx
         vg_token_mask = torch.cat(
             [
