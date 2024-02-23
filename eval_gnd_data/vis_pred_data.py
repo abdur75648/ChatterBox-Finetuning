@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
 # Load the JSON file
-file_path = "prediction.json"
+file_path = "new_prediction_extra_e1.json"
 with open(file_path) as f:
     data = json.load(f)
 
@@ -14,6 +14,9 @@ def visualize_gt_box(sample_index):
     filename = filename.split("/")[-1]
     gt_box = sample["gt"]
     pred_box = sample["out_boxes"]
+    print("="*50)
+    print(f"Image: {filename}")
+    print(f"Question: {sample['prompt']}")
     print(f"Ground Truth Box: {gt_box}") # x1, y1, x`2, y2
     print(f"Predicted Box: {pred_box}") # x1, y1, x`2, y2
     print("Answer: ", sample["answer"])
@@ -32,5 +35,5 @@ def visualize_gt_box(sample_index):
     # Save the plot
     plt.savefig(f"vis_"+filename)
 
-sample_index = 0
-visualize_gt_box(sample_index)
+for sample_index in range(len(data)):
+    visualize_gt_box(sample_index)
