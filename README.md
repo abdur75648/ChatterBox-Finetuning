@@ -19,7 +19,7 @@ cd ChatterBox-Finetuning
 2. Install Packages (Runpod with template `2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04`)
 ```Shell
 apt-get update
-apt-get install zip unzip
+apt-get install zip unzip screen
 pip install --upgrade pip
 pip install -r requirements.txt
 unzip mmcv-1.4.7.zip
