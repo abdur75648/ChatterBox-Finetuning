@@ -84,7 +84,7 @@ def parse_args(args):
     parser.add_argument("--vqa_grad_accumulation_steps", default=20, type=int)
     parser.add_argument("--val_batch_size", default=1, type=int)
     parser.add_argument("--workers", default=4, type=int)
-    parser.add_argument("--lr", default=0.000010, type=float)
+    parser.add_argument("--lr", default=0.000005, type=float)
     parser.add_argument("--dice_loss_weight", default=0.5, type=float)
     parser.add_argument("--bce_loss_weight", default=2.0, type=float)
     parser.add_argument("--lora_alpha", default=16, type=int)

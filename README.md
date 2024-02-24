@@ -16,7 +16,7 @@ git https://github.com/abdur75648/ChatterBox-Finetuning.git
 cd ChatterBox-Finetuning
 ```
 
-2.1 Install Packages (Runpod with template `2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04`)
+2. Install Packages (Runpod with template `2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04`)
 ```Shell
 apt-get update
 apt-get install zip unzip
@@ -28,16 +28,16 @@ MMCV_WITH_OPS=1 pip install -e .
 cd ../model/GroundingDINO/ops
 python setup.py build install
 cd ../../../
-rm -rf CB-300K
-mkdir CB-300K && cd CB-300K
-gdown --id 1vAqozQ3En5xSEIhzCp4WnUeWztYzZGQY
-gdown --id 1C0XyMyhLRzdSDbtWAiGdW1rjljop0sMe
-gdown --id 16CaLpXiiudAKP40ESKUjhquzWa0OTXaF
-gdown --id 1--RcXrmY0yl4OFE-sDe_vZcbanJG5tUG
-unzip images.zip
-unzip images2.zip
-rm *.zip
-cd ..
+# rm -rf CB-300K
+# mkdir CB-300K && cd CB-300K
+# gdown --id 1vAqozQ3En5xSEIhzCp4WnUeWztYzZGQY
+# gdown --id 1C0XyMyhLRzdSDbtWAiGdW1rjljop0sMe
+# gdown --id 16CaLpXiiudAKP40ESKUjhquzWa0OTXaF
+# gdown --id 1--RcXrmY0yl4OFE-sDe_vZcbanJG5tUG
+# unzip images.zip
+# unzip images2.zip
+# rm *.zip
+# cd ..
 cd llava-llama-2-13b-chat-lightning-preview
 bash download_model.sh
 cd ..
@@ -46,8 +46,8 @@ wget https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alp
 
 * ** Update @ 17th feb 2024: ** Trained weights available at https://huggingface.co/sunsmarterjieleaf/ChatterBox
 
-2.2. Install Packages (HPC)
-
+<!-- 3. Install Packages (HPC) -->
+<!-- 
 ```Shell
 module load compiler/cuda/11.0/compilervars
 module load compiler/gcc/6.5.0/compilervars
@@ -65,7 +65,7 @@ cd ../../../
 wget https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha2/groundingdino_swinb_cogcoor.pth
 git lfs install
 git clone https://huggingface.co/liuhaotian/llava-llama-2-13b-chat-lightning-preview
-```
+``` -->
 
 
 ## Train
@@ -77,8 +77,9 @@ python startup_stage1.py  # stage1
 python startup_stage2.py  # stage2
 ``` -->
 ```Shell
-deepspeed --include localhost:0,1 --master_port 54906 train_stage1.py --version llava-llama-2-13b-chat-lightning-preview
-deepspeed --include localhost:0,1 --master_port 54906 train_stage2.py --version llava-llama-2-13b-chat-lightning-preview
+deepspeed --include localhost:0,1 --master_port 54906 custom_train_gnd.py --version llava-llama-2-13b-chat-lightning-preview
+# deepspeed --include localhost:0,1 --master_port 54906 train_stage1.py --version llava-llama-2-13b-chat-lightning-preview
+# deepspeed --include localhost:0,1 --master_port 54906 train_stage2.py --version llava-llama-2-13b-chat-lightning-preview
 ```
 
 
