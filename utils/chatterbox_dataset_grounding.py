@@ -462,7 +462,7 @@ class MyGroundingDataset(torch.utils.data.Dataset):
         # self.transform = dino_transform  # transforms for dino detection
         self.clip_image_processor = CLIPImageProcessor.from_pretrained(vision_tower)
         self.data_path = os.path.join(base_root)
-        with open(os.path.join(anno_path, 'apollo_8k_GND.json')) as f:
+        with open(os.path.join(anno_path, 'apollo_16k_GND.json')) as f:
             jack_json = json.load(f)
         self.jack_json = jack_json['data']
 
@@ -1228,10 +1228,10 @@ class GroundingDataset(torch.utils.data.Dataset):
             elif dataset == "mygr":
                 self.all_datasets.append(
                     MyGroundingDataset(
-                        base_root="Augmented-Apollo-MLLM-data/", # path to images in grounding_gt.json
+                        base_root="16k-Apollo-MLLM-data", # path to images in grounding_gt.json
                         tokenizer=tokenizer,
                         vision_tower=vision_tower,
-                        anno_path='Augmented-Apollo-MLLM-data/'
+                        anno_path='16k-Apollo-MLLM-data'
                     )
                 )
                 self.numSamples += len(self.all_datasets[-1])
