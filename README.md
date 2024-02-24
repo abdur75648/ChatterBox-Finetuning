@@ -28,21 +28,24 @@ MMCV_WITH_OPS=1 pip install -e .
 cd ../model/GroundingDINO/ops
 python setup.py build install
 cd ../../../
-# rm -rf CB-300K
-# mkdir CB-300K && cd CB-300K
-# gdown --id 1vAqozQ3En5xSEIhzCp4WnUeWztYzZGQY
-# gdown --id 1C0XyMyhLRzdSDbtWAiGdW1rjljop0sMe
-# gdown --id 16CaLpXiiudAKP40ESKUjhquzWa0OTXaF
-# gdown --id 1--RcXrmY0yl4OFE-sDe_vZcbanJG5tUG
-# unzip images.zip
-# unzip images2.zip
-# rm *.zip
-# cd ..
 cd llava-llama-2-13b-chat-lightning-preview
 bash download_model.sh
 cd ..
 wget https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha2/groundingdino_swinb_cogcoor.pth
 ```
+
+<!-- Downloading Visual Genome Grounding Datatset -->
+<!-- rm -rf CB-300K
+mkdir CB-300K && cd CB-300K
+gdown --id 1vAqozQ3En5xSEIhzCp4WnUeWztYzZGQY
+gdown --id 1C0XyMyhLRzdSDbtWAiGdW1rjljop0sMe
+gdown --id 16CaLpXiiudAKP40ESKUjhquzWa0OTXaF
+gdown --id 1--RcXrmY0yl4OFE-sDe_vZcbanJG5tUG
+unzip images.zip
+unzip images2.zip
+rm *.zip
+cd .. -->
+
 
 * ** Update @ 17th feb 2024: ** Trained weights available at https://huggingface.co/sunsmarterjieleaf/ChatterBox
 
@@ -78,9 +81,10 @@ python startup_stage2.py  # stage2
 ``` -->
 ```Shell
 deepspeed --include localhost:0,1 --master_port 54906 custom_train_gnd.py --version llava-llama-2-13b-chat-lightning-preview
-# deepspeed --include localhost:0,1 --master_port 54906 train_stage1.py --version llava-llama-2-13b-chat-lightning-preview
-# deepspeed --include localhost:0,1 --master_port 54906 train_stage2.py --version llava-llama-2-13b-chat-lightning-preview
 ```
+
+<!-- deepspeed --include localhost:0,1 --master_port 54906 train_stage1.py --version llava-llama-2-13b-chat-lightning-preview
+deepspeed --include localhost:0,1 --master_port 54906 train_stage2.py --version llava-llama-2-13b-chat-lightning-preview -->
 
 
 
@@ -116,4 +120,4 @@ If this project has been helpful or if you've used our dataset, please cite:
 
 ## Acknowledgment
 
-This project is based on LLaVA ([paper](https://arxiv.org/abs/2304.08485), [code](https://github.com/haotian-liu/LLaVA)), LISA ([paper](https://arxiv.org/abs/2308.00692), [code](https://github.com/dvlab-research/LISA)), GPT4RoI ([paper](https://arxiv.org/abs/2307.03601), [code](https://github.com/jshilong/GPT4RoI)), thanks for their excellent works.
+Original Repository: [ChatterBox](https://github.com/sunsmarterjie/ChatterBox)
