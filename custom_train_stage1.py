@@ -397,9 +397,9 @@ def train(
             # with torch.cuda.amp.autocast(enabled=True):
             output_dict = model(**meta_input_dict)
 
-            vqa_loss = output_dict["vqa_loss"]
-            vg_loss = output_dict["vg_loss"]
-            loss = vqa_loss + vg_loss
+            vqa_loss = output_dict["vqa_loss"] # ~ 3.1
+            vg_loss = output_dict["vg_loss"] # ~ 30.5
+            loss = vqa_loss + vg_loss*0.5
 
             losses.update(loss.item(), input_dict["images"].size(0))
             vqa_losses.update(vqa_loss.item(), input_dict["images"].size(0))
