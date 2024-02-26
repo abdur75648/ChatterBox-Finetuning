@@ -1,0 +1,128 @@
+[
+ {
+  "gt": [],
+  "image_abs_path": "eval_data/images_rajat/1.png",
+  "prompt": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: None \nGive me the next action? [VG]",
+  "answer": " Reasoning: The previous action is None, so the first step is to initiate the search. The task requires finding product managers with a minimum of 5 years of experience working in a series A company with a minimum of 1M in revenue. The search can be conducted using a search engine or a database, where we can input the necessary criteria to filter the results. The next action would be to start the search, and the results will be displayed based on the input criteria. ",
+  "gt_text": "",
+  "score": 0,
+  "out_boxes": [
+   0,
+   0,
+   1,
+   1
+  ]
+ },
+ {
+  "gt": [],
+  "image_abs_path": "eval_data/images_rajat/2.png",
+  "prompt": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: None \nGive me the next action? [VG]",
+  "answer": " Reasoning: The previous action is None, so the first step is to initiate the search. The task requires finding product managers with a minimum of 5 years of experience working in a series A company with a minimum of 1M in revenue. The search can be conducted using a search engine or a database, where we can input the relevant criteria such as job title, years of experience, company stage, and revenue. The next action would be to start the search and compile a list of potential candidates. ",
+  "gt_text": "",
+  "score": 0,
+  "out_boxes": [
+   0,
+   0,
+   1,
+   1
+  ]
+ },
+ {
+  "gt": [],
+  "image_abs_path": "eval_data/images_rajat/3.png",
+  "prompt": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: None \nGive me the next action? [VG]",
+  "answer": " Reasoning: The previous action is None, so the first step is to initiate the search. The task requires a list of product managers with a minimum of 5 years of experience working in a series A company with a minimum of 1M in revenue. The search can be conducted using a search engine or a database, where we can input the relevant criteria such as job title, company stage, and revenue. The next action would be to start the search and compile the list of product managers that meet the specified criteria. ",
+  "gt_text": "",
+  "score": 0,
+  "out_boxes": [
+   0,
+   0,
+   1,
+   1
+  ]
+ },
+ {
+  "gt": [],
+  "image_abs_path": "eval_data/images_rajat/4.png",
+  "prompt": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: CLICK: Click on Search button \nGive me the next action? [VG]",
+  "answer": " Reasoning: The previous action was to click on the search button. The next action would be to refine the search results by using the filters. The filters could include job title, years of experience, company revenue, and location. By using these filters, the user can narrow down the search results to find product managers with at least 5 years of experience, working in a series A company with minimum 1M in revenue. ",
+  "gt_text": "",
+  "score": 0,
+  "out_boxes": [
+   0,
+   0,
+   1,
+   1
+  ]
+ },
+ {
+  "gt": [],
+  "image_abs_path": "eval_data/images_rajat/5.png",
+  "prompt": "Task: Give me the list of all engineers with minimum 2 years of experience working in a series C company. \n Previous Action: CLICK: Click on the Search button \nGive me the next action? [VG]",
+  "answer": " Reasoning: The previous action was to click on the Search button. The next action would be to click on the \"Export\" button to download the list of engineers with minimum 2 years of experience working in a series C company. This will allow the user to have a physical copy of the information for further review or analysis. ",
+  "gt_text": "",
+  "score": 0.314050555229187,
+  "out_boxes": [
+   1087,
+   407,
+   1166,
+   453
+  ]
+ },
+ {
+  "gt": [],
+  "image_abs_path": "eval_data/images_rajat/6.png",
+  "prompt": "Task: Give me the list of all researchers with working Microsoft in New York with high buying intent signal. \n Previous Action: Click: Click on the Signal Button \n Next Action: What is the next action? [VG]",
+  "answer": " Reasoning: The next action is to click on the \"Export\" button to download the list of researchers with a high buying intent signal. This will allow the user to have a physical copy of the data for further analysis or use. ",
+  "gt_text": "",
+  "score": 0.6627964973449707,
+  "out_boxes": [
+   233,
+   769,
+   444,
+   820
+  ]
+ },
+ {
+  "gt": [],
+  "image_abs_path": "eval_data/images_rajat/7.png",
+  "prompt": "Task: Give me the list of all researchers with working Microsoft in New York with maximum 10 years of experience. \n Previous Action: Click: Click total years of experience in the search tab \n Next Action: Give the next action? [VG]",
+  "answer": " Reasoning: The next action is to click on the search filter button to apply the filter for researchers with a maximum of 10 years of experience. This will help to narrow down the search results to only include those researchers who have been working at Microsoft in New York for a maximum of 10 years. ",
+  "gt_text": "",
+  "score": 0.5630176067352295,
+  "out_boxes": [
+   283,
+   439,
+   499,
+   489
+  ]
+ },
+ {
+  "gt": [],
+  "image_abs_path": "eval_data/images_rajat/8.png",
+  "prompt": "Task: Give me the list of all researchers with working Microsoft in New York with high buying intent signal. \n Previous Action: Type: Type High Buying intent in the tab \n Next Action: What is the next action? [VG]",
+  "answer": " Reasoning: The next action is to click on the \"Export\" button to download the list of researchers with high buying intent in New York. This will allow the user to have a physical copy of the data for further analysis or use. ",
+  "gt_text": "",
+  "score": 0.39414262771606445,
+  "out_boxes": [
+   277,
+   786,
+   498,
+   829
+  ]
+ },
+ {
+  "gt": [],
+  "image_abs_path": "eval_data/images_rajat/9.png",
+  "prompt": "Task: Give me the list of all researchers with working Microsoft in New York with maximum 10 years of experience. \n Previous Action: Click: Click total years of experience in the search tab \n Next Action: Give the next action? [VG]",
+  "answer": " Reasoning: The next action is to click on the search filter button to apply the filter for researchers with a maximum of 10 years of experience. This will help to narrow down the search results to only include those researchers who have been working at Microsoft in New York for a maximum of 10 years. ",
+  "gt_text": "",
+  "score": 0.7275885343551636,
+  "out_boxes": [
+   284,
+   518,
+   501,
+   563
+  ]
+ }
+]

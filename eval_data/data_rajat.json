@@ -1,0 +1,38 @@
+[
+    {
+        "filename": "images_rajat/1.png",
+        "question": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: None \nGive me the next action?"
+    },
+    {
+        "filename": "images_rajat/2.png",
+        "question": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: None \nGive me the next action?"
+    },
+    {
+        "filename": "images_rajat/3.png",
+        "question": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: None \nGive me the next action?"
+    },
+    {
+        "filename": "images_rajat/4.png",
+        "question": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: CLICK: Click on Search button \nGive me the next action?"
+    },
+    {
+        "filename": "images_rajat/5.png",
+        "question": "Task: Give me the list of all engineers with minimum 2 years of experience working in a series C company. \n Previous Action: CLICK: Click on the Search button \nGive me the next action?"
+    },
+    {
+        "filename": "images_rajat/6.png",
+        "question": "Task: Give me the list of all researchers with working Microsoft in New York with high buying intent signal. \n Previous Action: Click: Click on the Signal Button \n Next Action: What is the next action?"
+    },
+    {
+        "filename": "images_rajat/7.png",
+        "question": "Task: Give me the list of all researchers with working Microsoft in New York with maximum 10 years of experience. \n Previous Action: Click: Click total years of experience in the search tab \n Next Action: Give the next action?"
+    },
+    {
+        "filename": "images_rajat/8.png",
+        "question": "Task: Give me the list of all researchers with working Microsoft in New York with high buying intent signal. \n Previous Action: Type: Type High Buying intent in the tab \n Next Action: What is the next action?"
+    },
+    {
+        "filename": "images_rajat/9.png",
+        "question": "Task: Give me the list of all researchers with working Microsoft in New York with maximum 10 years of experience. \n Previous Action: Click: Click total years of experience in the search tab \n Next Action: Give the next action?"
+    }
+]
