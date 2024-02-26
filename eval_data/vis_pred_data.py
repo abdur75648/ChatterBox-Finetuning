@@ -1,9 +1,8 @@
 import json
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
-
+import cv2
+from PIL import Image, ImageDraw
 # Load the JSON file
-file_path = "pred_1.1.json"
+file_path = "pred_2.2.json"
 with open(file_path) as f:
     data = json.load(f)
 
@@ -20,24 +19,26 @@ def visualize_gt_box(sample_index):
     print("="*50)
     print(f"Image: {filename}")
     print(f"Question: {sample['prompt']}")
-    print(f"Ground Truth Box: {gt_box}") # x1, y1, x`2, y2
+    # print(f"Ground Truth Box: {gt_box}") # x1, y1, x`2, y2
     print(f"Predicted Box: {pred_box}") # x1, y1, x`2, y2
     print("Answer: ", sample["answer"])
 
-   # Read the image and Create a rectangle patch for the gt_box in green color and pred_box in blue color
-    img = plt.imread(filename)
-    fig, ax = plt.subplots(1)
-    ax.imshow(img)
+    # Read the image using OpenCV
+    img = cv2.imread(filename)
+    img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    img_pil = Image.fromarray(img_rgb)
+
+    draw = ImageDraw.Draw(img_pil)
     if len(gt_box) > 0:
-        rect_gt = patches.Rectangle((gt_box[0], gt_box[1]), gt_box[2]-gt_box[0], gt_box[3]-gt_box[1], linewidth=2, edgecolor='g', facecolor='none')
-        ax.add_patch(rect_gt)
+        draw.rectangle([(gt_box[0], gt_box[1]), (gt_box[2], gt_box[3])], outline='green', width=5)
     
-    rect_pred = patches.Rectangle((pred_box[0], pred_box[1]), pred_box[2]-pred_box[0], pred_box[3]-pred_box[1], linewidth=2, edgecolor='b', facecolor='none')
-    ax.add_patch(rect_pred)
+    draw.rectangle([(pred_box[0], pred_box[1]), (pred_box[2], pred_box[3])], outline='blue', width=5)
 
     filename = filename.replace("/", "_")
-    # Save the plot
-    plt.savefig(f"vis_"+filename)
+    # Save the image
+    img_pil.save(f"vis_{filename}")
 
 for sample_index in range(len(data)):
+    print("="*50)
     visualize_gt_box(sample_index)
+    print("="*50)

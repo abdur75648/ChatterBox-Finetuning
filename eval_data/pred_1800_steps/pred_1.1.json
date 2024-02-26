@@ -20,10 +20,10 @@
  },
  {
   "gt": [
-   399,
-   664,
-   719,
-   706
+    303,
+    569,
+    540,
+    603
   ],
   "image_abs_path": "eval_data/images/images_wf-anish-9_Screenshot 2024-01-24 113639.png",
   "prompt": "Task: Give me the list of all the people working in Meta as software engineer with minimum 5 years of experience in Seattle. \n Previous Action: CLICK: Click the location button \nGive me the next action? [VG]",
@@ -39,10 +39,10 @@
  },
  {
   "gt": [
-   303,
-   569,
-   540,
-   603
+    1721,
+    421,
+    1859,
+    468
   ],
   "image_abs_path": "eval_data/images/images_wf-anish-5_u.png",
   "prompt": "Task:  Give me the director of Series A funded company in Mumbai in entertainment sector \n Previous Action: TYPE: Type entertainment in the search industries tab \nGive me the next action? [VG]",
@@ -58,10 +58,10 @@
  },
  {
   "gt": [
-   303,
-   569,
-   540,
-   603
+    764,
+    351,
+    811,
+    390
   ],
   "image_abs_path": "eval_data/images/images_wf-anish-17_x.jpg",
   "prompt": "Task:  Give me a list of quant employees at JP Morgan Chase & Co. working in Mumbai for at least 2 years \n Previous Action: CLICK: Click on the apply filters button \nGive me the next action? [VG]",
@@ -77,10 +77,10 @@
  },
  {
   "gt": [
-   1721,
-   421,
-   1859,
-   468
+    394,
+    675,
+    706,
+    719
   ],
   "image_abs_path": "eval_data/images/images_wf-deep-3_e.png",
   "prompt": "Task: Give me the list of 100 analyst working in a Venture firm with minimum 10 years of experience. \n Previous Action: CLICK: Click on the Job Titles button \nGive me the next action? [VG]",

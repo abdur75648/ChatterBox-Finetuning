@@ -1,29 +1,10 @@
 [
  {
   "gt": [
-   303,
-   569,
-   540,
-   603
-  ],
-  "image_abs_path": "eval_data/images_aug/images_wf-anish-9_113639.1.png",
-  "prompt": "Task: Give me the list of all the people working in Meta as software engineer with minimum 5 years of experience in Seattle. \n Previous Action: CLICK: Click the location button \nGive me the next action? [VG]",
-  "answer": " Reasoning: The previous action was to click the location button. The next action is to click the search filters button. This will allow us to filter the search results based on specific criteria such as job title, years of experience, and location. In this case, we are looking for software engineers with a minimum of 5 years of experience in Seattle. After applying the filters, we can then click the search button to get the list of all the people working in Meta as software engineers with a minimum of 5 years of experience in Seattle. ",
-  "gt_text": "Reasoning: The next action would be to specify the location as Seattle in the Meta directory. Thus clicking the 'enter locations' tab would allow us to do so. CLICK: Click the enter locations  tab. .",
-  "score": 0,
-  "out_boxes": [
-   0,
-   0,
-   1,
-   1
-  ]
- },
- {
-  "gt": [
-   303,
-   569,
-   540,
-   603
+    57,
+    1425,
+    500,
+    1500
   ],
   "image_abs_path": "eval_data/images_aug/images_wf-anish-9_113639.2.png",
   "prompt": "Task: Give me the list of all the people working in Meta as software engineer with minimum 5 years of experience in Seattle. \n Previous Action: CLICK: Click the location button \nGive me the next action? [VG]",
@@ -39,10 +20,10 @@
  },
  {
   "gt": [
-   57,
-   1425,
-   500,
-   1500
+    375,
+    650,
+    640,
+    685
   ],
   "image_abs_path": "eval_data/images_aug/images_wf-anish-9_113639.3.png",
   "prompt": "Task: Give me the list of all the people working in Meta as software engineer with minimum 5 years of experience in Seattle. \n Previous Action: CLICK: Click the location button \nGive me the next action? [VG]",
@@ -58,10 +39,10 @@
  },
  {
   "gt": [
-   57,
-   1425,
-   500,
-   1500
+    1490,
+    367,
+    1620,
+    408
   ],
   "image_abs_path": "eval_data/images_aug/images_wf-anish-5_u.1.png",
   "prompt": "Task:  Give me the director of Series A funded company in Mumbai in entertainment sector \n Previous Action: TYPE: Type entertainment in the search industries tab \nGive me the next action? [VG]",
@@ -77,10 +58,10 @@
  },
  {
   "gt": [
-   375,
-   650,
-   640,
-   685
+    2640,
+    875,
+    2850,
+    925
   ],
   "image_abs_path": "eval_data/images_aug/images_wf-anish-5_u.2.png",
   "prompt": "Task:  Give me the director of Series A funded company in Mumbai in entertainment sector \n Previous Action: TYPE: Type entertainment in the search industries tab \nGive me the next action? [VG]",
@@ -96,10 +77,10 @@
  },
  {
   "gt": [
-   375,
-   650,
-   640,
-   685
+    2210,
+    630,
+    2390,
+    700
   ],
   "image_abs_path": "eval_data/images_aug/images_wf-anish-5_u.3.png",
   "prompt": "Task:  Give me the director of Series A funded company in Mumbai in entertainment sector \n Previous Action: TYPE: Type entertainment in the search industries tab \nGive me the next action? [VG]",
@@ -115,10 +96,10 @@
  },
  {
   "gt": [
-   1490,
-   367,
-   1620,
-   408
+    764,
+    351,
+    811,
+    390
   ],
   "image_abs_path": "eval_data/images_aug/images_wf-anish-17_x.1.jpg",
   "prompt": "Task:  Give me a list of quant employees at JP Morgan Chase & Co. working in Mumbai for at least 2 years \n Previous Action: CLICK: Click on the apply filters button \nGive me the next action? [VG]",
@@ -134,10 +115,10 @@
  },
  {
   "gt": [
-   1490,
-   367,
-   1620,
-   408
+    765,
+    310,
+    815,
+    345
   ],
   "image_abs_path": "eval_data/images_aug/images_wf-anish-17_x.2.jpg",
   "prompt": "Task:  Give me a list of quant employees at JP Morgan Chase & Co. working in Mumbai for at least 2 years \n Previous Action: CLICK: Click on the apply filters button \nGive me the next action? [VG]",
@@ -153,10 +134,10 @@
  },
  {
   "gt": [
-   2640,
-   875,
-   2850,
-   925
+    430,
+    215,
+    455,
+    235
   ],
   "image_abs_path": "eval_data/images_aug/images_wf-anish-17_x.3.jpg",
   "prompt": "Task:  Give me a list of quant employees at JP Morgan Chase & Co. working in Mumbai for at least 2 years \n Previous Action: CLICK: Click on the apply filters button \nGive me the next action? [VG]",

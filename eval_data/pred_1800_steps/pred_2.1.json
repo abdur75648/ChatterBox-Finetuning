@@ -20,10 +20,10 @@
  },
  {
   "gt": [
-   10,
-   201,
-   290,
-   239
+    556,
+    422,
+    715,
+    466
   ],
   "image_abs_path": "eval_data/images/images_wf-deep-3_b.png",
   "prompt": "Task: Give me the list of 100 analyst working in a Venture firm with minimum 10 years of experience. \n Previous Action: CLICK: Click the Search button \nGive me the next action? [VG]",
@@ -39,10 +39,10 @@
  },
  {
   "gt": [
-   556,
-   422,
-   715,
-   466
+    458,
+    427,
+    802,
+    471
   ],
   "image_abs_path": "eval_data/images/images_wf-deep-3_c.png",
   "prompt": "Task: Give me the list of 100 analyst working in a Venture firm with minimum 10 years of experience. \n Previous Action: CLICK: Click the more filters button \nGive me the next action? [VG]",

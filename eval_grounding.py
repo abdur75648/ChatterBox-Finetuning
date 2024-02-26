@@ -170,28 +170,24 @@ def get_gnd_qa_list(path):
     # image_id_list=[]
     with open(path,'r') as fr:
         file=json.load(fr)
-        for f in file:
-            # image_id_list.append(f['image_id'])
-            file_name_list.append(f['filename'])
-            question=f['question']+' [VG]'
-            prompt_list.append(question)
-            answer = f.get('answer', "")
-            if answer == "":
-                bbox = []
-            else:
-                if len(answer.split('<'))==2:
-                    sent,name_box=answer.split('<')
-                    sent+='.'
-                    answer = sent
-                    name_box=name_box.rstrip('>')
-                    name,box=name_box.split(':')
-                    bbox=eval(box)
-                    gt_list.append(bbox)
-                else:
-                    bbox = []
-            answer_sent_list.append(answer)
+    for f in file:
+        # image_id_list.append(f['image_id'])
+        file_name_list.append(f['filename'])
+        question=f['question']+' [VG]'
+        prompt_list.append(question)
+        answer = f.get('answer', "")
+        bbox = []
+        if len(answer.split('<'))==2:
+            sent,name_box=answer.split('<')
+            sent+='.'
+            answer = sent
+            name_box=name_box.rstrip('>')
+            name,box=name_box.split(':')
+            bbox=eval(box)
             gt_list.append(bbox)
-            # int_gt_list.append([int(bbox[0]),int(bbox[1]),int(bbox[2]),int(bbox[3])])
+        answer_sent_list.append(answer)
+        gt_list.append(bbox)
+        # int_gt_list.append([int(bbox[0]),int(bbox[1]),int(bbox[2]),int(bbox[3])])
             # object_name_list.append(name)
     return prompt_list,file_name_list,gt_list,answer_sent_list
 
@@ -458,12 +454,14 @@ def main(args):
                 output_dict['score'] = pred_score
                 output_dict['out_boxes'] = pred_box
                 print('predict box: ',pred_box)
+            # print(output_dict)
+            # print(gt_list[idx])
             output_list.append(output_dict)
 
     #save prediction results
     os.makedirs(os.path.dirname(args.save_out_path), exist_ok=True)
     with open(args.save_out_path, 'w') as fw:
-        json.dump(output_list, fw, indent=1)
+        json.dump(output_list, fw, indent=4)
 
 if __name__ == "__main__":
     main(sys.argv[1:])
