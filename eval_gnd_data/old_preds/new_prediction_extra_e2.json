@@ -1,0 +1,97 @@
+[
+ {
+  "gt": [
+   58,
+   134,
+   125,
+   158
+  ],
+  "out_category": "button",
+  "image_abs_path": "eval_gnd_data/0.png",
+  "prompt": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: None \nGive me the next action? [VG]",
+  "answer": " To search for a series A company with a revenue of at least 1 million, you can use a search engine like Google. Type in the search for a series A company in the search filter. ",
+  "score": 0.4127076268196106,
+  "out_boxes": [
+   53,
+   137,
+   201,
+   157
+  ]
+ },
+ {
+  "gt": [
+   26,
+   228,
+   377,
+   278
+  ],
+  "out_category": "button",
+  "image_abs_path": "eval_gnd_data/1.png",
+  "prompt": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: None \nGive me the next action? [VG]",
+  "answer": " To search for a series A company with a revenue of at least 1 million, the product managers with a minimum of 5 years of experience in the company, and the total number of product managers in the company. ",
+  "score": 0.42363685369491577,
+  "out_boxes": [
+   15,
+   223,
+   387,
+   272
+  ]
+ },
+ {
+  "gt": [
+   740,
+   472,
+   958,
+   526
+  ],
+  "out_category": "button",
+  "image_abs_path": "eval_gnd_data/2.png",
+  "prompt": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: CLICK: Click on the Search button \nGive me the next action? [VG]",
+  "answer": " CLICK: Click on the Search filters ",
+  "score": 0.4741593897342682,
+  "out_boxes": [
+   738,
+   470,
+   950,
+   523
+  ]
+ },
+ {
+  "gt": [
+   726,
+   339,
+   965,
+   419
+  ],
+  "out_category": "tab",
+  "image_abs_path": "eval_gnd_data/3.png",
+  "prompt": "Task: Give me a list of all the companies with account location in United States. \n Previous Action: CLICK: Click on the Search button \nGive me the next action? [VG]",
+  "answer": " CLICK: Click on the Search filters ",
+  "score": 0.38577955961227417,
+  "out_boxes": [
+   841,
+   665,
+   1096,
+   728
+  ]
+ },
+ {
+  "gt": [
+   726,
+   657,
+   965,
+   724
+  ],
+  "out_category": "tab",
+  "image_abs_path": "eval_gnd_data/4.png",
+  "prompt": "Task: Give me a list of all the companies with account location in United States. \n Previous Action: CLICK: Click on the Search button \nGive me the next action? [VG]",
+  "answer": " CLICK: Click on the Search filters ",
+  "score": 0,
+  "out_boxes": [
+   0,
+   0,
+   1,
+   1
+  ]
+ }
+]

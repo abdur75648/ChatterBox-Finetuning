@@ -164,35 +164,43 @@ def get_gnd_qa_list(path):
     prompt_list=[]
     file_name_list=[]
     gt_list=[]
-    int_gt_list=[]
-    object_name_list=[]
+    # int_gt_list=[]
+    # object_name_list=[]
     answer_sent_list=[]
-    image_id_list=[]
+    # image_id_list=[]
     with open(path,'r') as fr:
         file=json.load(fr)
         for f in file:
-            image_id_list.append(f['image_id'])
+            # image_id_list.append(f['image_id'])
             file_name_list.append(f['filename'])
             question=f['question']+' [VG]'
             prompt_list.append(question)
-            answer=f['answer']
-            sent,name_box=answer.split('<')
-            sent+='.'
-            answer_sent_list.append(sent)
-            name_box=name_box.rstrip('>')
-            name,box=name_box.split(':')
-            bbox=eval(box)
+            answer = f.get('answer', "")
+            if answer == "":
+                bbox = []
+            else:
+                if len(answer.split('<'))==2:
+                    sent,name_box=answer.split('<')
+                    sent+='.'
+                    answer = sent
+                    name_box=name_box.rstrip('>')
+                    name,box=name_box.split(':')
+                    bbox=eval(box)
+                    gt_list.append(bbox)
+                else:
+                    bbox = []
+            answer_sent_list.append(answer)
             gt_list.append(bbox)
-            int_gt_list.append([int(bbox[0]),int(bbox[1]),int(bbox[2]),int(bbox[3])])
-            object_name_list.append(name)
-    return prompt_list,file_name_list,gt_list,object_name_list,image_id_list
+            # int_gt_list.append([int(bbox[0]),int(bbox[1]),int(bbox[2]),int(bbox[3])])
+            # object_name_list.append(name)
+    return prompt_list,file_name_list,gt_list,answer_sent_list
 
 
 def main(args):
     args = parse_args(args)
     os.makedirs(args.vis_save_path, exist_ok=True)
 
-    prompt_list, file_name_list, gt_list, object_name_list, answer_sent_list = get_gnd_qa_list(args.gnd_file_path)#get questions
+    prompt_list, file_name_list, gt_list, answer_sent_list = get_gnd_qa_list(args.gnd_file_path)#get questions
     print("Loaded questions: ", len(prompt_list))
     # for i in range(len(prompt_list)):
     #     print("Prompt ", str(i+1), ": ", prompt_list[i])
@@ -269,7 +277,7 @@ def main(args):
         #annotation
         gt = gt_list[idx]
         output_dict['gt'] = gt
-        output_dict['out_category'] = object_name_list[idx]
+        # output_dict['out_category'] = object_name_list[idx]
         image_path_or = os.path.join(args.images_path,file_name_list[idx])
         output_dict['image_abs_path'] = image_path_or
         image_path = image_path_or
@@ -417,6 +425,7 @@ def main(args):
             )
             print("text_output: ", text_output)
             output_dict['answer'] = text_output
+            output_dict['gt_text'] = answer_sent_list[idx]
 
             # for grounding task
             if len(pred_box) > 0:

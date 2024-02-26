@@ -59,7 +59,7 @@
     ],
     "catgory": "tab",
     "question": "Task: Give me a list of all the companies with account location in United States. \n Previous Action: CLICK: Click on the Search button \nGive me the next action?",
-    "answer": "CLICK: Click on the Companies tab. <tab: [726, 339, 965, 419]>",
+    "answer": "",
     "gt_box": [
         726,
         339,
@@ -76,7 +76,7 @@
     ],
     "catgory": "tab",
     "question": "Task: Give me a list of all the companies with account location in United States. \n Previous Action: CLICK: Click on the Search button \nGive me the next action?",
-    "answer": "CLICK: Click on the Companies tab. <tab: [726, 657, 965, 724]>",
+    "answer": "No answer",
     "gt_box": [
         726,
         657,

@@ -1,0 +1,40 @@
+[
+{
+    "gt": [
+        411.1,
+        237.7,
+        93.00999999999999,
+        242.3
+    ],
+    "out_category": "toilet",
+    "image_abs_path": "/Workspace/TianYunjie/datasets/MSCOCO2017/images/000000403385.jpg",
+    "prompt": "Where is the toilet? [VG]",
+    "answer": "The toilet is on the left side of the image.",
+    "score": 0.9171544313430786,
+    "out_boxes": [
+        411,
+        237,
+        502,
+        481
+    ]
+    },
+    {
+    "gt": [
+        9.21,
+        313.62,
+        142.71,
+        78.25999999999999
+    ],
+    "out_category": "sink",
+    "image_abs_path": "/Workspace/TianYunjie/datasets/MSCOCO2017/images/000000403385.jpg",
+    "prompt": "Where is the sink? [VG]",
+    "answer": "The sink is on the right side of the image.",
+    "score": 0.3460991382598877,
+    "out_boxes": [
+        411,
+        237,
+        502,
+        481
+    ]
+    }
+]

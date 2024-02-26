@@ -1,0 +1,97 @@
+[
+ {
+  "gt": [
+   58,
+   134,
+   125,
+   158
+  ],
+  "out_category": "button",
+  "image_abs_path": "eval_gnd_data/0.png",
+  "prompt": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: None \nGive me the next action? [VG]",
+  "answer": " Reasoning: The previous action is None, so the first step is to initiate the search. The task requires a list of product managers with a minimum of 5 years of experience working in a series A company with a minimum of 1M in revenue. The first step is to use the search function to find these product managers. The search function can be accessed by clicking the search button. After initiating the search, the next step is to refine the search results by using filters such as location, company size, and years of experience. The search results will then be displayed, allowing the user to view the list of product managers that meet the specified criteria. ",
+  "score": 0.520663857460022,
+  "out_boxes": [
+   53,
+   137,
+   203,
+   156
+  ]
+ },
+ {
+  "gt": [
+   26,
+   228,
+   377,
+   278
+  ],
+  "out_category": "button",
+  "image_abs_path": "eval_gnd_data/1.png",
+  "prompt": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: None \nGive me the next action? [VG]",
+  "answer": " Reasoning: The previous action is None, so the first step is to initiate the search. The task requires finding product managers with a minimum of 5 years of experience working in a series A company with a minimum of 1M in revenue. The first step is to use the search function in the platform to find such individuals. The search function can be accessed by clicking the search button. After initiating the search, the platform will display a list of product managers that match the specified criteria. The next action would be to review the list and select the most suitable candidates for the position. ",
+  "score": 0.8168451189994812,
+  "out_boxes": [
+   9,
+   223,
+   381,
+   272
+  ]
+ },
+ {
+  "gt": [
+   740,
+   472,
+   958,
+   526
+  ],
+  "out_category": "button",
+  "image_abs_path": "eval_gnd_data/2.png",
+  "prompt": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: CLICK: Click on the Search button \nGive me the next action? [VG]",
+  "answer": " Reasoning: The previous action was to click on the Search button. The next action would be to click on the \"More Filters\" button to refine the search results. This will allow the user to add more specific filters such as location, job title, or company size to narrow down the search results to match the given criteria. ",
+  "score": 0.7028360962867737,
+  "out_boxes": [
+   743,
+   471,
+   956,
+   523
+  ]
+ },
+ {
+  "gt": [
+   726,
+   339,
+   965,
+   419
+  ],
+  "out_category": "tab",
+  "image_abs_path": "eval_gnd_data/3.png",
+  "prompt": "Task: Give me a list of all the companies with account location in United States. \n Previous Action: CLICK: Click on the Search button \nGive me the next action? [VG]",
+  "answer": " Reasoning: The previous action was to click on the Search button. The next action is to click on the \"more filters\" button to refine the search results. This will allow the user to narrow down the list of companies to those located in the United States. ",
+  "score": 0.5356753468513489,
+  "out_boxes": [
+   845,
+   662,
+   1096,
+   727
+  ]
+ },
+ {
+  "gt": [
+   726,
+   657,
+   965,
+   724
+  ],
+  "out_category": "tab",
+  "image_abs_path": "eval_gnd_data/4.png",
+  "prompt": "Task: Give me a list of all the companies with account location in United States. \n Previous Action: CLICK: Click on the Search button \nGive me the next action? [VG]",
+  "answer": " Reasoning: The previous action was to click on the Search button. The next action is to click on the \"more filters\" button to refine the search results. This will allow the user to narrow down the list of companies to only those located in the United States. ",
+  "score": 0.38231441378593445,
+  "out_boxes": [
+   2748,
+   829,
+   2936,
+   893
+  ]
+ }
+]

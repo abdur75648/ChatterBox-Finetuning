@@ -1,0 +1,155 @@
+[
+    {
+        "image_id": "0",
+        "filename": "images_aug/images_wf-anish-9_113639.1.png",
+        "wh": [
+            1920,
+            1080
+        ],
+        "catgory": "tab",
+        "question": "Task: Give me the list of all the people working in Meta as software engineer with minimum 5 years of experience in Seattle. \n Previous Action: CLICK: Click the location button \nGive me the next action?",
+        "answer": "Reasoning: The next action would be to specify the location as Seattle in the Meta directory. Thus clicking the 'enter locations' tab would allow us to do so. CLICK: Click the enter locations  tab. <tab: [303, 569, 540, 603]>",
+        "gt_box": [
+            303,
+            569,
+            540,
+            603
+        ]
+    },
+    {
+        "image_id": "1",
+        "filename": "images_aug/images_wf-anish-9_113639.2.png",
+        "wh": [
+            2900,
+            1868
+        ],
+        "catgory": "tab",
+        "question": "Task: Give me the list of all the people working in Meta as software engineer with minimum 5 years of experience in Seattle. \n Previous Action: CLICK: Click the location button \nGive me the next action?",
+        "answer": "Reasoning: The next action would be to specify the location as Seattle in the Meta directory. Thus clicking the 'enter locations' tab would allow us to do so. CLICK: Click the enter locations  tab. <tab: [57, 1425, 500, 1500]>",
+        "gt_box": [
+            57,
+            1425,
+            500,
+            1500
+        ]
+    },
+    {
+        "image_id": "2",
+        "filename": "images_aug/images_wf-anish-9_113639.3.png",
+        "wh": [
+            2036,
+            1278
+        ],
+        "catgory": "tab",
+        "question": "Task: Give me the list of all the people working in Meta as software engineer with minimum 5 years of experience in Seattle. \n Previous Action: CLICK: Click the location button \nGive me the next action?",
+        "answer": "Reasoning: The next action would be to specify the location as Seattle in the Meta directory. Thus clicking the 'enter locations' tab would allow us to do so. CLICK: Click the enter locations  tab. <tab: [375, 650, 640, 685]>",
+        "gt_box": [
+            375,
+            650,
+            640,
+            685
+        ]
+    },
+    {
+        "image_id": "3",
+        "filename": "images_aug/images_wf-anish-5_u.1.png",
+        "wh": [
+            1622,
+            942
+        ],
+        "catgory": "button",
+        "question": "Task:  Give me the director of Series A funded company in Mumbai in entertainment sector \n Previous Action: TYPE: Type entertainment in the search industries tab \nGive me the next action?",
+        "answer": "Reasoning: After typing \"entertainment\" in the search industries tab, the next action is to apply this filter. Hence, we click the \"apply filters\" button to refine the search results according to the typed keyword in the industry. CLICK: Click on the apply filters  button. <button: [1490, 367, 1620, 408]>",
+        "gt_box": [
+            1490,
+            367,
+            1620,
+            408
+        ]
+    },
+    {
+        "image_id": "4",
+        "filename": "images_aug/images_wf-anish-5_u.2.png",
+        "wh": [
+            2984,
+            1858
+        ],
+        "catgory": "button",
+        "question": "Task:  Give me the director of Series A funded company in Mumbai in entertainment sector \n Previous Action: TYPE: Type entertainment in the search industries tab \nGive me the next action?",
+        "answer": "Reasoning: After typing \"entertainment\" in the search industries tab, the next action is to apply this filter. Hence, we click the \"apply filters\" button to refine the search results according to the typed keyword in the industry. CLICK: Click on the apply filters  button. <button: [2640, 875, 2850, 925]>",
+        "gt_box": [
+            2640,
+            875,
+            2850,
+            925
+        ]
+    },
+    {
+        "image_id": "5",
+        "filename": "images_aug/images_wf-anish-5_u.3.png",
+        "wh": [
+            2558,
+            1566
+        ],
+        "catgory": "button",
+        "question": "Task:  Give me the director of Series A funded company in Mumbai in entertainment sector \n Previous Action: TYPE: Type entertainment in the search industries tab \nGive me the next action?",
+        "answer": "Reasoning: After typing \"entertainment\" in the search industries tab, the next action is to apply this filter. Hence, we click the \"apply filters\" button to refine the search results according to the typed keyword in the industry. CLICK: Click on the apply filters  button. <button: [2210, 630, 2390, 700]>",
+        "gt_box": [
+            2210,
+            630,
+            2390,
+            700
+        ]
+    },
+    {
+        "image_id": "6",
+        "filename": "images_aug/images_wf-anish-17_x.1.jpg",
+        "wh": [
+            1920,
+            1080
+        ],
+        "catgory": "icon",
+        "question": "Task:  Give me a list of quant employees at JP Morgan Chase & Co. working in Mumbai for at least 2 years \n Previous Action: CLICK: Click on the apply filters button \nGive me the next action?",
+        "answer": "Reasoning: Click on the selection dropdown to apply filters, such as location (Mumbai) and years of experience (at least 2 years), in order to narrow down the search results to quant employees at JP Morgan Chase & Co. CLICK: Click on the selection dropdown  icon. <icon: [764, 351, 811, 390]>",
+        "gt_box": [
+            764,
+            351,
+            811,
+            390
+        ]
+    },
+    {
+        "image_id": "7",
+        "filename": "images_aug/images_wf-anish-17_x.2.jpg",
+        "wh": [
+            1655,
+            996
+        ],
+        "catgory": "icon",
+        "question": "Task:  Give me a list of quant employees at JP Morgan Chase & Co. working in Mumbai for at least 2 years \n Previous Action: CLICK: Click on the apply filters button \nGive me the next action?",
+        "answer": "Reasoning: Click on the selection dropdown to apply filters, such as location (Mumbai) and years of experience (at least 2 years), in order to narrow down the search results to quant employees at JP Morgan Chase & Co. CLICK: Click on the selection dropdown  icon. <icon: [765, 310, 815, 345]>",
+        "gt_box": [
+            765,
+            310,
+            815,
+            345
+        ]
+    },
+    {
+        "image_id": "8",
+        "filename": "images_aug/images_wf-anish-17_x.3.jpg",
+        "wh": [
+            1060,
+            623
+        ],
+        "catgory": "icon",
+        "question": "Task:  Give me a list of quant employees at JP Morgan Chase & Co. working in Mumbai for at least 2 years \n Previous Action: CLICK: Click on the apply filters button \nGive me the next action?",
+        "answer": "Reasoning: Click on the selection dropdown to apply filters, such as location (Mumbai) and years of experience (at least 2 years), in order to narrow down the search results to quant employees at JP Morgan Chase & Co. CLICK: Click on the selection dropdown  icon. <icon: [430, 215, 455, 235]>",
+        "gt_box": [
+            430,
+            215,
+            455,
+            235
+        ]
+    }
+]

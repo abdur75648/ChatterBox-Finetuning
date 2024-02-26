@@ -1,0 +1,87 @@
+[
+    {
+        "image_id": "0",
+        "filename": "images/images_wf-ujjwal-21_Screenshot 2024-01-24 at 4.42.37 PM.png",
+        "wh": [
+            1920,
+            1080
+        ],
+        "catgory": "button",
+        "question": "Task: Give me a list of all CTO working in Pune with minimum 10 years of experience \n Previous Action: CLICK: Click the location button \nGive me the next action?",
+        "answer": "Reasoning: The next step requires to enter the specific location of interest, which is Pune in this case, hence the 'Enter Locations' button needs to be clicked. CLICK: Click the Enter Locations  button. <button: [399, 664, 719, 706]>",
+        "gt_box": [
+            399,
+            664,
+            719,
+            706
+        ]
+    },
+    {
+        "image_id": "1",
+        "filename": "images/images_wf-anish-9_Screenshot 2024-01-24 113639.png",
+        "wh": [
+            1920,
+            1080
+        ],
+        "catgory": "tab",
+        "question": "Task: Give me the list of all the people working in Meta as software engineer with minimum 5 years of experience in Seattle. \n Previous Action: CLICK: Click the location button \nGive me the next action?",
+        "answer": "Reasoning: The next action would be to specify the location as Seattle in the Meta directory. Thus clicking the 'enter locations' tab would allow us to do so. CLICK: Click the enter locations  tab. <tab: [303, 569, 540, 603]>",
+        "gt_box": [
+            303,
+            569,
+            540,
+            603
+        ]
+    },
+    {
+        "image_id": "2",
+        "filename": "images/images_wf-anish-5_u.png",
+        "wh": [
+            1920,
+            1080
+        ],
+        "catgory": "button",
+        "question": "Task:  Give me the director of Series A funded company in Mumbai in entertainment sector \n Previous Action: TYPE: Type entertainment in the search industries tab \nGive me the next action?",
+        "answer": "Reasoning: After typing \"entertainment\" in the search industries tab, the next action is to apply this filter. Hence, we click the \"apply filters\" button to refine the search results according to the typed keyword in the industry. CLICK: Click on the apply filters  button. <button: [1721, 421, 1859, 468]>",
+        "gt_box": [
+            1721,
+            421,
+            1859,
+            468
+        ]
+    },
+    {
+        "image_id": "3",
+        "filename": "images/images_wf-anish-17_x.jpg",
+        "wh": [
+            1920,
+            1080
+        ],
+        "catgory": "icon",
+        "question": "Task:  Give me a list of quant employees at JP Morgan Chase & Co. working in Mumbai for at least 2 years \n Previous Action: CLICK: Click on the apply filters button \nGive me the next action?",
+        "answer": "Reasoning: Click on the selection dropdown to apply filters, such as location (Mumbai) and years of experience (at least 2 years), in order to narrow down the search results to quant employees at JP Morgan Chase & Co. CLICK: Click on the selection dropdown  icon. <icon: [764, 351, 811, 390]>",
+        "gt_box": [
+            764,
+            351,
+            811,
+            390
+        ]
+    },
+    {
+        "image_id": "4",
+        "filename": "images/images_wf-deep-3_e.png",
+        "wh": [
+            1920,
+            1080
+        ],
+        "catgory": "button",
+        "question": "Task: Give me the list of 100 analyst working in a Venture firm with minimum 10 years of experience. \n Previous Action: CLICK: Click on the Job Titles button \nGive me the next action?",
+        "answer": "Reasoning: The next logical step after clicking on the Job Titles button is to launch a specific search for the job title we're interested in, in this case, analysts. So, clicking on 'Search for a job title' button will allow us to proceed with the task. CLICK: Click on Search for a job title  button. <button: [394, 675, 706, 719]>",
+        "gt_box": [
+            394,
+            675,
+            706,
+            719
+        ]
+    }
+]

@@ -1,0 +1,97 @@
+[
+ {
+  "gt": [
+   58,
+   134,
+   125,
+   158
+  ],
+  "out_category": "button",
+  "image_abs_path": "eval_gnd_data/0.png",
+  "prompt": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: None \nGive me the next action? [VG]",
+  "answer": " Reasoning: The task requires information about product managers with a minimum of 5 years of experience and working in a series A company with a minimum of 1M in revenue. This information is not available in the current view of the task. Therefore, the next action is to click on the \"more filters\" button to apply additional filters to narrow down the search results. This will help to find the specific information requested. ",
+  "score": 0.498318612575531,
+  "out_boxes": [
+   54,
+   137,
+   199,
+   156
+  ]
+ },
+ {
+  "gt": [
+   26,
+   228,
+   377,
+   278
+  ],
+  "out_category": "button",
+  "image_abs_path": "eval_gnd_data/1.png",
+  "prompt": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: None \nGive me the next action? [VG]",
+  "answer": " Reasoning: The previous action was to click on the \"more filters\" button. The next action would be to apply the additional filters to narrow down the search results. This could include specifying the company's industry, location, or other relevant criteria. ",
+  "score": 0.6365790963172913,
+  "out_boxes": [
+   11,
+   225,
+   380,
+   274
+  ]
+ },
+ {
+  "gt": [
+   740,
+   472,
+   958,
+   526
+  ],
+  "out_category": "button",
+  "image_abs_path": "eval_gnd_data/2.png",
+  "prompt": "Task: Give me the list of all product manager with minimum 5 years of experience working in a series A company with minimum 1M in revenue. \n Previous Action: CLICK: Click on the Search button \nGive me the next action? [VG]",
+  "answer": " Reasoning: The previous action was to click on the Search button. Now, the next action is to click on the \"More Filters\" button to refine the search results. This will allow the user to apply additional filters such as company size, location, and job title to narrow down the search results to match the specific criteria. ",
+  "score": 0,
+  "out_boxes": [
+   0,
+   0,
+   1,
+   1
+  ]
+ },
+ {
+  "gt": [
+   726,
+   339,
+   965,
+   419
+  ],
+  "out_category": "tab",
+  "image_abs_path": "eval_gnd_data/3.png",
+  "prompt": "Task: Give me a list of all the companies with account location in United States. \n Previous Action: CLICK: Click on the Search button \nGive me the next action? [VG]",
+  "answer": " Reasoning: The next action is to click on the \"Export\" button to download the list of companies with account locations in the United States. This will allow the user to have a physical copy of the information for further review or analysis. ",
+  "score": 0.6970936059951782,
+  "out_boxes": [
+   842,
+   663,
+   1095,
+   728
+  ]
+ },
+ {
+  "gt": [
+   726,
+   657,
+   965,
+   724
+  ],
+  "out_category": "tab",
+  "image_abs_path": "eval_gnd_data/4.png",
+  "prompt": "Task: Give me a list of all the companies with account location in United States. \n Previous Action: CLICK: Click on the Search button \nGive me the next action? [VG]",
+  "answer": " Reasoning: The next action is to click on the \"More Filters\" button to refine the search results. This will allow the user to filter the companies based on specific criteria such as industry, size, or location. ",
+  "score": 0,
+  "out_boxes": [
+   0,
+   0,
+   1,
+   1
+  ]
+ }
+]

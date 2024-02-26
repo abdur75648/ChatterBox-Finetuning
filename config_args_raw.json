@@ -25,10 +25,10 @@
   "local_rank": null,
   "amp": false,
   "version": "llava-llama-2-13b-chat-lightning-preview",
-  "weight": "outputs/epoch_0/global_step451/mp_rank_00_model_states.pt",
+  "weight": "epoch_2/global_step1451/mp_rank_00_model_states.pt",
   "vision_tower": "openai/clip-vit-large-patch14",
   "vision_tower_aux": "openai/clip-vit-large-patch14",
-  "images_path": "eval_gnd_data/",
-  "gnd_file_path": "eval_gnd_data/grouding_qa_extra.json",
-  "save_out_path": "eval_gnd_data/new_prediction_extra_e2.json"
+  "images_path": "eval_data/",
+  "gnd_file_path": "eval_data/data1.1.json",
+  "save_out_path": "eval_data/pred_1.1.json"
 }

@@ -6,8 +6,11 @@ mmcv-1.4.7/
 runs/
 outputs/
 outputs_*/
+epoch_*/
 __MACOSX/
 __pycache__/
+**/__pycache__/
+**/*.pyc
 *.pth
 *.pt
 *.bin
