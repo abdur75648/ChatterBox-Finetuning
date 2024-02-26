@@ -184,7 +184,6 @@ def get_gnd_qa_list(path):
             name_box=name_box.rstrip('>')
             name,box=name_box.split(':')
             bbox=eval(box)
-            gt_list.append(bbox)
         answer_sent_list.append(answer)
         gt_list.append(bbox)
         # int_gt_list.append([int(bbox[0]),int(bbox[1]),int(bbox[2]),int(bbox[3])])

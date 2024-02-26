@@ -1,0 +1,70 @@
+[
+    {
+        "image_id": "0",
+        "filename": "images/images_wf-deep-3_m.png",
+        "wh": [
+            1920,
+            1080
+        ],
+        "catgory": "button",
+        "question": "Task: Give me the list of 100 analyst working in a Venture firm with minimum 10 years of experience. \n Previous Action: TYPE: Type Total Years of Experience in the serach filter tab \nGive me the next action?",
+        "answer": "Reasoning: Clicking the Total Years of Experience button is the next step after typing the required years of experience in the search filter tab. It will filter the results based on the entered years of experience criteria. CLICK: Click on the Total Years of Experience  button. <button: [354, 543, 748, 615]>",
+        "gt_box": [
+            354,
+            543,
+            748,
+            615
+        ]
+    },
+    {
+        "image_id": "1",
+        "filename": "images/images_wf-deep-3_n.png",
+        "wh": [
+            1920,
+            1080
+        ],
+        "catgory": "tab",
+        "question": "Task: Give me the list of 100 analyst working in a Venture firm with minimum 10 years of experience. \n Previous Action: CLICK: Click on the Total Years of Experience button \nGive me the next action?",
+        "answer": "Reasoning: Now that we have brought up the Years of Experience filter, we need to further refine it by clicking the Minimum years tab to filter people who have at least 10 years of experience. CLICK: Click on the Min year  tab. <tab: [377, 614, 534, 662]>",
+        "gt_box": [
+            377,
+            614,
+            534,
+            662
+        ]
+    },
+    {
+        "image_id": "2",
+        "filename": "images/images_wf-deep-3_o.png",
+        "wh": [
+            1920,
+            1080
+        ],
+        "catgory": "tab",
+        "question": "Task: Give me the list of 100 analyst working in a Venture firm with minimum 10 years of experience. \n Previous Action: CLICK: Click on the Min year tab \nGive me the next action?",
+        "answer": "Reasoning: We need to input '10' in the Min Year tab because we are looking for the list of analysts having minimum 10 years of experience. This action will filter the list according to the required years of experience. TYPE: Type 10 in Min Year  tab. <tab: [379, 615, 540, 664]>",
+        "gt_box": [
+            379,
+            615,
+            540,
+            664
+        ]
+    },
+    {
+        "image_id": "3",
+        "filename": "images/images_wf-deep-3_p.png",
+        "wh": [
+            1920,
+            1080
+        ],
+        "catgory": "tab",
+        "question": "Task: Give me the list of 100 analyst working in a Venture firm with minimum 10 years of experience. \n Previous Action: CLICK: Click on the Min year tab \nGive me the next action?",
+        "answer": "INCORRECT ANSWER SHOULD BE THERE BECAUSE INPUT IMAGE WAS CHANGED. <tab: [379, 615, 540, 664]>",
+        "gt_box": [
+            379,
+            615,
+            540,
+            664
+        ]
+    }
+]

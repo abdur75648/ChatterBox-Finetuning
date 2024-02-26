@@ -29,6 +29,6 @@
   "vision_tower": "openai/clip-vit-large-patch14",
   "vision_tower_aux": "openai/clip-vit-large-patch14",
   "images_path": "eval_data/",
-  "gnd_file_path": "eval_data/data_rajat.json",
-  "save_out_path": "eval_data/pred_rajat.json"
+  "gnd_file_path": "eval_data/data2.2.json",
+  "save_out_path": "eval_data/pred_2.2_dummy.json"
 }
