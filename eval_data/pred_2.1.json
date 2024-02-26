@@ -1,0 +1,59 @@
+[
+ {
+  "gt": [
+   10,
+   201,
+   290,
+   239
+  ],
+  "image_abs_path": "eval_data/images/images_wf-deep-3_a.png",
+  "prompt": "Task: Give me the list of 100 analyst working in a Venture firm with minimum 10 years of experience. \n Previous Action: None \nGive me the next action? [VG]",
+  "answer": " Reasoning: The previous action is None, so the first step would be to initiate the search. The next action is to click on the Search button to begin the process of finding the list of 100 analysts working in a Venture firm with a minimum of 10 years of experience. ",
+  "gt_text": "Reasoning: To initiate the task, the first action to be taken is to click on the 'Search' button. This will allow us to input our specified criteria and find the required data. CLICK: Click the Search  button. .",
+  "score": 0.8787311315536499,
+  "out_boxes": [
+   9,
+   203,
+   285,
+   244
+  ]
+ },
+ {
+  "gt": [
+   10,
+   201,
+   290,
+   239
+  ],
+  "image_abs_path": "eval_data/images/images_wf-deep-3_b.png",
+  "prompt": "Task: Give me the list of 100 analyst working in a Venture firm with minimum 10 years of experience. \n Previous Action: CLICK: Click the Search button \nGive me the next action? [VG]",
+  "answer": " Reasoning: The previous action was to click the search button. The next action would be to refine the search results by using the search filters. This will allow the user to narrow down the list to analysts with specific criteria such as years of experience, job title, or company. The search filters can be accessed by clicking on the search filters button. After refining the search, the user can then click on the search button again to get the updated list of analysts. ",
+  "gt_text": "Reasoning: We need to select \"more filters\" after performing the search to refine the result based on the specific criteria which is 10 years of experience in this case. CLICK: Click the more filters  button. .",
+  "score": 0.8603691458702087,
+  "out_boxes": [
+   556,
+   418,
+   717,
+   466
+  ]
+ },
+ {
+  "gt": [
+   556,
+   422,
+   715,
+   466
+  ],
+  "image_abs_path": "eval_data/images/images_wf-deep-3_c.png",
+  "prompt": "Task: Give me the list of 100 analyst working in a Venture firm with minimum 10 years of experience. \n Previous Action: CLICK: Click the more filters button \nGive me the next action? [VG]",
+  "answer": " Reasoning: The next action is to click the more filters button to further refine the search results. This will allow the user to specify additional criteria such as job title, years of experience, and location. The previous action was to click the more filters button, so the next logical step is to utilize these additional filters to narrow down the search results. ",
+  "gt_text": "Reasoning: After opening the additional filters, we now need to specify the job title as 'Analysts' in the search filter. This will narrow down the search results to the specific job role we are interested in. TYPE: Type Job Titles in the search filter  tab. .",
+  "score": 0.7727022171020508,
+  "out_boxes": [
+   455,
+   422,
+   797,
+   470
+  ]
+ }
+]
