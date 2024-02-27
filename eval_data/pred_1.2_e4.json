@@ -1,0 +1,173 @@
+[
+    {
+        "gt": [
+            303,
+            569,
+            540,
+            603
+        ],
+        "image_abs_path": "eval_data/images_aug/images_wf-anish-9_113639.1.png",
+        "prompt": "Task: Give me the list of all the people working in Meta as software engineer with minimum 5 years of experience in Seattle. \n Previous Action: CLICK: Click the location button \nGive me the next action? [VG]",
+        "answer": " Reasoning: The previous action was to click the location button. The next action is to click the search filters button. This will allow us to narrow down the search results to only show software engineers with a minimum of 5 years of experience in Seattle. The search filters will help us find the specific group of people we are looking for. ",
+        "gt_text": "Reasoning: The next action would be to specify the location as Seattle in the Meta directory. Thus clicking the 'enter locations' tab would allow us to do so. CLICK: Click the enter locations  tab. .",
+        "score": 0,
+        "out_boxes": [
+            0,
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "gt": [
+            57,
+            1425,
+            500,
+            1500
+        ],
+        "image_abs_path": "eval_data/images_aug/images_wf-anish-9_113639.2.png",
+        "prompt": "Task: Give me the list of all the people working in Meta as software engineer with minimum 5 years of experience in Seattle. \n Previous Action: CLICK: Click the location button \nGive me the next action? [VG]",
+        "answer": " Reasoning: The previous action was to click the location button. The next action is to click the search filters button. This will allow us to filter the search results based on specific criteria such as job title, years of experience, and location. In this case, we are looking for software engineers with a minimum of 5 years of experience in Seattle. After applying the filters, we can then proceed to the search results page to view the list of people working in Meta as software engineers with at least 5 years of experience in Seattle. ",
+        "gt_text": "Reasoning: The next action would be to specify the location as Seattle in the Meta directory. Thus clicking the 'enter locations' tab would allow us to do so. CLICK: Click the enter locations  tab. .",
+        "score": 0,
+        "out_boxes": [
+            0,
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "gt": [
+            375,
+            650,
+            640,
+            685
+        ],
+        "image_abs_path": "eval_data/images_aug/images_wf-anish-9_113639.3.png",
+        "prompt": "Task: Give me the list of all the people working in Meta as software engineer with minimum 5 years of experience in Seattle. \n Previous Action: CLICK: Click the location button \nGive me the next action? [VG]",
+        "answer": " Reasoning: The previous action was to click the location button. The next action is to click the search filters button. This will allow us to filter the search results based on specific criteria such as job title, years of experience, and location. In this case, we are looking for software engineers with a minimum of 5 years of experience in Seattle. After applying the filters, we can then click the search button to find the list of all people working in Meta as software engineers with a minimum of 5 years of experience in Seattle. ",
+        "gt_text": "Reasoning: The next action would be to specify the location as Seattle in the Meta directory. Thus clicking the 'enter locations' tab would allow us to do so. CLICK: Click the enter locations  tab. .",
+        "score": 0.3429014980792999,
+        "out_boxes": [
+            481,
+            379,
+            754,
+            416
+        ]
+    },
+    {
+        "gt": [
+            1490,
+            367,
+            1620,
+            408
+        ],
+        "image_abs_path": "eval_data/images_aug/images_wf-anish-5_u.1.png",
+        "prompt": "Task:  Give me the director of Series A funded company in Mumbai in entertainment sector \n Previous Action: TYPE: Type entertainment in the search industries tab \nGive me the next action? [VG]",
+        "answer": " Reasoning: The next action is to click on the search industries tab, where the user has typed \"entertainment\". This will likely display a list of companies in the entertainment sector. The user can then select the company they are interested in, which is a Series A funded company in Mumbai. The user can then click on the company's name to view its details, such as its directors. ",
+        "gt_text": "Reasoning: After typing \"entertainment\" in the search industries tab, the next action is to apply this filter. Hence, we click the \"apply filters\" button to refine the search results according to the typed keyword in the industry. CLICK: Click on the apply filters  button. .",
+        "score": 0.9595351815223694,
+        "out_boxes": [
+            1484,
+            363,
+            1622,
+            411
+        ]
+    },
+    {
+        "gt": [
+            2640,
+            875,
+            2850,
+            925
+        ],
+        "image_abs_path": "eval_data/images_aug/images_wf-anish-5_u.2.png",
+        "prompt": "Task:  Give me the director of Series A funded company in Mumbai in entertainment sector \n Previous Action: TYPE: Type entertainment in the search industries tab \nGive me the next action? [VG]",
+        "answer": " Reasoning: The previous action was to type \"entertainment\" in the search industries tab. The next action is to click on the search industries tab to display the results. This will provide a list of companies in the entertainment sector, among which the director of a Series A funded company in Mumbai can be found. ",
+        "gt_text": "Reasoning: After typing \"entertainment\" in the search industries tab, the next action is to apply this filter. Hence, we click the \"apply filters\" button to refine the search results according to the typed keyword in the industry. CLICK: Click on the apply filters  button. .",
+        "score": 0.3599264323711395,
+        "out_boxes": [
+            2646,
+            866,
+            2855,
+            937
+        ]
+    },
+    {
+        "gt": [
+            2210,
+            630,
+            2390,
+            700
+        ],
+        "image_abs_path": "eval_data/images_aug/images_wf-anish-5_u.3.png",
+        "prompt": "Task:  Give me the director of Series A funded company in Mumbai in entertainment sector \n Previous Action: TYPE: Type entertainment in the search industries tab \nGive me the next action? [VG]",
+        "answer": " Reasoning: The next action is to click on the search industries tab, where the user has already typed \"entertainment\". This will display a list of companies in the entertainment sector. The user can then select the company they are interested in, which is a Series A funded company in Mumbai. The search results will provide information about the company, its funding, and its location. ",
+        "gt_text": "Reasoning: After typing \"entertainment\" in the search industries tab, the next action is to apply this filter. Hence, we click the \"apply filters\" button to refine the search results according to the typed keyword in the industry. CLICK: Click on the apply filters  button. .",
+        "score": 0.5344302654266357,
+        "out_boxes": [
+            2216,
+            634,
+            2381,
+            693
+        ]
+    },
+    {
+        "gt": [
+            764,
+            351,
+            811,
+            390
+        ],
+        "image_abs_path": "eval_data/images_aug/images_wf-anish-17_x.1.jpg",
+        "prompt": "Task:  Give me a list of quant employees at JP Morgan Chase & Co. working in Mumbai for at least 2 years \n Previous Action: CLICK: Click on the apply filters button \nGive me the next action? [VG]",
+        "answer": " Reasoning: The next action is to click on the export icon to download the list of quant employees at JP Morgan Chase & Co. working in Mumbai for at least 2 years. This is because the previous action was to apply filters, and the list has been generated. The user wants to obtain this information for further use or analysis. The export function will allow the user to download the list in a manageable format. ",
+        "gt_text": "Reasoning: Click on the selection dropdown to apply filters, such as location (Mumbai) and years of experience (at least 2 years), in order to narrow down the search results to quant employees at JP Morgan Chase & Co. CLICK: Click on the selection dropdown  icon. .",
+        "score": 0,
+        "out_boxes": [
+            0,
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "gt": [
+            765,
+            310,
+            815,
+            345
+        ],
+        "image_abs_path": "eval_data/images_aug/images_wf-anish-17_x.2.jpg",
+        "prompt": "Task:  Give me a list of quant employees at JP Morgan Chase & Co. working in Mumbai for at least 2 years \n Previous Action: CLICK: Click on the apply filters button \nGive me the next action? [VG]",
+        "answer": " Reasoning: The next action is to click on the export icon to download the list of quant employees at JP Morgan Chase & Co. working in Mumbai for at least 2 years. This is because the previous action was to apply filters, and the list has been generated. The user wants to obtain this information for further use or analysis. The export function will allow the user to download the list in a manageable format. ",
+        "gt_text": "Reasoning: Click on the selection dropdown to apply filters, such as location (Mumbai) and years of experience (at least 2 years), in order to narrow down the search results to quant employees at JP Morgan Chase & Co. CLICK: Click on the selection dropdown  icon. .",
+        "score": 0,
+        "out_boxes": [
+            0,
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "gt": [
+            430,
+            215,
+            455,
+            235
+        ],
+        "image_abs_path": "eval_data/images_aug/images_wf-anish-17_x.3.jpg",
+        "prompt": "Task:  Give me a list of quant employees at JP Morgan Chase & Co. working in Mumbai for at least 2 years \n Previous Action: CLICK: Click on the apply filters button \nGive me the next action? [VG]",
+        "answer": " Reasoning: The next action is to click on the export icon to download the list of quant employees at JP Morgan Chase & Co. working in Mumbai for at least 2 years. This is because the previous action was to apply filters, and the list has been generated. The user wants to obtain this information for further use or analysis. The export function will allow the user to download the list in a manageable format. ",
+        "gt_text": "Reasoning: Click on the selection dropdown to apply filters, such as location (Mumbai) and years of experience (at least 2 years), in order to narrow down the search results to quant employees at JP Morgan Chase & Co. CLICK: Click on the selection dropdown  icon. .",
+        "score": 0,
+        "out_boxes": [
+            0,
+            0,
+            1,
+            1
+        ]
+    }
+]

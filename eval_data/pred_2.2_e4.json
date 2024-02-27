@@ -1,0 +1,78 @@
+[
+    {
+        "gt": [
+            354,
+            543,
+            748,
+            615
+        ],
+        "image_abs_path": "eval_data/images/images_wf-deep-3_m.png",
+        "prompt": "Task: Give me the list of 100 analyst working in a Venture firm with minimum 10 years of experience. \n Previous Action: TYPE: Type Total Years of Experience in the serach filter tab \nGive me the next action? [VG]",
+        "answer": " Reasoning: The next action is to click on the search filter tab to apply the filter for the minimum years of experience. This will help narrow down the search results to only include analysts with at least 10 years of experience. After applying the filter, the search results will be updated to display only those analysts who meet the specified criteria. ",
+        "gt_text": "Reasoning: Clicking the Total Years of Experience button is the next step after typing the required years of experience in the search filter tab. It will filter the results based on the entered years of experience criteria. CLICK: Click on the Total Years of Experience  button. .",
+        "score": 0,
+        "out_boxes": [
+            0,
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "gt": [
+            377,
+            614,
+            534,
+            662
+        ],
+        "image_abs_path": "eval_data/images/images_wf-deep-3_n.png",
+        "prompt": "Task: Give me the list of 100 analyst working in a Venture firm with minimum 10 years of experience. \n Previous Action: CLICK: Click on the Total Years of Experience button \nGive me the next action? [VG]",
+        "answer": " Reasoning: The next action is to click on the \"Export as CSV\" button. This will allow the user to download the list of analysts in a CSV file for further analysis or use. The previous action was to click on the \"Total Years of Experience\" button, which displayed the total years of experience of the analysts. Now, the user wants to export this data for their convenience. ",
+        "gt_text": "Reasoning: Now that we have brought up the Years of Experience filter, we need to further refine it by clicking the Minimum years tab to filter people who have at least 10 years of experience. CLICK: Click on the Min year  tab. .",
+        "score": 0,
+        "out_boxes": [
+            0,
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "gt": [
+            379,
+            615,
+            540,
+            664
+        ],
+        "image_abs_path": "eval_data/images/images_wf-deep-3_o.png",
+        "prompt": "Task: Give me the list of 100 analyst working in a Venture firm with minimum 10 years of experience. \n Previous Action: CLICK: Click on the Min year tab \nGive me the next action? [VG]",
+        "answer": " Reasoning: The previous action was to click on the Min year tab. The next action is to click on the Max year tab. This will allow the user to filter the list of analysts based on their years of experience, from the minimum to the maximum years. The user can then view the list of analysts with the specified years of experience. ",
+        "gt_text": "Reasoning: We need to input '10' in the Min Year tab because we are looking for the list of analysts having minimum 10 years of experience. This action will filter the list according to the required years of experience. TYPE: Type 10 in Min Year  tab. .",
+        "score": 0.3030094802379608,
+        "out_boxes": [
+            1721,
+            418,
+            1858,
+            465
+        ]
+    },
+    {
+        "gt": [
+            379,
+            615,
+            540,
+            664
+        ],
+        "image_abs_path": "eval_data/images/images_wf-deep-3_p.png",
+        "prompt": "Task: Give me the list of 100 analyst working in a Venture firm with minimum 10 years of experience. \n Previous Action: CLICK: Click on the Min year tab \nGive me the next action? [VG]",
+        "answer": " Reasoning: The previous action was to click on the Min year tab. The next action would be to click on the Max year tab. This would allow the user to filter the list of analysts based on their years of experience, from the minimum to the maximum years. The user can then view the list of analysts with the specified years of experience. ",
+        "gt_text": "INCORRECT ANSWER SHOULD BE THERE BECAUSE INPUT IMAGE WAS CHANGED. .",
+        "score": 0,
+        "out_boxes": [
+            0,
+            0,
+            1,
+            1
+        ]
+    }
+]
